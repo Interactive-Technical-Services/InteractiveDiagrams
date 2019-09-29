@@ -46,7 +46,7 @@ function wireClicked(wire){
 var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
 schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
 schematic.addEventListener('gesturechange', function(e) {
-    if (e.scale < 1.0) {
+    if (e.scale < 1.0 && scaleUp > 1) {
         // alert('lower than' + e.scale)
         scaleUp = scaleUp - .025;
 			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
@@ -56,7 +56,7 @@ schematic.addEventListener('gesturechange', function(e) {
     	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
 }, false); 
- alert("eden")   
+ alert("ansley")   
 
 var scaleUp = 1;
 function zoomSchematic(e){
