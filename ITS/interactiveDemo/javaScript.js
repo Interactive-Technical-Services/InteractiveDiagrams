@@ -48,15 +48,15 @@ schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, fals
 schematic.addEventListener('gesturechange', function(e) {
     if (e.scale < 1.0 && scaleUp > 1) {
         // alert('lower than' + e.scale)
-        scaleUp = scaleUp - .1;
+        scaleUp = scaleUp - .05;
 			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     } else if (e.scale > 1.0) {
         // alert('higher than' + e.scale)
-        scaleUp = scaleUp + .1;
+        scaleUp = scaleUp + .05;
     	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
 }, false); 
- alert("rob")   
+ alert("pam")   
 
 var scaleUp = 1;
 function zoomSchematic(e){
