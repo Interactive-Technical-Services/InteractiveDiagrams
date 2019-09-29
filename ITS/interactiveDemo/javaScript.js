@@ -45,15 +45,11 @@ function wireClicked(wire){
 
 var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
 schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
-schematic.addEventListener('gestureend', function(e) {
-    if (e < 1.0) {
-        scaleUp = scaleUp - .25;
-			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
-    } else if (e > 1.0) {
-       scaleUp = scaleUp + .25;
-    	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
-    }
-}, false);
+schematic.addEventListener('gestureend', function(e) {"pinchin", handlePinchIn()};
+function handlePinchIn(){
+	alert("pinch in")
+}
+    
 
 var scaleUp = 1;
 function zoomSchematic(e){
