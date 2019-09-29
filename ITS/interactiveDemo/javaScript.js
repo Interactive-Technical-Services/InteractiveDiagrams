@@ -45,14 +45,18 @@ function wireClicked(wire){
 
 var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
 schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
-schematic.addEventListener('gestureend', function(e) {
+schematic.addEventListener('gesturechange', function(e) {
     if (e.scale < 1.0) {
-        alert('lower than' + e.scale)
+        // alert('lower than' + e.scale)
+        scaleUp = scaleUp - .25;
+			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     } else if (e.scale > 1.0) {
-        alert('higher than' + e.scale)
+        // alert('higher than' + e.scale)
+        scaleUp = scaleUp + .25;
+    	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
 }, false); 
- alert("rob")   
+ alert("new")   
 
 var scaleUp = 1;
 function zoomSchematic(e){
