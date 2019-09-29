@@ -49,7 +49,8 @@ schematic.addEventListener('gestureend', function(e) {"pinchin", handlePinchIn()
 function handlePinchIn(){
 	alert("pinch in")
 }
-    
+ 
+ alert("new")   
 
 var scaleUp = 1;
 function zoomSchematic(e){
