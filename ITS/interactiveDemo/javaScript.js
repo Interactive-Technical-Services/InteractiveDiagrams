@@ -15,8 +15,8 @@ for(i=0; i<diagram1PathsLength; i++){
 	path.setAttribute('opacity',0);
 	path.setAttribute('id',diagram1Paths[i].id + 'copy');
 	path.setAttribute('onclick','wireClicked(this);');
-	path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
-	path.setAttribute('onmouseout','notOverPath(this);');
+	// path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
+	// path.setAttribute('onmouseout','notOverPath(this);');
 	path.style['stroke-width']=1;
 	path.style['stroke-linecap']="round";
 	diagram1Paths[i].style['stroke-linecap']="round";
@@ -48,15 +48,15 @@ schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, fals
 schematic.addEventListener('gesturechange', function(e) {
     if (e.scale < 1.0 && scaleUp > 1) {
         // alert('lower than' + e.scale)
-        scaleUp = scaleUp - .025;
+        scaleUp = scaleUp - .1;
 			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     } else if (e.scale > 1.0) {
         // alert('higher than' + e.scale)
-        scaleUp = scaleUp + .025;
+        scaleUp = scaleUp + .1;
     	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
 }, false); 
- alert("ansley")   
+ alert("rob")   
 
 var scaleUp = 1;
 function zoomSchematic(e){
