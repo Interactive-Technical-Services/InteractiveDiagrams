@@ -1,0 +1,67 @@
+body{
+  overflow: hidden;
+  border: 0px;
+  padding: 1px;
+  margin: 0px;
+}
+
+.menu{
+  background-color: grey;
+  overflow-y: auto;
+  position:fixed;
+  margin: auto;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-bottom: 0px;
+  color: white;
+  font-family: "Arial", Times, serif;
+  font-size: .6em;
+}
+
+.select-css {
+    display:inline-block;
+    font-size: .9em;
+    font-family: sans-serif;
+    font-weight: 700;
+    color: #444;
+    line-height: 1;
+    padding: .6em 1.4em .5em .8em;
+    width: 15%;
+    max-width: 100%; 
+    box-sizing: border-box;
+    margin: 0;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+}
+
+#showWindow{
+  display: block;
+  margin: auto;
+  width: 500px;
+}
+
+.slider {
+  position : relative;
+  margin: auto;
+  width: 98%;
+}
+
+.partData{
+  background-color: gray;
+  overflow-y: auto;
+  position:fixed;
+  border-style: 150px;
+  border-color: red;
+  top: 71px;
+  left: 0px;
+  width: 18%;
+  height: 100%;
+  padding: 10px;
+  color: white;
+  font-family: "Arial", Times, serif;
+}
+
