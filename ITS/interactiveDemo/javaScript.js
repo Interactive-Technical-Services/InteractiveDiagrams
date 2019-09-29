@@ -84,6 +84,7 @@ function partWindowStateChange(e){
 
 document.getElementById("partDataWindow").style.display = document.getElementById("partWindowSelect").value;
 TweenMax.to(schematic, 0, {x:500, y:75, scaleX:1, scaleY:1, transformOrigin: "50% 50%", ease: Power0.easeNone});
+console.log("new")
 
 
 
