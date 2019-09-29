@@ -57,7 +57,7 @@ schematic.addEventListener('gesturechange', function(e) {
     	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
 }, false); 
- alert("ansley")   
+ alert("brett")   
 
 var scaleUp = 1;
 function zoomSchematic(e){
@@ -77,10 +77,6 @@ function zoomSchematic(e){
     zoomSlider.value=scaleUp;
 }
 
-zoomSlider.addEventListener("input", update);
-function update(){
-	TweenMax.set(schematic, {scaleX:zoomSlider.value, scaleY:zoomSlider.value, transformOrigin: "50% 50%", ease: Power0.easeNone});
-}
 
 
 function colorPickerChange(e){
