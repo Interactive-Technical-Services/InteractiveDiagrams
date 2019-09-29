@@ -46,10 +46,10 @@ function wireClicked(wire){
 var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
 schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
 schematic.addEventListener('gestureend', function(e) {
-    if (e.scale < 1.0) {
+    if (e < 1.0) {
         scaleUp = scaleUp - .25;
 			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
-    } else if (e.scale > 1.0) {
+    } else if (e > 1.0) {
        scaleUp = scaleUp + .25;
     	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
