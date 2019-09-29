@@ -47,9 +47,9 @@ var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
 schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
 schematic.addEventListener('gestureend', function(e) {
     if (e.scale < 1.0) {
-        alert('less than')
+        alert('less than + e')
     } else if (e.scale > 1.0) {
-        alert('greater than')
+        alert('greater than' + e)
     }
 }, false); 
  alert("rob")   
