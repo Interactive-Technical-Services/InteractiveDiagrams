@@ -14,8 +14,8 @@ for(i=0; i<diagram1PathsLength; i++){
 	path.setAttribute('opacity',0);
 	path.setAttribute('id',diagram1Paths[i].id + 'copy');
 	path.setAttribute('onclick','wireClicked(this);');
-	// path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
-	// path.setAttribute('onmouseout','notOverPath(this);');
+	path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
+	path.setAttribute('onmouseout','notOverPath(this);');
 	path.style['stroke-width']=1;
 	path.style['stroke-linecap']="round";
 	diagram1Paths[i].style['stroke-linecap']="round";
@@ -44,7 +44,58 @@ function wireClicked(wire){
 }
 
 var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
+
+// schematic.addEventListener('mousewheel', function(e){zoomSchematic(e)}, false);
 schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
+
+
+schematic.addEventListener('mousewheel', chromeMouseWheelEvent);
+
+
+
+function mouseWheelEvent(e){
+	console.log("fired" + e.wheelDelta)
+}
+
+function chromeMouseWheelEvent(e){
+	console.log(e)
+	e.preventDefault();
+	switch(e.wheelDelta<0 && scaleUp>1) {
+		case true:
+		if(scaleUp > .5 ){
+			scaleUp = scaleUp - .25;
+			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+		}
+		break;
+		case false:
+		scaleUp = scaleUp + .25;
+    	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+        break;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 schematic.addEventListener('gesturechange', function(e) {
     if (e.scale < 1.0 && scaleUp > 1) {
         // alert('lower than' + e.scale)
@@ -60,8 +111,9 @@ schematic.addEventListener('gesturechange', function(e) {
 
 var scaleUp = 1;
 function zoomSchematic(e){
+	console.log(e)
 	e.preventDefault();
-	switch(e.detail>0) {
+	switch(e.detail>0 && scaleUp>1) {
 		case true:
 		if(scaleUp > .5 ){
 			scaleUp = scaleUp - .25;
@@ -90,7 +142,7 @@ function partWindowStateChange(e){
 
 document.getElementById("partDataWindow").style.display = document.getElementById("partWindowSelect").value;
 TweenMax.to(schematic, 0, {x:500, y:75, scaleX:1, scaleY:1, transformOrigin: "50% 50%", ease: Power0.easeNone});
-console.log("new")
+
 
 
 
