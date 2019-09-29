@@ -44,8 +44,10 @@ function wireClicked(wire){
 }
 
 var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
+schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
+schematic.addEventListener('gestureend', function(e) {zoomSchematic(e)}, false);
 
-var scaleUp = 2;
+var scaleUp = 1;
 function zoomSchematic(e){
 	e.preventDefault();
 	switch(e.detail>0) {
