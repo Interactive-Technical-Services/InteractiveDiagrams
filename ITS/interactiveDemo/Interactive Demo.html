@@ -9,22 +9,24 @@
 </head>
 <body>
 	<div id="mainWindow"></div>
-	<div class="menu" style="scroll-behavior: smooth;">    
-	Component &nbsp;
+	<div class="menu" style="scroll-behavior: smooth;">
+  <span style="color: black;"> <center>Model#: DR557322</center></span>   
 	<select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex);">
-	  	<option>SELECT</option>
+	  	<option>COMPONENT</option>
 	  	<option>Oven Control</option>
 	  	<option>Oven Light</option>
 	  	<option>Door Latch Switch</option>
 	  	<option>Door Lock Solenoid</option>
 	</select>
-	&nbsp;&nbsp;Component Data Window&nbsp;
+  <br>
 	<select id="partWindowSelect" class="select-css" onChange="partWindowStateChange(this.selectedIndex);">
-  		<option value="none" style="background-color: Gray;">Hidden</option>
+  		<option value="none" style="background-color: Gray;">PART DATA WINDOW</option>
+      <option value="none" style="background-color: Gray;">Hidden</option>
   		<option value="inline" style="background-color: DarkGray;">Visible</option>
 	</select>
-	&nbsp;&nbsp;Color Picker &nbsp;
+  <br>
 	<select id="colorPicker" class="select-css" onChange="colorPickerChange(this.selectedIndex);">
+    <option value="#000000" style="background-color: Black;color: #FFFFFF;">COLOR PICKER</option>
   		<option value="#000000" style="background-color: Black;color: #FFFFFF;">Black</option>
   		<option value="#808080" style="background-color: Gray;">Gray</option>
   		<option value="#A9A9A9" style="background-color: DarkGray;">DarkGray</option>
@@ -47,9 +49,11 @@
   		<option value="#DEB887" style="background-color: BurlyWood;">BurlyWood</option>
   		<option value="#F5F5DC" style="background-color: Beige;">Beige</option>
 	</select>
-	<br><br>
-	<button>RESET DIAGRAM</button>
-</div>
+	<br>
+  <button class="select-css">RESET DIAGRAM</button>
+  <br>
+
+
 <div id="partDataWindow" class="partData">
 	This is part stuff.<br>
 	This is part stuff.<br>
@@ -58,7 +62,7 @@
 	This is part stuff.<br>
 	This is part stuff.<br>
 </div>
-  
+ 
 
 
 
