@@ -13,6 +13,12 @@ body {
     font-size:12px;
 }
 
+#menuwrapper{
+  position: absolute;
+    top:0;
+    left:0;
+}
+
 /* We remove the margin, padding, and list style of UL and LI components */
 #menuwrapper ul, #menuwrapper ul li{
     margin:0;
@@ -24,7 +30,7 @@ body {
 #menuwrapper ul li{
     background-color:#7f95db;
     border-bottom:solid 1px white;
-    width:150px;
+    width:200px;
     cursor:pointer;
 }
 
@@ -51,7 +57,7 @@ body {
 
 /* When user has hovered the li item, we show the ul list by applying display:block, note: 150px is the individual menu width.  */
 #menuwrapper ul li:hover ul{
-    left:150px;
+    left:200px;
     top:0px;
     display:block;
 }
@@ -70,7 +76,7 @@ body {
 #menuwrapper ul li ul li a{
     color:#454444;
     display:inline-block;
-    width:120px;
+    width:300px;
 }
 
 /**** THIRD LEVEL MENU ****/
@@ -83,7 +89,7 @@ body {
 /* We show the third level menu only when they hover the second level menu parent */
 #menuwrapper ul li:hover ul li:hover ul{
     display:block;
-    left:150px;
+    left:200px;
     top:0;
 }
 
@@ -110,32 +116,44 @@ body {
   </style>
 </head>
 <body>
-	
+	<div id="mainWindow"></div>
 <div id="menuwrapper">
     <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a>
+      <li><center><a href="#">MENU</a></center>
             <ul>
-                <li><a href="#">Product 1</a>
+                <li><a href="#">COMPONENTS</a>
                     <ul>
-                        <li><a href="#">Sub Product 1</a></li>
-                        <li><a href="#">Sub Product 2</a></li>
-                        <li><a href="#">Sub Product 3</a></li>
+                        <li><a href="#">OVEN CONTROL</a></li>
+                        <li><a href="#">BAKE ELEMENT</a></li>
+                        <li><a href="#">BROIL ELEMENT</a></li>
+                        <li><a href="#">OVEN SENSOR</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Product 2</a></li>
+                <li><a href="#">PART DATA WINDOW</a>
+                    <ul>
+                        <li><a href="#">VISIBLE</a></li>
+                        <li><a href="#">HIDDEN</a></li>
+                        <li><a href="#">LEFT</a></li>
+                        <li><a href="#">RIGHT</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">COLOR PICKER</a>
+                <ul>
+                        <li><a href="#">BLACK</a></li>
+                        <li><a href="#">RED</a></li>
+                        <li><a href="#">GREEN</a></li>
+                        <li><a href="#">ORANGE</a></li>
+                        <li><a href="#">BLUE</a></li>
+                        <li><a href="#">PRUPLE</a></li>
+                    </ul>
+                  </li>
+                
                 <li><a href="#">Product 3</a></li>
             </ul>
         </li>
-        <li><a href="#">About Us</a>
-            <ul>
-                <li><a href="#">Faqs</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Where are we?</a></li>
-            </ul>
-        </li>
-        <li><a href="#">Help</a>
-    </ul>
+      
+        
+      </ul>
 </div>
 
 
@@ -184,7 +202,7 @@ body {
   
 
 
-<div id="mainWindow"></div>
+
 
 </body>
 <script src="../JavaScriptLibraries/TweenMax.min.js"></script>
