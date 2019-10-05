@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Demo</title>
+  <meta charset="UTF-8">
+  <!DOCTYPE html>
+  <link rel="stylesheet" href="../JavaScriptLibraries/interactiveSchematic.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+	<div id="mainWindow" style="text-align: right"></div>
+	<div class="menu" style="scroll-behavior: smooth;">
+  <span style="color: black;"> <center>Model#: DR557322</center></span>   
+	<select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex);">
+	  	<option>COMPONENT</option>
+	  	<option>Oven Control</option>
+	  	<option>Oven Light</option>
+	  	<option>Door Latch Switch</option>
+	  	<option>Door Lock Solenoid</option>
+	</select>
+
+  <br>
+	<select id="colorPicker" class="select-css" onChange="colorPickerChange(this.selectedIndex);">
+  		<option value="rgb(0, 0, 0)" style="background-color: Black;color: #000000;">Black</option>
+      <option value="rgb(255, 0, 0)" style="background-color: Red;">Red</option>
+      <option value="rgb((0, 255, 0)" style="background-color: Green;color: #FFFFFF;">Green</option>
+      <option value="rgb(0, 0, 255)" style="background-color: Blue;">Blue</option>
+
+      <option value="rgb(128, 0, 128)" style="background-color: Purple;color: #FFFFFF;">Purple</option>
+      <option value="rgb(255, 255, 0)" style="background-color: Yellow;">Yellow</option>
+      <option value="rgb(255, 165, 0)" style="background-color: Orange;">Orange</option>
+      <option value="rgb(165, 42, 42)" style="background-color: Brown;">Brown</option>
+
+      <option value="rgb(255, 192, 203)" style="background-color: Pink;">Pink</option>
+      <option value="rgb(105, 105, 105)" style="background-color: Gray;">Gray</option>
+  		<option value="rgb(0, 0, 0)" style="background-color: White;">White</option>
+  		
+  		
+  		
+  		
+  		
+  		
+	</select>
+	<br>
+  <button id= "partDataButton" class="select-css" onclick="showHidePartsDataWindow()">SHOW PART DATA</button>
+  <button class="select-css" onclick="resetDiagram();">RESET DIAGRAM</button>
+  <br>
+
+
+<div id="partDataWindow" class="partData">
+	This is part stuff.<br>
+	This is part stuff.<br>
+	This is part stuff.<br>
+	This is part stuff.<br>
+	This is part stuff.<br>
+	This is part stuff.<br>
+</div>
+ 
+
+
+
+
+</body>
+<script src="../JavaScriptLibraries/TweenMax.min.js"></script>
+<script src="../JavaScriptLibraries/draggable.js"></script>
+<script src="../JavaScriptLibraries/Refrigeration Variables.js"></script>
+<script src="javaScript.js"></script>
+</html>

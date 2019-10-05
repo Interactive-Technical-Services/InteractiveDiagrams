@@ -1,8 +1,8 @@
 body{
-  overflow: hidden;
-  border: 0px;
+  /*overflow: hidden;*/
+  border: 0px;/*
   padding: 1px;
-  margin: 0px;
+  margin: 0px;*/
 }
 
 .menu{
@@ -10,6 +10,7 @@ body{
   position:fixed;
   top: 0px;
   right: 0px;
+  width: 30%
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
@@ -38,10 +39,15 @@ body{
     border-radius: .5em;
 }
 
-#showWindow{
-  display: block;
-  margin: auto;
-  width: 500px;
+#mainWindow{
+  background-color: red;
+  margin: 0;
+  /*position:fixed;
+  top: 0px;
+  left: -5000px;
+  width: 100%
+  margin: 0;
+  padding: 0;*/
 }
 
 .slider {

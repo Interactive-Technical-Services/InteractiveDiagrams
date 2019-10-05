@@ -79,22 +79,10 @@ function chromeMouseWheelEvent(e){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//Samsung Pinch Zoom
+    // mainPage.addEventListener("touchstart", function(ev){
+    //     	var l = ev.touches.length;
+    //     	if (l > 1) { 
 
 schematic.addEventListener('gesturechange', function(e) {
     if (e.scale < 1.0 && scaleUp > 1) {
@@ -124,20 +112,28 @@ function zoomSchematic(e){
     }
 }
 
-
+function componentChange(){
+	display = document.getElementById("componentSelect").value;
+	console.log(display)
+}
 
 function colorPickerChange(e){
 	var rob = document.getElementById("colorPicker").value
 console.log(rob)
 }
-function partWindowStateChange(e){
-	display = document.getElementById("partWindowSelect").value;
-	document.getElementById("partDataWindow").style.display = display;
-	console.log(display)
+
+partDataWindow.style.display = "none";
+function showHidePartsDataWindow(){
+	 partsWindowVisibility = partDataWindow.style.display;
+	 if(partsWindowVisibility === "none"){
+	 	partDataWindow.style.display = "inline";
+	 	partDataButton.innerHTML = "HIDE PART DATA"
+	 }else{
+	 	partDataWindow.style.display = "none";
+	 	partDataButton.innerHTML = "SHOW PART DATA"
+	 }
 }
 
-
-document.getElementById("partDataWindow").style.display = document.getElementById("partWindowSelect").value;
 TweenMax.to(schematic, 0, {x:500, y:75, scaleX:1, scaleY:1, transformOrigin: "50% 50%", ease: Power0.easeNone});
 
 

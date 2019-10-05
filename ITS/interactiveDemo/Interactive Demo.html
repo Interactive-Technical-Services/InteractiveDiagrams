@@ -18,12 +18,7 @@
 	  	<option>Door Latch Switch</option>
 	  	<option>Door Lock Solenoid</option>
 	</select>
-  <br>
-	<select id="partWindowSelect" class="select-css" onChange="partWindowStateChange(this.selectedIndex);">
-  		<option value="none" style="background-color: Gray;">PART DATA WINDOW</option>
-      <option value="none" style="background-color: Gray;">Hidden</option>
-  		<option value="inline" style="background-color: DarkGray;">Visible</option>
-	</select>
+
   <br>
 	<select id="colorPicker" class="select-css" onChange="colorPickerChange(this.selectedIndex);">
     <option value="#000000" style="background-color: Black;color: #FFFFFF;">COLOR PICKER</option>
@@ -50,6 +45,7 @@
   		<option value="#F5F5DC" style="background-color: Beige;">Beige</option>
 	</select>
 	<br>
+  <button id= "partDataButton" class="select-css" onclick="showHidePartsDataWindow()">SHOW PART DATA</button>
   <button class="select-css">RESET DIAGRAM</button>
   <br>
 
