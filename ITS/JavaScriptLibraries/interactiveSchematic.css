@@ -41,9 +41,14 @@ body{
 
 #mainWindow{
   background-color: red;
-  margin: 0;
-  /*position:fixed;
-  top: 0px;
+  
+  /*width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  position:fixed;*/
+/*  top: 0px;
   left: -5000px;
   width: 100%
   margin: 0;
@@ -60,7 +65,7 @@ body{
   background-color: gray;
   overflow-y: auto;
   position:fixed;
-  border-style: 150px;
+  /*border-style: 150px;*/
   border-color: red;
   top: 0px;
   left: 0px;
