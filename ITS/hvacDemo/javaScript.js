@@ -88,33 +88,53 @@ function chromeMouseWheelEvent(e){
     //     	var l = ev.touches.length;
     //     	if (l > 1) { 
 
-schematic.addEventListener('gesturechange', function(e) {
-	e.preventDefault();
-    if (e.scale < 1.0 && scaleUp > 1) {
-        scaleUp = scaleUp - .01;
-			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
-    } else if (e.scale > 1.0) {
-        scaleUp = scaleUp + .01;
-    	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
-    }
-}, false);   
+    	var tracks = [];
+schematic.on("touchmove", function (event) {
 
-var scaleUp = 1;
-function zoomSchematic(e){
-	e.preventDefault();
-	switch(e.detail>0 && scaleUp>1) {
-		case true:
-		if(scaleUp > .5 ){
-			scaleUp = scaleUp - .25;
-			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
-		}
-		break;
-		case false:
-		scaleUp = scaleUp + .25;
-    	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
-        break;
+    //only run code if the user has two fingers touching
+    if (event.originalEvent.touches.length === 2) {
+
+        //track the touches, I'm setting each touch as an array inside the tracks array
+        //each touch array contains an X and Y coordinate
+        tracks.push([ [event.originalEvent.touches[0].pageX, event.originalEvent.touches[0].pageY], [event.originalEvent.touches[1].pageX, event.originalEvent.touches[1].pageY] ]);
     }
-}
+}).on("touchstart", function () {
+    //start-over
+    tracks = [];
+}).on("touchend", function () {
+    //now you can decide the scale that the user chose
+    //take the track points that are the closest and determine the difference between them and the points that are the farthest away from each other
+});
+
+
+
+// schematic.addEventListener('gesturechange', function(e) {
+// 	e.preventDefault();
+//     if (e.scale < 1.0 && scaleUp > 1) {
+//         scaleUp = scaleUp - .01;
+// 			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+//     } else if (e.scale > 1.0) {
+//         scaleUp = scaleUp + .01;
+//     	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+//     }
+// }, false);   
+
+// var scaleUp = 1;
+// function zoomSchematic(e){
+// 	e.preventDefault();
+// 	switch(e.detail>0 && scaleUp>1) {
+// 		case true:
+// 		if(scaleUp > .5 ){
+// 			scaleUp = scaleUp - .25;
+// 			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+// 		}
+// 		break;
+// 		case false:
+// 		scaleUp = scaleUp + .25;
+//     	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+//         break;
+//     }
+// }
 
 function componentChange(){
 	display = document.getElementById("componentSelect").value;
