@@ -89,11 +89,12 @@ function chromeMouseWheelEvent(e){
     //     	if (l > 1) { 
 
 schematic.addEventListener('gesturechange', function(e) {
+	e.preventDefault();
     if (e.scale < 1.0 && scaleUp > 1) {
-        scaleUp = scaleUp - .02;
+        scaleUp = scaleUp - .01;
 			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     } else if (e.scale > 1.0) {
-        scaleUp = scaleUp + .02;
+        scaleUp = scaleUp + .01;
     	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
 }, false);   
