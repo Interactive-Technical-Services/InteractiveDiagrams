@@ -1,10 +1,8 @@
 xhr = new XMLHttpRequest();
-xhr.open("GET","schematic.svg",false);
+xhr.open("GET","schematic2.svg",false);
 xhr.overrideMimeType("image/svg+xml");
 xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
-// schematic.classList.add("right");
-console.log("This" + mainWindow.childNodes.length)
 
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
@@ -12,20 +10,20 @@ for(i=0; i<diagram1PathsLength; i++){
 	diagram1Paths[i].style['stroke-linecap']="round";
 	diagram1Paths[i].style.stroke = "Black";
 
-	// var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-	// path.setAttribute('stroke','blue');
-	// path.setAttribute('fill','none');
-	// path.setAttribute('opacity',0);
-	// path.setAttribute('id',diagram1Paths[i].id + 'copy');
-	// path.setAttribute('onclick','wireClicked(this);');
-	// path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
-	// path.setAttribute('onmouseout','notOverPath(this);');
-	// path.style['stroke-width']=1;
-	// path.style['stroke-linecap']="round";
-	// path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
-	// diagram1.appendChild(path);
-	// path.style["stroke-width"]= 3;
-	// path.setAttribute('touchmove','wireClicked(this);');	
+	var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+	path.setAttribute('stroke','blue');
+	path.setAttribute('fill','none');
+	path.setAttribute('opacity',0);
+	path.setAttribute('id',diagram1Paths[i].id + 'copy');
+	path.setAttribute('onclick','wireClicked(this);');
+	path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
+	path.setAttribute('onmouseout','notOverPath(this);');
+	path.style['stroke-width']=1;
+	path.style['stroke-linecap']="round";
+	path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
+	diagram1.appendChild(path);
+	path.style["stroke-width"]= 3;
+	path.setAttribute('touchmove','wireClicked(this);');	
 }
 
 function overPath(wire){
@@ -42,7 +40,7 @@ var highlightColor = "black";
 function wireClicked(wire){
 	nameSplit = wire.id.split("copy");
 	wire2 = document.getElementById(nameSplit[0]);
-	TweenMax.to(wire2,.1,{stroke:highlightColor, strokeWidth:2});
+	TweenMax.to(wire2,.1,{stroke:highlightColor, strokeWidth:highlightedWidth});
 	selectedPart = wire2.id;
 	console.log(highlightColor)
 }
@@ -51,8 +49,6 @@ var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
 
 // schematic.addEventListener('mousewheel', function(e){zoomSchematic(e)}, false);
 schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
-
-
 schematic.addEventListener('mousewheel', chromeMouseWheelEvent);
 
 
@@ -67,12 +63,12 @@ function chromeMouseWheelEvent(e){
 	switch(e.wheelDelta<0 && scaleUp>1) {
 		case true:
 		if(scaleUp > .5 ){
-			scaleUp = scaleUp - .25;
+			scaleUp = scaleUp - .1;
 			TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
 		}
 		break;
 		case false:
-		scaleUp = scaleUp + .25;
+		scaleUp = scaleUp + .1;
     	TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
         break;
     }
@@ -117,7 +113,28 @@ function zoomSchematic(e){
 }
 
 function componentChange(){
-	display = document.getElementById("componentSelect").value;
+	// alert(document.getElementById("componentSelect").value);
+	switch(document.getElementById("componentSelect").value) {
+
+		case "COMP":
+			TweenMax.to(COMPorangeArray, .1, {stroke:"orange", strokeWidth:highlightedWidth});
+  			TweenMax.to(COMPblackArray, .1, {stroke:"black", strokeWidth:highlightedWidth});
+  			TweenMax.to(COMPblueArray, .1, {stroke:"blue", strokeWidth:highlightedWidth});
+  			TweenMax.to(COMPyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
+  			TweenMax.to(COMPgreenArray, .1, {stroke:"green", strokeWidth:highlightedWidth});
+   		break;
+
+   		case "OFM":
+			TweenMax.to(OFMorangeArray, .1, {stroke:"orange", strokeWidth:highlightedWidth});
+  			TweenMax.to(OFMblackArray, .1, {stroke:"black", strokeWidth:highlightedWidth});
+  			TweenMax.to(OFMyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
+  			TweenMax.to(OFMbrownArray, .1, {stroke:"rgb(165, 42, 42)", strokeWidth:highlightedWidth});
+   		break;
+
+   // 		case "IFMhighStatic":
+			// TweenMax.to([IFMhighStaticgrayArray], .1, {stroke:'gray'});
+   // 		break;
+   	}
 }
 
 function colorPickerChange(e){
@@ -136,7 +153,6 @@ function showHidePartsDataWindow(){
 	 }
 }
 
-// TweenMax.to(schematic, 0, {x:500, y:75, scaleX:1, scaleY:1, transformOrigin: "50% 50%", ease: Power0.easeNone});
 
 
 var blackArray = [];
@@ -153,8 +169,9 @@ var pinkArray = [];
 var grayArray = [];
 var whiteArray = [];
 
+var clickedPart = "";
 function resetDiagram(){
-	
+	console.log(clickedPart);
 	for(i=0; i<diagram1PathsLength; i++){
 		switch(diagram1Paths[i].style.stroke) {
 
@@ -190,7 +207,7 @@ function resetDiagram(){
    		pinkArray.push(diagram1Paths[i].id);
    		break;
 
-   		case "rgb(24, 24, 24)":
+   		case "rgb(105, 105, 105)":
    		grayArray.push(diagram1Paths[i].id);
    		break;
 
@@ -201,38 +218,33 @@ function resetDiagram(){
 		}
 
 	}
-	console.log("TweenMax.to([" + grayArray + "], .1, {stroke:'gray'});");
-	console.log("TweenMax.to([" + blueArray + "], .1, {stroke:'blue'});");
-	console.log("TweenMax.to([" + yellowArray + "], .1, {stroke:'yellow'});");
-	console.log("TweenMax.to([" + orangeArray + "], .1, {stroke:'orange'});");
+	// console.log(clickedPart.concat(grayArray));
+	// console.log(clickedPart.concat("grayArray"));
+	console.log(grayArray)
+	console.log(redArray)
+	console.log(blueArray)
+	console.log(orangeArray)
+	// console.log("var " + clickedPart.concat("grayArray") + " = [" + grayArray +"];");
+	
+	// var IFMhighStaticorangeArray = [blueArray];
+	// var OFMgrayArray = [path1518,path1667,path146,path9549,path9557,path120];
+
+// 	console.log("TweenMax.to([" + blueArray + "], .1, {stroke:'blue'});");
+// 	console.log("TweenMax.to([" + yellowArray + "], .1, {stroke:'yellow'});");
+// 	console.log("TweenMax.to([" + orangeArray + "], .1, {stroke:'orange'});");
 }
 
 //Clear Diagram Highlights
 function clearHighlights(){
-for(i=0; i<diagram1PathsLength; i++){
-	diagram1Paths[i].style['stroke-linecap']="round";
-	diagram1Paths[i].style.stroke = "Black";
-	diagram1Paths[i].style["stroke-width"]= .7;	
-}
+	for(i=0; i<diagram1PathsLength; i++){
+		diagram1Paths[i].style['stroke-linecap']="round";
+		diagram1Paths[i].style.stroke = "Black";
+		diagram1Paths[i].style["stroke-width"]= .7;	
+	}
 }
 clearHighlights();
 
-//////////////////////////////////////////////////////////
-
-var highlightedWidth = 1.4;
-var OFMorangeArray = [OFM_path];
-var OFMgrayArray = [path1518,path1667,path146,path9549,path9557,path120];
-var OFMyellowArray = [path1512,path142,path154,path124,path5855,path5900,path9564];
-
-var COMPorangeArray = [COMP_path];
-var COMPgrayArray = [path2000,path146,path1667,path1518];
-var COMPyellowArray = [path1512,path142,path154,path5875];
-var COMPblueArray = [path98,path54,path64];
-
-var IFMhighStaticorangeArray = [IFMhighStatic_path];
-var IFMhighStaticgrayArray = [path2000,path146,path1667,path1518];
-var IFMhighStaticyellowArray = [path1512,path142,path154,path5875];
-var IFMhighStaticblueArray = [path98,path54,path64];
+var highlightedWidth = 1.5;
 
 var buttons = document.getElementById("componentButtons").childNodes;
 var buttonsLength = buttons.length;
@@ -242,31 +254,57 @@ for(i=0; i<buttonsLength; i++){
 	buttons[i].setAttribute('onmouseover','this.style.cursor = "pointer";');	
 }
 
+//////////////////////////////////////////////////////////
+
+var COMPorangeArray = [COMP_path];
+var COMPblackArray = [path4022,path3844,path3900,path3908,path3904,path3896,path3820,path3932,path51987,path4022,path52044,path3904];
+var COMPblueArray = [path6460,path52055];
+var COMPyellowArray = [path52051,path6468];
+var COMPgreenArray = [path134];
+
+var OFMorangeArray = [OFM_path];
+var OFMblackArray = [path4022,path51987,path3932,path3820,path3896,path3908,path3900,path3844,path10328,path52163,path10328,path10364,path3904];
+var OFMbrownArray = [path52160,path6452];
+var OFMyellowArray = [path52157,path6468,path3924,path3920,path52062,path42844];
+var OFMgreenArray = [path7024];
+
+
+// var COMPorangeArray = [COMP_path];
+// var COMPgrayArray = [path2000,path146,path1667,path1518];
+// var COMPyellowArray = [path1512,path142,path154,path5875];
+// var COMPblueArray = [path98,path54,path64];
+
+// var IFMhighStaticorangeArray = [IFMhighStatic_path];
+// var IFMhighStaticgrayArray = [path2000,path146,path1667,path1518];
+// var IFMhighStaticyellowArray = [path1512,path142,path154,path5875];
+// var IFMhighStaticblueArray = [path98,path54,path64];
+
 function showPartData(selectedPart){
 	clearHighlights();
 	selectedPart = selectedPart.id.split("_");
 	selectedPart = selectedPart[0];
+	clickedPart = selectedPart;
+
 	switch(selectedPart) {
 
-		case "OFM":
-			TweenMax.to(OFMorangeArray, .1, {stroke:"orange", strokeWidth:highlightedWidth});
-  			TweenMax.to(OFMgrayArray, .1, {stroke:"gray", strokeWidth:highlightedWidth});
-  			TweenMax.to(OFMyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
-   		break;
-
-   		case "COMP":
+		case "COMP":
 			TweenMax.to(COMPorangeArray, .1, {stroke:"orange", strokeWidth:highlightedWidth});
-  			TweenMax.to(COMPgrayArray, .1, {stroke:"gray", strokeWidth:highlightedWidth});
-  			TweenMax.to(COMPyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
+  			TweenMax.to(COMPblackArray, .1, {stroke:"black", strokeWidth:highlightedWidth});
   			TweenMax.to(COMPblueArray, .1, {stroke:"blue", strokeWidth:highlightedWidth});
+  			TweenMax.to(COMPyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
+  			TweenMax.to(COMPgreenArray, .1, {stroke:"green", strokeWidth:highlightedWidth});
    		break;
 
-   		case "IFMhighStatic":
-			TweenMax.to(IFMhighStaticorangeArray, .1, {stroke:"orange", strokeWidth:highlightedWidth});
-  			TweenMax.to(IFMhighStaticgrayArray, .1, {stroke:"gray", strokeWidth:highlightedWidth});
-  			TweenMax.to(IFMhighStaticyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
-  			TweenMax.to(IFMhighStaticblueArray, .1, {stroke:"blue", strokeWidth:highlightedWidth});
+   		case "OFM":
+			TweenMax.to(OFMorangeArray, .1, {stroke:"orange", strokeWidth:highlightedWidth});
+  			TweenMax.to(OFMblackArray, .1, {stroke:"black", strokeWidth:highlightedWidth});
+  			TweenMax.to(OFMyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
+  			TweenMax.to(OFMbrownArray, .1, {stroke:"rgb(165, 42, 42)", strokeWidth:highlightedWidth});
    		break;
+
+   // 		case "IFMhighStatic":
+			// TweenMax.to([IFMhighStaticgrayArray], .1, {stroke:'gray'});
+   // 		break;
    	}
 
 

@@ -11,12 +11,22 @@
 	<div id="mainWindow"></div>
 	<div class="menu" style="scroll-behavior: smooth;">
   <span style="color: black;"> <center>Model#: DR557322</center></span>   
-	<select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex);">
-	  	<option>COMPONENT</option>
-	  	<option>Oven Control</option>
-	  	<option>Oven Light</option>
-	  	<option>Door Latch Switch</option>
-	  	<option>Door Lock Solenoid</option>
+	<select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex.value);">
+	  	<optgroup label="COMPRESSOR">
+        <option value="COMP">COMPRESSOR</option>
+      </optgroup>
+      <optgroup label="CONTACTOR">
+      <option value="CC">CONTACTOR - COIL</option>
+      <option value="CC">CONTACTOR - OUTSIDE FAN MOTOR</option>
+      <option value="CC">CONTACTOR - COMPRESSOR</option>
+    </optgroup>
+	  	<option value="OFM">OUTSIDE FAN MOTOR</option>
+	  	<option value="IFMLSGH">OUTSIDE FAN MOTOR - LOW STAGE GAS HEATING</option>
+      <option value="IFMHSGH">OUTSIDE FAN MOTOR - HIGH STAGE GAS HEATING</option>
+      <option value="IFMLSC">OUTSIDE FAN MOTOR - LOW STAGE COOLING/HEAT PUMP</option>
+      <option value="IFMHSC">OUTSIDE FAN MOTOR - HIGH STAGE GAS HEATING</option>
+      <option value="IFMD">OUTSIDE FAN MOTOR - DEHUMIDIFY</option>
+      <option value="IFMC">OUTSIDE FAN MOTOR - CONTINUOS FAN</option>
 	</select>
 
   <br>
@@ -65,4 +75,5 @@
 <script src="../JavaScriptLibraries/draggable.js"></script>
 <script src="../JavaScriptLibraries/Refrigeration Variables.js"></script>
 <script src="javaScript.js"></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script>
 </html>
