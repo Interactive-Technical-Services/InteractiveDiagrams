@@ -7,206 +7,56 @@
   <link rel="stylesheet" href="../JavaScriptLibraries/interactiveSchematic.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style type="text/css">
-    /* Define the body style */
-body {
-    font-family:Arial;
-    font-size:12px;
+    body {
+      font-family:Arial;
+      font-size:12px;
+    }
+
+    #flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px black solid;
+    margin: 0 auto;
 }
 
-#menuwrapper{
-  position: absolute;
-    top:0;
-    left:0;
+.flex-item1 {
+    width: 10%;
+    height: 100vh;
+    border: 1px black solid;
+    background: #369;
 }
 
-/* We remove the margin, padding, and list style of UL and LI components */
-#menuwrapper ul, #menuwrapper ul li{
-    margin:0;
-    padding:0;
-    list-style:none;
+.flex-item2 {
+    width: 80%;
+    height: 100vh;
+    border: 1px black solid;
+    background: red;
 }
 
-/* We apply background color and border bottom white and width to 150px */
-#menuwrapper ul li{
-    background-color:#7f95db;
-    border-bottom:solid 1px white;
-    width:200px;
-    cursor:pointer;
+.flex-item3 {
+    width: 10%;
+    height: 100vh;
+    border: 1px black solid;
+    background: #369;
 }
 
-/* We apply the background hover color when user hover the mouse over of the li component */
-#menuwrapper ul li:hover{
-    background-color:#6679e9;
-    position:relative;
-}
 
-/* We apply the link style */
-#menuwrapper ul li a{
-    padding:5px 15px;
-    color:#ffffff;
-    display:inline-block;
-    text-decoration:none;
-}
 
-/**** SECOND LEVEL MENU ****/
-/* We make the position to absolute for flyout menu and hidden the ul until the user hover the parent li item */
-#menuwrapper ul li ul{
-    position:absolute;
-    display:none;
-}
-
-/* When user has hovered the li item, we show the ul list by applying display:block, note: 150px is the individual menu width.  */
-#menuwrapper ul li:hover ul{
-    left:200px;
-    top:0px;
-    display:block;
-}
-
-/* we apply different background color to 2nd level menu items*/
-#menuwrapper ul li ul li{
-    background-color:#cae25a;
-}
-
-/* We change the background color for the level 2 submenu when hovering the menu */
-#menuwrapper ul li:hover ul li:hover{
-    background-color:#b1b536;
-}
-
-/* We style the color of level 2 links */
-#menuwrapper ul li ul li a{
-    color:#454444;
-    display:inline-block;
-    width:300px;
-}
-
-/**** THIRD LEVEL MENU ****/
-/* We need to hide the 3rd menu, when hovering the first level menu */
-#menuwrapper ul li:hover ul li ul{
-    position:absolute;
-    display:none;
-}
-
-/* We show the third level menu only when they hover the second level menu parent */
-#menuwrapper ul li:hover ul li:hover ul{
-    display:block;
-    left:200px;
-    top:0;
-}
-
-/* We change the background color for the level 3 submenu*/
-#menuwrapper ul li:hover ul li:hover ul li{
-    background:#86d3fa;
-}
-
-/* We change the background color for the level 3 submenu when hovering the menu */
-
-#menuwrapper ul li:hover ul li:hover ul li:hover{
-    background:#358ebc;
-}
-
-/* We change the level 3 link color */
-#menuwrapper ul li:hover ul li:hover ul li a{
-    color:#ffffff;
-}
-
-/* Clear float */
-.clear{
-    clear:both;
-}
   </style>
 </head>
 <body>
-	<div id="mainWindow"></div>
-<div id="menuwrapper">
-    <ul>
-      <li><center><a href="#">MENU</a></center>
-            <ul>
-                <li><a href="#">COMPONENTS</a>
-                    <ul>
-                        <li><a href="#">OVEN CONTROL</a></li>
-                        <li><a href="#">BAKE ELEMENT</a></li>
-                        <li><a href="#">BROIL ELEMENT</a></li>
-                        <li><a href="#">OVEN SENSOR</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">PART DATA WINDOW</a>
-                    <ul>
-                        <li><a href="#">VISIBLE</a></li>
-                        <li><a href="#">HIDDEN</a></li>
-                        <li><a href="#">LEFT</a></li>
-                        <li><a href="#">RIGHT</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">COLOR PICKER</a>
-                <ul>
-                        <li><a href="#">BLACK</a></li>
-                        <li><a href="#">RED</a></li>
-                        <li><a href="#">GREEN</a></li>
-                        <li><a href="#">ORANGE</a></li>
-                        <li><a href="#">BLUE</a></li>
-                        <li><a href="#">PRUPLE</a></li>
-                    </ul>
-                  </li>
-                
-                <li><a href="#">Product 3</a></li>
-            </ul>
-        </li>
-      
-        
-      </ul>
-</div>
+	<div id="flex-container">
+    <div class="flex-item1"></div>
+        <div id="mainWindow" class="flex-item2"></div>
+        <div class="flex-item3"></div>
 
-
-
-
-	<!-- &nbsp;&nbsp;Component Data Window&nbsp;
-	<select id="partWindowSelect" class="select-css" onChange="partWindowStateChange(this.selectedIndex);">
-  		<option value="none" style="background-color: Gray;">Hidden</option>
-  		<option value="inline" style="background-color: DarkGray;">Visible</option>
-	</select>
-	&nbsp;&nbsp;Color Picker &nbsp;
-	<select id="colorPicker" class="select-css" onChange="colorPickerChange(this.selectedIndex);">
-  		<option value="#000000" style="background-color: Black;color: #FFFFFF;">Black</option>
-  		<option value="#808080" style="background-color: Gray;">Gray</option>
-  		<option value="#A9A9A9" style="background-color: DarkGray;">DarkGray</option>
-  		<option value="#D3D3D3" style="background-color: LightGrey;">LightGray</option>
-  		<option value="#FFFFFF" style="background-color: White;">White</option>
-  		<option value="#7FFFD4" style="background-color: Aquamarine;">Aquamarine</option>
-  		<option value="#0000FF" style="background-color: Blue;">Blue</option>
-  		<option value="#000080" style="background-color: Navy;color: #FFFFFF;">Navy</option>
-  		<option value="#800080" style="background-color: Purple;color: #FFFFFF;">Purple</option>
-  		<option value="#FF1493" style="background-color: DeepPink;">DeepPink</option>
-  		<option value="#EE82EE" style="background-color: Violet;">Violet</option>
-  		<option value="#FFC0CB" style="background-color: Pink;">Pink</option>
-  		<option value="#006400" style="background-color: DarkGreen;color: #FFFFFF;">DarkGreen</option>
-  		<option value="#008000" style="background-color: Green;color: #FFFFFF;">Green</option>
-  		<option value="#9ACD32" style="background-color: YellowGreen;">YellowGreen</option>
-  		<option value="#FFFF00" style="background-color: Yellow;">Yellow</option>
-  		<option value="#FFA500" style="background-color: Orange;">Orange</option>
-  		<option value="#FF0000" style="background-color: Red;">Red</option>
-  		<option value="#A52A2A" style="background-color: Brown;">Brown</option>
-  		<option value="#DEB887" style="background-color: BurlyWood;">BurlyWood</option>
-  		<option value="#F5F5DC" style="background-color: Beige;">Beige</option>
-	</select>
-	<br><br>
-	<button>RESET DIAGRAM</button> -->
-</div>
-<!-- <div id="partDataWindow" class="partData">
-	This is part stuff.<br>
-	This is part stuff.<br>
-	This is part stuff.<br>
-	This is part stuff.<br>
-	This is part stuff.<br>
-	This is part stuff.<br>
-</div> -->
-  
-
-
-
-
+  </div>
 </body>
 <script src="../JavaScriptLibraries/TweenMax.min.js"></script>
 <script src="../JavaScriptLibraries/draggable.js"></script>
 <script src="../JavaScriptLibraries/Refrigeration Variables.js"></script>
 <script src="javaScript.js"></script>
+<script src="demoMovie.js"></script>
 </html>

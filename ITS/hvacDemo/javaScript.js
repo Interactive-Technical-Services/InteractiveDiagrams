@@ -113,7 +113,7 @@ function zoomSchematic(e){
 }
 
 function componentChange(){
-	// alert(document.getElementById("componentSelect").value);
+	clearHighlights();
 	switch(document.getElementById("componentSelect").value) {
 
 		case "COMP":
@@ -268,6 +268,12 @@ var OFMbrownArray = [path52160,path6452];
 var OFMyellowArray = [path52157,path6468,path3924,path3920,path52062,path42844];
 var OFMgreenArray = [path7024];
 
+var OFMorangeArray = [CONTACTOR_path];
+var OFMblackArray = [path4022,path51987,path3932,path3820,path3896,path3908,path3900,path3844,path10328,path52163,path10328,path10364,path3904];
+var OFMbrownArray = [path52160,path6452];
+var OFMyellowArray = [path52157,path6468,path3924,path3920,path52062,path42844];
+var OFMgreenArray = [path7024];
+
 
 // var COMPorangeArray = [COMP_path];
 // var COMPgrayArray = [path2000,path146,path1667,path1518];
@@ -278,12 +284,13 @@ var OFMgreenArray = [path7024];
 // var IFMhighStaticgrayArray = [path2000,path146,path1667,path1518];
 // var IFMhighStaticyellowArray = [path1512,path142,path154,path5875];
 // var IFMhighStaticblueArray = [path98,path54,path64];
-
+alert("What the Fuck? ");
 function showPartData(selectedPart){
 	clearHighlights();
 	selectedPart = selectedPart.id.split("_");
 	selectedPart = selectedPart[0];
-	clickedPart = selectedPart;
+	console.log("What the Fuck? ");
+	alert("What the Fuck? ");
 
 	switch(selectedPart) {
 
@@ -293,6 +300,8 @@ function showPartData(selectedPart){
   			TweenMax.to(COMPblueArray, .1, {stroke:"blue", strokeWidth:highlightedWidth});
   			TweenMax.to(COMPyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
   			TweenMax.to(COMPgreenArray, .1, {stroke:"green", strokeWidth:highlightedWidth});
+  			console.log("What the Fuck? ");
+  			alert("What the Fuck? ");
    		break;
 
    		case "OFM":
@@ -300,6 +309,12 @@ function showPartData(selectedPart){
   			TweenMax.to(OFMblackArray, .1, {stroke:"black", strokeWidth:highlightedWidth});
   			TweenMax.to(OFMyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
   			TweenMax.to(OFMbrownArray, .1, {stroke:"rgb(165, 42, 42)", strokeWidth:highlightedWidth});
+   		break;
+   		case "CONTACTOR":
+			TweenMax.to(CONTACTORorangeArray, .1, {stroke:"orange", strokeWidth:highlightedWidth});
+  			// TweenMax.to(OFMblackArray, .1, {stroke:"black", strokeWidth:highlightedWidth});
+  			// TweenMax.to(OFMyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
+  			// TweenMax.to(OFMbrownArray, .1, {stroke:"rgb(165, 42, 42)", strokeWidth:highlightedWidth});
    		break;
 
    // 		case "IFMhighStatic":

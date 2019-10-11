@@ -11,15 +11,16 @@
 	<div id="mainWindow"></div>
 	<div class="menu" style="scroll-behavior: smooth;">
   <span style="color: black;"> <center>Model#: DR557322</center></span>   
-	<select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex.value);">
+	COMPONENT LIST: 
+  <select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex.value);">
 	  	<optgroup label="COMPRESSOR">
         <option value="COMP">COMPRESSOR</option>
         <option value="COMPCCH">COMPRESSOR CRANK CASE HEATER</option>
       </optgroup>
       <optgroup label="CONTACTOR">
-        <option value="CC">CONTACTOR - COIL</option>
-        <option value="CC">CONTACTOR - OUTSIDE FAN MOTOR</option>
-        <option value="CC">CONTACTOR - COMPRESSOR</option>
+        <option value="CONTACTOR">CONTACTOR - COIL</option>
+        <option value="CONTACTOR">CONTACTOR - OUTSIDE FAN MOTOR</option>
+        <option value="CONTACTOR">CONTACTOR - COMPRESSOR</option>
     </optgroup>
     <optgroup label="INDOOR FAN MOTOR">
 	  	<option value="IFM">INDOOR FAN MOTOR</option>
@@ -81,12 +82,9 @@
 
 
 <div id="partDataWindow" class="partData">
-	This is part stuff.<br>
-	This is part stuff.<br>
-	This is part stuff.<br>
-	This is part stuff.<br>
-	This is part stuff.<br>
-	This is part stuff.<br>
+	Select a component from the list on the right.
+  <br><br>
+  Component information display in this window.<br>
 </div>
  
 
@@ -98,5 +96,4 @@
 <script src="../JavaScriptLibraries/draggable.js"></script>
 <script src="../JavaScriptLibraries/Refrigeration Variables.js"></script>
 <script src="javaScript.js"></script>
- <script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/hammer.min.js"></script>
 </html>
