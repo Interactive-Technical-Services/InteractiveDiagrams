@@ -24,7 +24,7 @@ for(i=0; i<diagram1PathsLength; i++){
 	path.style["stroke-width"]= 3;
 	path.setAttribute('touchmove','wireClicked(this);');	
 }
-
+console.log("fuck")
 function overPath(wire){
 	nameSplit = wire.id.split("copy");
 	wire.setAttribute("opacity", ".5"); 
