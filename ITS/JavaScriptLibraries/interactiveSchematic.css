@@ -10,7 +10,7 @@ body{
   position:fixed;
   top: 0px;
   right: 0px;
-  width: 30%
+  max-width: 15%;
   padding-top: 1em;
   padding-left: 1em;
   padding-right: 1em;
