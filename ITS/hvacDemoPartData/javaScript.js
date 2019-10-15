@@ -280,7 +280,7 @@ function colorPickerChange(e){
 	highlightColor = document.getElementById("colorPicker").value;
 }
 
-partDataWindow.style.display = "none";
+// partDataWindow.style.display = "none";
 function showHidePartsDataWindow(){
 	 partsWindowVisibility = partDataWindow.style.display;
 	 if(partsWindowVisibility === "none"){
