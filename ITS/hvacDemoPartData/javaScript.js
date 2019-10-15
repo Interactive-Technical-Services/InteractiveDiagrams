@@ -3,6 +3,7 @@ xhr.open("GET","schematic.svg",false);
 xhr.overrideMimeType("image/svg+xml");
 xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
+TweenMax.to(mainWindow, 0, {x:270});
 
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
@@ -182,8 +183,9 @@ var NONEgrayArray = [];
 
 document.getElementById("componentSelect").value = "NONE";
 function componentChange(){
-	console.log(document.getElementById("componentSelect").value);
 	clearHighlights();
+  COMP.style.display = "none";
+  START.style.display = "none";
 	switch(document.getElementById("componentSelect").value){
 
 		case "COMP":
@@ -192,6 +194,7 @@ function componentChange(){
   			TweenMax.to(COMPblueArray, .1, {stroke:"blue", strokeWidth:highlightedWidth});
   			TweenMax.to(COMPyellowArray, .1, {stroke:"yellow", strokeWidth:highlightedWidth});
   			TweenMax.to(COMPgreenArray, .1, {stroke:"green", strokeWidth:highlightedWidth});
+        COMP.style.display="block";
    		break;
 
    		case "OFM":
@@ -262,6 +265,7 @@ function componentChange(){
    		break;
 
    		case "NONE":
+      START.style.display="block";
    			TweenMax.to(NONEorangeArray, .1, {stroke:"orange", strokeWidth:highlightedWidth});
 			TweenMax.to(NONEblackArray, .1, {stroke:"black", strokeWidth:highlightedWidth});
 			TweenMax.to(NONEbrownArray, .1, {stroke:"rgb(165, 42, 42)", strokeWidth:highlightedWidth});
