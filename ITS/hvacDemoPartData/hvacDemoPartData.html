@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Demo</title>
+  <meta charset="UTF-8">
+  <!DOCTYPE html>
+  <link rel="stylesheet" href="../JavaScriptLibraries/interactiveSchematic.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+	<div id="mainWindow"></div>
+	<div class="menu" style="scroll-behavior: smooth;">
+  <span style="color: black;"> <center>Model#: DR557322</center></span>   
+	COMPONENT LIST: 
+  <select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex.value);">
+    <optgroup label="DIAGRAM">
+        <option value="NONE">CLEAR HIGHLIGHTS</option>
+      </optgroup>
+      <optgroup label="COMPRESSOR">
+        <option value="COMP">COMPRESSOR</option>
+        <option value="CCH">COMPRESSOR CRANK CASE HEATER</option>
+      </optgroup>
+      <optgroup label="CONTACTOR">
+        <option value="CC1CC2">CONTACTOR - COIL</option>
+        <option value="CC1CC2CoilControls">CONTACTOR - COIL CONTROLS</option>
+    </optgroup>
+    <optgroup label="INDOOR FAN MOTOR">
+	  	<option value="IFM">INDOOR FAN MOTOR</option>
+    </optgroup>
+
+    <optgroup label="OUTDOOR FAN MOTOR">
+      <option value="OFM">OUTDOOR FAN MOTOR</option>
+    </optgroup>
+
+    <optgroup label="INDUCED DRAFT MOTOR">
+      <option value="IDM">INDUCED DRAFT MOTOR</option>
+    </optgroup>
+
+    <optgroup label="MAIN GAS VALVE">
+      <option value="MGV">MAIN GAS VALVE</option>
+    </optgroup>
+
+    <optgroup label="TRANSFORMER">
+      <option value="TRANHV">TRANSFORMER</option>
+    </optgroup>
+	</select>
+
+</body>
+<script src="../JavaScriptLibraries/TweenMax.min.js"></script>
+<script src="../JavaScriptLibraries/draggable.js"></script>
+<script src="../JavaScriptLibraries/Refrigeration Variables.js"></script>
+<script src="javaScript.js"></script>
+</html>

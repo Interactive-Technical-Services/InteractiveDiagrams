@@ -27,6 +27,30 @@ for(i=0; i<diagram1PathsLength; i++){
 	path.setAttribute('touchmove','wireClicked(this);');	
 }
 
+var partsList = [];
+var partNameGroupList = partNameGroup.getElementsByTagName("path");
+for(i=0; i<partNameGroupList.length; i++){
+	partName = partNameGroupList[i].id.split("_")
+	partsList.push(partName[0]);
+	
+	var result = partName[0].replace( /([A-Z])/g, " $1" );
+	var finalResult = result.charAt(0).toUpperCase() + result.slice(1);
+
+  	var option = document.createElement("option");
+  	option.value = partName[0];
+  	option.text = finalResult;
+  	componentSelect.add(option);
+
+  	var div = document.createElement('div');
+  	div.style.display = 'block';
+  	div.style.zIndex = 100;
+  	div.innerHTML = '<span class="msg">Hello world.</span>';
+  	document.getElementById("partDataWindow").appendChild(div);
+}
+console.log(partDataWindow)
+
+ 
+
 function overPath(wire){
 	nameSplit = wire.id.split("copy");
 	wire.setAttribute("opacity", ".5"); 
@@ -119,13 +143,12 @@ function resetPartWindow(){
 	}
 }
 resetPartWindow();
-document.getElementById("componentSelect").value = "NONE";
-document.getElementById("START").style.display="block";
+// document.getElementById("componentSelect").value = "NONE";
+// document.getElementById("START").style.display="block";
 function componentChange(){
+	console.log(document.getElementById("componentSelect").value)
 	clearHighlights();
-	resetPartWindow()
-  	COMP.style.display = "none";
-  	START.style.display = "none";
+	resetPartWindow();
 	switch(document.getElementById("componentSelect").value){
 
 		case "ovenLamp":
