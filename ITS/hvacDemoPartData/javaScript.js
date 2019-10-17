@@ -113,6 +113,18 @@ function zoomSchematic(e){
     }
 }
 
+
+
+schematic.addEventListener("mouseup", tapOrClick, false);
+schematic.addEventListener("touchend", tapOrClick, false);
+
+function tapOrClick(event) {
+   //handle tap or click.
+
+    event.preventDefault();
+    alert("fited")
+}
+
 var COMPorangeArray = [COMP_path];
 var COMPblackArray = [path4022,path3844,path3900,path3908,path3904,path3896,path3820,path3932,path51987,path4022,path52044,path3904];
 var COMPblueArray = [path6460,path52055];

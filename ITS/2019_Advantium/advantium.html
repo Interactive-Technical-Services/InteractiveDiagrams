@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HVAC Parts Data Demo</title>
+  <meta charset="UTF-8">
+  <!DOCTYPE html>
+  <link rel="stylesheet" href="../JavaScriptLibraries/interactiveSchematic.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+</head>
+<body>
+  <div id="mainWindow"></div>
+<span style="position: fixed; top: 0px; left: 5px; width: 20%; margin: 0; padding: 0; z-index: 100;">
+    <select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex.value);">
+      <option value="NONE">CLEAR HIGHLIGHTS</option>
+      <optgroup label="HEATERS">
+        <option value="lowerHeaterCeramic">Lower Heater Ceramic</option>
+        <option value="upperHeater1">Upper Heater 1</option>
+        <option value="upperHeater2">Upper Heater 2</option>
+      </optgroup>  
+        
+      <optgroup label="MOTORS">
+        <option value="convMotor">Convection Fan Motor</option>
+        <option value="damperMotor">Damper Motor</option>
+        <option value="fanMotor">Fan Motor</option>
+        <option value="turntableMotor">Turntable Motor</option>
+      </optgroup>  
+      <optgroup label="LAMPS">  
+        <option value="ovenLamp">Oven Lamp</option>
+      </optgroup>
+      <optgroup label="HIGH VOLTAGE">
+        <option value="highVoltageTransformer">High Voltage Transformer</option>
+      </optgroup>
+    </select>
+  </span>
+
+
+<div id="partDataWindow" class="partData">
+
+
+  <div id="START" style="display:block;">
+    <h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3><h3>Select component from list to view part data and circuit highlghts.</h3>
+  </div>
+
+  <div id="ovenTCODiv" style="display:none;" >
+    <center><h2>OVEN TCO</h2></center>
+    <a href="images/ovenTCO.png" target="_blank" width="100%"><img src="images/ovenTCO.png" width="100%"/></a>
+    <center>CLICK IMAGE TO ENLARGE</center>
+    <hr>
+    <ul>
+      <li>Used as a safety to disable entire unit if oven cavity gets too hot.</li>
+      <li>Not Resettable</li>
+      <li>Normally Closed</li>
+      <li>Opens: 293 degrees</li>
+      <li>Operating Votage: 120 VAC</li>
+    </ul> 
+  </div>
+
+      <div id="heaterTCODiv" style="display:none;" >
+        <center><h2>HEATER TCO</h2></center>
+        <a href="images/heaterTCO.png" target="_blank" width="100%"><img src="images/heaterTCO.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if either of the upper heaters get too hot.</li>
+          <li>Not Resettable</li>
+          <li>Normally Closed</li>
+          <li>Opens: 293 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="magnetronTCODiv" style="display:none;" >
+        <center><h3>MAGNETRON TCO</h3></center>
+        <a href="images/magnetronTCO.png" target="_blank" width="100%"><img src="images/magnetronTCO.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if convection fan airflow is interrupted.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+       <div id="convectionTCODiv" style="display:none;" >
+        <center><h3>CONVECTION TCO</h3></center>
+        <a href="images/convectionTCO.png" target="_blank" width="100%"><img src="images/convectionTCO.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="PISBladeDiv" style="display:none;" >
+        <center><h3>PRIMARY INTERLOCK SWITCH</h3></center>
+        <a href="images/primaryInterlockSwitch.png" target="_blank" width="100%"><img src="images/primaryInterlockSwitch.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="MISBladeDiv" style="display:none;" >
+        <center><h3>MONITOR INTERLOCK SWITCH</h3></center>
+        <a href="images/monitorSwitch.png" target="_blank" width="100%"><img src="images/monitorSwitch.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="doorSwitchBladeDiv" style="display:none;" >
+        <center><h3>DOOR SWITCH</h3></center>
+        <a href="images/doorSwitch.png" target="_blank" width="100%"><img src="images/doorSwitch.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="humiditySensorDiv" style="display:none;" >
+        <center><h3>HUMIDITY SENSOR</h3></center>
+        <a href="images/humiditySensor.png" target="_blank" width="100%"><img src="images/humiditySensor.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="damperSwitchDiv" style="display:none;" >
+        <center><h3>DAMPER SWITCH</h3></center>
+        <a href="images/damperSwitch.png" target="_blank" width="100%"><img src="images/damperSwitch.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="damperMotorDiv" style="display:none;" >
+        <center><h3>DAMPER Motor</h3></center>
+        <a href="images/damperMotor.png" target="_blank" width="100%"><img src="images/damperMotor.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="ovenLampDiv" style="display:none;" >
+        <center><h3>OVEN LAMP</h3></center>
+        <a href="images/ovenLamp.png" target="_blank" width="100%"><img src="images/ovenLamp.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="fanMotorDiv" style="display:none;" >
+        <center><h3>FAN MOTOR</h3></center>
+        <a href="images/fanMotor.png" target="_blank" width="100%"><img src="images/fanMotor.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="convMotorDiv" style="display:none;" >
+        <center><h3>CONVECTION MOTOR</h3></center>
+        <a href="images/convectionFanMotor.pdf" target="_blank" width="100%"><img src="images/convectionFanMotor.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="turntableMotorDiv" style="display:none;" >
+        <center><h3>TURNTABLE MOTOR</h3></center>
+        <a href="images/turntableMotor.png" target="_blank" width="100%"><img src="images/turntableMotor.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="lowerHeaterCeramicDiv" style="display:none;" >
+        <center><h3>LOWER HEATER</h3></center>
+        <a href="images/lowerHeater.png" target="_blank" width="100%"><img src="images/lowerHeater.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="upperHeater1Div" style="display:none;" >
+        <center><h3>Upper HEATER 1</h3></center>
+        <a href="images/upperHeater1.png" target="_blank" width="100%"><img src="images/upperHeater1.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="upperHeater2Div" style="display:none;" >
+        <center><h3>Upper HEATER 2</h3></center>
+        <a href="images/upperHeater2.png" target="_blank" width="100%"><img src="images/upperHeater2.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="convectionHeaterDiv" style="display:none;" >
+        <center><h3>CONVECTION HEATER</h3></center>
+        <a href="images/convectionHeater.png" target="_blank" width="100%"><img src="images/convectionHeater.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="highVoltageTransformerDiv" style="display:none;" >
+        <center><h3>HIGH VOLTAGE TRANSFORMER</h3></center>
+        <a href="images/highVoltageTransformer.png" target="_blank" width="100%"><img src="images/highVoltageTransformer.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="highVoltageCapacitorDiv" style="display:none;" >
+        <center><h3>HIGH VOLTAGE CAPACITOR</h3></center>
+        <a href="images/highVoltageCapacitor.png" target="_blank" width="100%"><img src="images/highVoltageCapacitor.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="rectifierDiv" style="display:none;" >
+        <center><h3>HIGH VOLTAGE DIODE (RECTIFIER)</h3></center>
+        <a href="images/rectifier.png" target="_blank" width="100%"><img src="images/rectifier.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="magnetronDiv" style="display:none;" >
+        <center><h3>MAGNETRON</h3></center>
+        <a href="images/magnetron.png" target="_blank" width="100%"><img src="images/magnetron.png" width="100%"/></a>
+        <ul>
+          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
+          <li>Not Resettable</li>
+          <li>Opens: 320 degrees</li>
+          <li>Operating Votage: 120 VAC</li>
+        </ul> 
+      </div>
+
+      <div id="magnetronRelayDiv" style="display:none;" >
+        <center><h3>RELAY BOARD BK (Black) CONNECTOR</h3></center>
+        <a href="images/relayBoard.png" target="_blank" width="100%"><img src="images/relayBoard.png" width="100%"/></a>
+        <br><br><br><br>
+        <a href="images/magnetronRelay.png" target="_blank" width="100%"><img src="images/magnetronRelay.png" width="100%"/></a>
+      </div>
+
+  <div id="COMP" style="display:none;">
+    <center><h3>COMPRESSOR</h3></center>
+    <img src="compressor.png" width="90%" style="margin:10px">
+    <center><a href="compressor.pdf">CLICK TO ENLARGE IMAGE</a></center>
+    <hr>
+    Component Data
+    <ul style="margin:0px">
+      <li>Operating Voltage: 208/230</li>
+      <li>Resistance: 10 ohms</li>
+    </ul>
+    <hr>
+    <ul>
+      <li>Conpressor is energized when contactor 11-21 closes.</li>
+      <li>Contactor is energized when 24VAC is applied to Contactor C1&C2.</li>
+      <li>HPS, LPS Defrost Board control the Contactor.</li>
+    </ul>
+  </div>
+</div>
+ 
+
+
+
+
+</body>
+<script src="../JavaScriptLibraries/TweenMax.min.js"></script>
+<script src="../JavaScriptLibraries/draggable.js"></script>
+<script src="../JavaScriptLibraries/Refrigeration Variables.js"></script>
+<script src="javaScript.js"></script>
+</html>
