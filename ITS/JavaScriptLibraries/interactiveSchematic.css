@@ -49,7 +49,7 @@ body{
 
 .partData{
   display: block;
-  background-color: white;
+  background-color: gray;
   overflow-y: auto;
   position:fixed;
   border-style: solid;
@@ -58,7 +58,7 @@ body{
   top: 40px;
   left: 8px;
   width: 18%;
-  height: 80%;
+  height: 99%;
   padding: 10px;
   color: black;
   font-family: "Arial", Times, serif;
