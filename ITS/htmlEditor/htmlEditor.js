@@ -2,7 +2,7 @@
 
 document.title = "HTML Editor"
 xhr = new XMLHttpRequest();
-xhr.open("GET","2019_Advantium/schematic.svg",false);
+xhr.open("GET","hvacDemoPartData/schematic.svg",false);
 xhr.overrideMimeType("image/svg+xml");
 xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
@@ -256,7 +256,6 @@ function getColors(){
 }
 
 
-var ovenTCOBlackArray = [path6738]; var ovenTCOBlackArray = [path6738];
 
 
 
