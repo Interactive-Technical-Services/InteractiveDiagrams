@@ -1,3 +1,5 @@
+document.title = "HVAC Parts"
+
 TweenMax.to(mainWindow, 0, {x:300, y:0});
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
@@ -44,14 +46,19 @@ var partNameGroupList = partNameGroup.getElementsByTagName("path");
 for(i=0; i<partNameGroupList.length; i++){
   partName = partNameGroupList[i].id.split("_")
   partsList.push(partName[0]);
-  
-  var result = partName[0].replace( /([A-Z])/g, " $1" );
+}
+
+partsList.sort();
+
+for(i=0; i<partsList.length; i++){
+  partName = partsList[i].split("_")
+var result = partName[0].replace( /([A-Z])/g, " $1" );
   var finalResult = result.charAt(0).toUpperCase() + result.slice(1);
 
-    var option = document.createElement("option");
-    option.value = partName[0];
-    option.text = finalResult;
-    componentSelect.add(option);
+  var option = document.createElement("option");
+  option.value = partName[0];
+  option.text = finalResult;
+  componentSelect.add(option);
 }
 
 var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
@@ -105,7 +112,6 @@ schematic.addEventListener('gesturechange', function(e) {
       TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
 }, false); 
-
 
 function componentChange(){
   highlightedWidth = 1.5;
@@ -240,4 +246,3 @@ brownArray = [];
 
   
 
-  // console.log("rob"+ "\n" + 'May')
