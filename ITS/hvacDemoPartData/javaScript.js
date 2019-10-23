@@ -116,20 +116,20 @@ schematic.addEventListener('gesturechange', function(e) {
 function componentChange(){
   highlightedWidth = 1.5;
   clearHighlights();
-  blackArray = document.getElementById("componentSelect").value + "BlackArray";
-  darkGrayArray = document.getElementById("componentSelect").value + "DarkGrayArray";
-  lightGrayArray = document.getElementById("componentSelect").value + "LightGrayArray";
-  aquamarineArray = document.getElementById("componentSelect").value + "AquamarineArray";
-  blueArray = document.getElementById("componentSelect").value + "BlueArray";
-  purpleArray = document.getElementById("componentSelect").value + "PurpleArray";
-  violetArray = document.getElementById("componentSelect").value + "VioletArray";
-  pinkArray = document.getElementById("componentSelect").value + "PinkArray";
-  yellowGreenArray = document.getElementById("componentSelect").value + "YellowGreenArray";
-  yellowArray = document.getElementById("componentSelect").value + "YellowArray";
-  orangeArray = document.getElementById("componentSelect").value + "OrangeArray";
-  redArray = document.getElementById("componentSelect").value + "RedArray";
-  brownArray = document.getElementById("componentSelect").value + "BrownArray";
-  textArray = document.getElementById("componentSelect").value + "Text";
+  blackArray = componentSelect.value + "BlackArray";
+  darkGrayArray = componentSelect.value + "DarkGrayArray";
+  lightGrayArray = componentSelect.value + "LightGrayArray";
+  aquamarineArray = componentSelect.value + "AquamarineArray";
+  blueArray = componentSelect.value + "BlueArray";
+  purpleArray = componentSelect.value + "PurpleArray";
+  violetArray = componentSelect.value + "VioletArray";
+  pinkArray = componentSelect.value + "PinkArray";
+  yellowGreenArray = componentSelect.value + "YellowGreenArray";
+  yellowArray = componentSelect.value + "YellowArray";
+  orangeArray = componentSelect.value + "OrangeArray";
+  redArray = componentSelect.value + "RedArray";
+  brownArray = componentSelect.value + "BrownArray";
+  textArray = componentSelect.value + "Text";
   
   TweenMax.to(eval("obj =" + blackArray), .1, {stroke:"rgb(0, 0, 0)", strokeWidth:highlightedWidth});
   TweenMax.to(eval("obj =" + darkGrayArray), .1, {stroke:"rgb(169, 169, 169)", strokeWidth:highlightedWidth});
@@ -143,12 +143,34 @@ function componentChange(){
   TweenMax.to(eval("obj =" + orangeArray), .1, {stroke:"rgb(255, 165, 0)", strokeWidth:highlightedWidth});
   TweenMax.to(eval("obj =" + redArray), .1, {stroke:"rgb(255, 0, 0)", strokeWidth:highlightedWidth});
   TweenMax.to(eval("obj =" + brownArray), .1, {stroke:"rgb(165, 42, 42)", strokeWidth:highlightedWidth});
+  try {
+   partDataWindow.innerHTML = eval("obj =" + textArray);
+ }catch(e){};
+  switch(componentSelect.value) {
+    case "indoorFanMotor":
 
-  partDataWindow.innerHTML = eval("obj =" + textArray);
+      IDFline.style.display = "block";
+      IDFarrow1.style.display = "block";
+      IDFarrow2.style.display = "block";
+      IDFarrow3.style.display = "block";
+      IDFarrow4.style.display = "block";
+      IDFarrow5.style.display = "block";
+    break;
+    case false:
+    scaleUp = scaleUp + .1;
+      TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+        break;
+    }
 }
 
 
 function clearHighlights(){
+  IDFline.style.display = "none";
+      IDFarrow1.style.display = "none";
+      IDFarrow2.style.display = "none";
+      IDFarrow3.style.display = "none";
+      IDFarrow4.style.display = "none";
+      IDFarrow5.style.display = "none";
   partDataWindow.innerHTML = "Select a component from the list."
   for(i=0; i<diagram1Paths.length; i++){
     part = diagram1Paths[i].id;
