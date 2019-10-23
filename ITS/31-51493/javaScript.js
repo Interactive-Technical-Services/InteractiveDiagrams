@@ -1,6 +1,6 @@
 document.title = "31-51493ITS"
 
-// TweenMax.to(mainWindow, 0, {x:300, y:0});
+TweenMax.to(mainWindow, 0, {x:300, y:0});
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
 for(i=0; i<diagram1PathsLength; i++){
@@ -61,7 +61,7 @@ var result = partName[0].replace( /([A-Z])/g, " $1" );
   componentSelect.add(option);
 }
 
-var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
+var schematicDrag = Draggable.create(mainWindow, {zIndexBoost:false});
 
 //Chrome Zoom
 mainWindow.addEventListener('mousewheel', chromeMouseWheelEvent);
@@ -71,12 +71,12 @@ function chromeMouseWheelEvent(e){
     case true:
     if(scaleUp > .5 ){
       scaleUp = scaleUp - .1;
-      TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+      TweenMax.to(mainWindow, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
     break;
     case false:
     scaleUp = scaleUp + .1;
-      TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+      TweenMax.to(mainWindow, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
         break;
     }
 }
@@ -91,12 +91,12 @@ function zoomSchematic(e){
     case true:
     if(scaleUp > .5 ){
       scaleUp = scaleUp - .1;
-      TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+      TweenMax.to(mainWindow, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
     break;
     case false:
     scaleUp = scaleUp + .1;
-      TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+      TweenMax.to(mainWindow, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
         break;
     }
 }
@@ -106,10 +106,10 @@ schematic.addEventListener('gesturechange', function(e) {
   e.preventDefault();
     if (e.scale < 1.0 && scaleUp > 1) {
         scaleUp = scaleUp - .01;
-      TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+      TweenMax.to(mainWindow, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     } else if (e.scale > 1.0) {
         scaleUp = scaleUp + .01;
-      TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
+      TweenMax.to(mainWindow, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
 }, false); 
 
