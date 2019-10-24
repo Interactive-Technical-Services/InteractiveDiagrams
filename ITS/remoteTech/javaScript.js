@@ -6,14 +6,55 @@ function handleSubmit(){
   fzTemp = step1A.value;
   ffTemp = step1B.value;
 
+  if(step1A.value == "fzCold" && step1B.value == "ffCold"){
+    illustrationWindow.innerHTML = "Check:<br>Replace Cold Control (Thermostat)"
+  }
+
   if(step1A.value == "fzCold" && step1B.value == "ffNormal"){
-    illustrationWindow.innerHTML += "<br>Check:<br>Airflow from freezer to fresh food."
+    illustrationWindow.innerHTML = "Check:<br>Air supply from freezer to fresh food.<br>Return air supply from fresh food to freezer."
   }
 
-  if(step1A.value == "(-20°F) - (-10°F)" && step1B.value == "(35°F) - (42°F)"){
-    illustrationWindow.innerHTML = "Not Possible Recheck Temps."
+  if(step1A.value == "fzCold" && step1B.value == "ffWarm"){
+    illustrationWindow.innerHTML = "Check:<br>Air supply from freezer to fresh food.<br>Return air supply from fresh food to freezer."
   }
 
+  if(step1A.value == "fzCold" && step1B.value == "ffHot"){
+    illustrationWindow.innerHTML = "Check: Door switch.<br>Fresh food light is not turning off when door is closed."
+  }
+
+  if(step1A.value == "fzNormal" && step1B.value == "ffCold"){
+    illustrationWindow.innerHTML = "Need to get."
+  }
+
+  if(step1A.value == "fzNormal" && step1B.value == "ffNormal"){
+    illustrationWindow.innerHTML = "Intermittent Issue: Temperature readings are normal."
+  }
+
+  if(step1A.value == "fzNormal" && step1B.value == "ffWarm"){
+    illustrationWindow.innerHTML = "Food load is blocking airflow in FF section."
+  }
+
+  if(step1A.value == "fzNormal" && step1B.value == "ffWarm"){
+    illustrationWindow.innerHTML = "Check: Door switch.<br>Fresh food light is not turning off when door is closed."
+  }
+
+  if(step1A.value == "fzWarm" && step1B.value == "ffCold"){
+    illustrationWindow.innerHTML = "Need to get"
+  }
+
+  if(step1A.value == "fzWarm" && step1B.value == "ffNormal"){
+    illustrationWindow.innerHTML = "Need to get"
+  }
+
+  if(step1A.value == "fzWarm" && step1B.value == "ffWarm"){
+    illustrationWindow.innerHTML = "Need to do more checks."
+  }
+
+  if(step1A.value == "fzWarm" && step1B.value == "ffHot"){
+    illustrationWindow.innerHTML = "Check: Door switch.<br>Fresh food light is not turning off when door is closed."
+  }
+
+  
 
 //   switch(step1a.value) {
 //   case x:
