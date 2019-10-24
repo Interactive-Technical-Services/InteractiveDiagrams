@@ -6,6 +6,8 @@ function handleSubmit(){
   fzTemp = step1A.value;
   ffTemp = step1B.value;
 
+  var illustrationWindow = document.getElementById("illustrationWindow");
+
   if(step1A.value == "fzCold" && step1B.value == "ffCold"){
     illustrationWindow.innerHTML = "Check:<br>Replace Cold Control (Thermostat)"
   }
