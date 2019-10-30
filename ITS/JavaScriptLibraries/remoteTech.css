@@ -1,10 +1,5 @@
 body{
   overflow: hidden;
-  border: 0px;
-  width: 100%
-  /*
-  padding: 1px;
-  margin: 0px;*/
 }
 
 .menu{
@@ -53,7 +48,7 @@ body{
   display: block;
   background-color: white;
   overflow-y: auto;
-  position:absolute;
+  position:fixed;
   border-right: 1px solid black;
   top: 0px;
   left: 0px;
@@ -87,10 +82,6 @@ body{
   display: block;
 }
 
-.mainWindow{
-  display: block;
-  left: 100%
-}
 
 ul {
   list-style-type: circle;
