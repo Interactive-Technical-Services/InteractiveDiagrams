@@ -9,7 +9,7 @@ function handleSubmit(){
   var illustrationWindow = document.getElementById("illustrationWindow");
 
   if(step1A.value == "fzCold" && step1B.value == "ffCold"){
-    illustrationWindow.innerHTML = "Check:<br>Replace Cold Control (Thermostat)"
+    illustrationWindow.innerHTML = "Check:<br>Replace Cold Control (Thermostat)<br><br><img src='coldControlImage.jpg' width='50%'><br><br><img src='coldControlLoc.jpg'>"
   }
 
   if(step1A.value == "fzCold" && step1B.value == "ffNormal"){
@@ -71,3 +71,4 @@ function handleSubmit(){
 }
 
 // Thermostat Issue:<ul style="list-style-type: disc"><li>Make sure food inside the Fresh Food compertment isnt <a href=""> blocking airflow from Freezer</a>.</li><li>Check Freezer return duct for blockage. <a href="">Blockage?</a>.</li><li>Replace Thermostat.</li></ul>
+
