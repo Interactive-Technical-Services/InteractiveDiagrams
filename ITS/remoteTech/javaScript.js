@@ -7,6 +7,7 @@ function handleSubmit(){
   var illustrationWindow = document.getElementById("illustrationWindow");
 
   if(step1A.value == "fzCold" && step1B.value == "ffCold"){
+    console.log("fired me")
    document.getElementById("illustrationWindow").innerHTML = "Check:<br>Replace Cold Control (Thermostat)<br><br><img src='coldControlImage.jpg' width='50%'><br><br><img src='coldControlLoc.jpg'>"
   }
 
