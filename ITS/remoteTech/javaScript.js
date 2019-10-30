@@ -7,6 +7,7 @@ let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 document.getElementById('mySubmit').addEventListener(touchEvent, handleSubmit);
 
 function handleSubmit(){
+  alert("fired")
   fzTemp = step1A.value;
   ffTemp = step1B.value;
 
