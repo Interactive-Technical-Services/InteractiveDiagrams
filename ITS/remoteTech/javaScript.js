@@ -1,19 +1,20 @@
 document.title = "31-51493ITS"
 
+function handleHome(){
+  document.getElementById("illustrationWindow").innerHTML = 'Before Testing:<ul style="list-style-type: disc"><li>Fresh Food and Freezer section should be loaded to at least 75% capacity.</li><li>Set temperature control setting to "Normal".</li> <li>Allow unit to run for 24 hours.</li></ul>'
+}
+
 function handleSubmit(){
   fzTemp = step1A.value;
   ffTemp = step1B.value;
 
   var illustrationWindow = document.getElementById("illustrationWindow");
-console.log("fzTemp " + step1A.value)
-console.log("ffTemp " + step1B.value)
   if(step1A.value == "fzCold" && step1B.value == "ffCold"){
-    console.log("too cold")
-   document.getElementById("illustrationWindow").innerHTML = ">Replace Cold Control (Thermostat)<br><br><img src='coldControlImage.jpg' class='responsive' width='600' height='400'><br><br><img src='coldControlLoc.jpg' class='responsive' width='600' height='400'>"
+   document.getElementById("illustrationWindow").innerHTML = "Replace Cold Control (Thermostat)<br><br><img src='coldControlImage.jpg' class='responsive'><br><br><img src='coldControlLoc.jpg' class='responsive'>"
   }
 
   if(step1A.value == "fzCold" && step1B.value == "ffNormal"){
-    illustrationWindow.innerHTML = "Check:<br>Air supply from freezer to fresh food.<br>Return air supply from fresh food to freezer."
+    illustrationWindow.innerHTML = "Airfow between FF and FZ is restricted.<br><br>Check:<br><a href='returnDuct.jpg' target=&quot;_blank&quot;>Air supply</a> from freezer to fresh food.<br>Visually inspect for frost blocking return.<br><br><a href='returnDuct.jpg' target=&quot;_blank&quot;>Return air</a> from fresh food to freezer."
   }
 
   if(step1A.value == "fzCold" && step1B.value == "ffWarm"){

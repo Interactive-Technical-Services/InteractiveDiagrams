@@ -9,6 +9,8 @@
 </head>
 <body>
   <div id="instructionWindow" style="width: 48%">
+    Step 1: Select FF and FZ temperature range in forms below.
+    <br><br><br>
     Freezer Temperature<br>
     <select id="step1A" class="select-css">
       <option value="fzCold">Less than -15°F</option>
@@ -30,9 +32,11 @@
       <option value="(35°F) - (42°F)">1-2 Amps</option>
       <option value="(43°F) - (49°F)">3-4 Amps</option>
     </select> -->
-
-    <br><br>
     <input id="mySubmit" type="submit" value="Submit" class="select-css" onclick="handleSubmit()" ontouchstart="handleSubmit()">
+     <br><br>
+    
+    <input id="myHome" type="submit" value="Start Over" class="select-css" onclick="handleHome()" ontouchstart="handleHome()">
+
   </div>
   <div id="illustrationWindow">
     Before Testing:
@@ -41,8 +45,6 @@
       <li>Set temperature control setting to "Normal".</li>
       <li>Allow unit to run for 24 hours.</li>
     </ul>
-    <hr>
-
     
   </div>
   
