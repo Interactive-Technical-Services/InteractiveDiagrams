@@ -1,6 +1,10 @@
 document.title = "31-51493ITS"
 
+// First we check if you support touch, otherwise it's click:
+let touchEvent = 'ontouchstart' in window ? 'touchstart' : 'click';
 
+// Then we bind via thát event. This way we only bind one event, instead of the two as below
+document.getElementById('mySubmit').addEventListener(touchEvent, handleSubmit);
 
 function handleSubmit(){
   fzTemp = step1A.value;
