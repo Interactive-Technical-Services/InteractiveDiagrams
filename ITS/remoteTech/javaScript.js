@@ -1,13 +1,13 @@
 document.title = "31-51493ITS"
-
+console.log("onload")
 function handleSubmit(){
   fzTemp = step1A.value;
   ffTemp = step1B.value;
 
   var illustrationWindow = document.getElementById("illustrationWindow");
-
+console.log("handleSubmit")
   if(step1A.value == "fzCold" && step1B.value == "ffCold"){
-    console.log("fired me")
+    console.log("too cold")
    document.getElementById("illustrationWindow").innerHTML = "Check:<br>Replace Cold Control (Thermostat)<br><br><img src='coldControlImage.jpg' width='50%'><br><br><img src='coldControlLoc.jpg'>"
   }
 
