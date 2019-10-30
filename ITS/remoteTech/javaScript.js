@@ -4,8 +4,8 @@ function handleSubmit(){
   ffTemp = step1B.value;
 
   var illustrationWindow = document.getElementById("illustrationWindow");
-console.log("handleSubmit " + step1A.value)
-console.log("handleSubmit " + step1B.value)
+console.log("fzTemp " + step1A.value)
+console.log("ffTemp " + step1B.value)
   if(step1A.value == "fzCold" && step1B.value == "ffCold"){
     console.log("too cold")
    document.getElementById("illustrationWindow").innerHTML = "Check:<br>Replace Cold Control (Thermostat)<br><br><img src='coldControlImage.jpg' width='50%'><br><br><img src='coldControlLoc.jpg'>"
