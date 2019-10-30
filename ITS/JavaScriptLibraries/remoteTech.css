@@ -2,21 +2,6 @@ body{
   overflow: hidden;
 }
 
-.menu{
-  background-color: white;
-  position:fixed;
-  top: 0px;
-  right: 0px;
-  max-width: 15%;
-  padding-top: 1em;
-  padding-left: 1em;
-  padding-right: 1em;
-  padding-bottom: 0px;
-  color: white;
-  font-family: "Arial", Times, serif;
-  font-size: .6em;
-}
-
 .select-css {
   top: 0px;
   left: 0px;
@@ -28,31 +13,24 @@ body{
     line-height: 1;
     /*padding: .6em 1.4em .5em .8em;*/
     width: 35%;
-    max-width: 100%; 
-    box-sizing: border-box;
+    /*max-width: 100%; */
+    /*box-sizing: border-box;*/
     margin: 0;
     border: 1px solid #aaa;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
     border-radius: .25em;
 }
 
-
-
-.slider {
-  position : relative;
-  margin: auto;
-  width: 98%;
-}
-
 #instructionWindow{
   display: block;
+  position:fixed;
   background-color: white;
   overflow-y: auto;
   position:fixed;
   border-right: 1px solid black;
   top: 0px;
   left: 0px;
-  width: 18%;
+  width: 40%;
   height: 99%;
   padding: 10px;
   color: black;
@@ -62,14 +40,15 @@ body{
 
 #illustrationWindow{
   display: block;
-  background-color: white;
+  background-color: green;
   overflow-y: auto;
   position:fixed;
   top: 0px;
-  left: 50%;
+  left: 41.6%;
   height: 99%;
+  width: 57%;
   padding: 10px;
-  color: black;
+  color: white;
   font-family: "Arial", Times, serif;
   font-size:1.5vw;
 }
