@@ -40,15 +40,14 @@ body{
 
 #illustrationWindow{
   display: block;
-  background-color: green;
+  background-color: white;
   overflow-y: auto;
   position:fixed;
   top: 0px;
-  left: 41.6%;
+  left: 42%;
   height: 99%;
-  width: 57%;
   padding: 10px;
-  color: white;
+  color: black;
   font-family: "Arial", Times, serif;
   font-size:1.5vw;
 }
