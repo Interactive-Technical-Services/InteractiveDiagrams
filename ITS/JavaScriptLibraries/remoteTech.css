@@ -53,7 +53,7 @@ body{
   display: block;
   background-color: white;
   overflow-y: auto;
-  position:fixed;
+  position:absolute;
   border-right: 1px solid black;
   top: 0px;
   left: 0px;

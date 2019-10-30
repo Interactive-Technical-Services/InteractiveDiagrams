@@ -10,6 +10,8 @@
 <body>
   <div id="instructionWindow" style="width: 48%">
     Step 1: Select FF and FZ temperature range in forms below.
+    <br><br>
+    <input id="back" type="submit" value="Previous Step" class="select-css" onclick="handleHome()" ontouchstart="handleHome()">
     <br><br><br>
     Freezer Temperature<br>
     <select id="step1A" class="select-css">
@@ -18,7 +20,8 @@
       <option value="fzWarm">More than 10°F</option>
     </select>
     <br><br>
-    Fresh Food Temperature<br>
+    Fresh Food Temperature
+    <br>
     <select id="step1B" class="select-css">
       <option value="ffCold">Less than 34°F</option>
       <option value="ffNormal">(35°F) - (43°F)</option>
