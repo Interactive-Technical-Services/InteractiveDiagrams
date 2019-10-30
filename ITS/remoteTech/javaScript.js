@@ -8,7 +8,7 @@ function handleSubmit(){
   var illustrationWindow = document.getElementById("illustrationWindow");
 
   if(step1A.value == "fzCold" && step1B.value == "ffCold"){
-    illustrationWindow.innerHTML = "Check:<br>Replace Cold Control (Thermostat)<br><br><img src='coldControlImage.jpg' width='50%'><br><br><img src='coldControlLoc.jpg'>"
+    illustrationWindow.innerText = "Check:<br>Replace Cold Control (Thermostat)<br><br><img src='coldControlImage.jpg' width='50%'><br><br><img src='coldControlLoc.jpg'>"
   }
 
   if(step1A.value == "fzCold" && step1B.value == "ffNormal"){
