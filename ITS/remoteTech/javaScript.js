@@ -1,12 +1,5 @@
 document.title = "31-51493ITS"
 
- function autoResizeDiv()
-        {
-            document.getElementById('illustrationWindow').style.width = window.innerwidth +'px';
-        }
-        window.onresize = autoResizeDiv;
-        autoResizeDiv();
-
 function handleSubmit(){
   fzTemp = step1A.value;
   ffTemp = step1B.value;
