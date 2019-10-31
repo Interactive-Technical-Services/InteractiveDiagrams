@@ -75,11 +75,20 @@ function handleSubmit(){
   }
 
   if(fzTemp == "fzNormal" && ffTemp == "ffCold"){
-    illustrationWindow.innerHTML = "Need to get."
+    illustrationWindow.innerHTML="";
+
+    instructionWindow.innerHTML=
+      "<span class='negative'>Food load in ff section is too low.</span><br><br>"+
+      "<span class='positive'>Advise tennant to increase load to 75% by either adding food or adding gallon jugs of water.</span><br><br>"+
+      "<input id='myHome' type='submit' value='Start Over' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>";
   }
 
   if(fzTemp == "fzNormal" && ffTemp == "ffNormal"){
-    illustrationWindow.innerHTML = "Intermittent Issue: Temperature readings are normal."
+    illustrationWindow.innerHTML="";
+
+    instructionWindow.innerHTML=
+      "<span class='neutral'>Intermittent issue: Temperature readings are normal.</span><br><br>"+
+      "<input id='myHome' type='submit' value='Start Over' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>";
   }
 
   if(fzTemp == "fzNormal" && ffTemp == "ffWarm"){
