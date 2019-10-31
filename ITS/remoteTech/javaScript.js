@@ -15,9 +15,9 @@ function handleHome(){
     "<br>"+
     "<select id='step1B' class='select-css'>"+
     "<option value='ffCold'>Less than 34°F</option>"+
-    "<option value='ffNormal'>(35°F) - (43°F)</option>"+
-    "<option value='ffWarm'>More than 43°F</option>"+
-    "<option value='ffHot'>Above Room Temperature</option>"+
+    "<option value='ffNormal'>35°F - 43°F</option>"+
+    "<option value='ffWarm'>43°F - Ambient</option>"+
+    "<option value='ffHot'>Above Ambient</option>"+
     "</select><br><br>"+
     "<input id='mySubmit' type='submit' value='Submit' class='select-css' onclick='handleSubmit()' ontouchstart='handleSubmit()'>"+
     "<br><br>";
@@ -39,7 +39,7 @@ function handleSubmit(){
     "<img src='coldControlImage.jpg' class='responsive'><br><br>"+
     "<img src='coldControlLoc.jpg' class='responsive'>";
    instructionWindow.innerHTML =
-    "Replace Cold Control (Thermostat)<br><br>"+
+    "<span class='negative'>Replace Cold Control (Thermostat)</span><br><br>"+
     "<input id='myHome' type='submit' value='Start Over' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>";
   }
 
@@ -55,11 +55,23 @@ function handleSubmit(){
   }
 
   if(fzTemp == "fzCold" && ffTemp == "ffWarm"){
-    illustrationWindow.innerHTML = fzColdffWarm;
+    illustrationWindow.innerHTML="";
+
+    instructionWindow.innerHTML=
+      "<span class='negative'>Airfow between FF and FZ is restricted.</span><br><br>"+
+      "<span class='positive'><span style = color:green>Check:</span><br><a href='javascript:changeImage(&quot;coldControlLoc.jpg&quot;)'>Return air</a> from fresh food to freezer.<br>"+
+      "<a href='javascript:changeImage(&quot;coldControlImage.jpg&quot;)'>Supply air</a> from freezer to fresh food.<br><br>"+
+      "Visually inspect ducts for frost blocking airflow.</span><br><br>"+
+      "<input id='myHome' type='submit' value='Start Over' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>";
   }
 
   if(fzTemp == "fzCold" && ffTemp == "ffHot"){
-    illustrationWindow.innerHTML = fzColdffWarm;
+    illustrationWindow.innerHTML="";
+
+    instructionWindow.innerHTML=
+      "<span class='negative'>Heat source inside refrigerator is stuck on.</span><br><br>"+
+      "<span class='positive'><span style = color:green>Check:</span><br><a href='javascript:changeImage(&quot;lightSwitch.jpg&quot;)'>Door switch</a> to ensure switch is turning off interior light.<br><br>"+
+      "<input id='myHome' type='submit' value='Start Over' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>";
   }
 
   if(fzTemp == "fzNormal" && ffTemp == "ffCold"){
