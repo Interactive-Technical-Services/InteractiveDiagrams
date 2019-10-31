@@ -2,9 +2,8 @@ document.title = "31-51493ITS"
 
 function handleHome(){
   instructionWindow.innerHTML =
-    "Step 1: "+
-    "Select FF and FZ temperature range in forms below."+
-    "<br><br><br>Freezer Temperature<br>"+
+    "<h4>1) Select FF and FZ temperature range.</h4>"+
+    "Freezer Temperature<br>"+
     "<select id='step1A' class='select-css'>"+
     "<option value='fzCold'>Less than -15°F</option>"+
     "<option value='fzNormal'>(-15°F) - (10°F)</option>"+
@@ -18,11 +17,17 @@ function handleHome(){
     "<option value='ffNormal'>35°F - 43°F</option>"+
     "<option value='ffWarm'>43°F - Ambient</option>"+
     "<option value='ffHot'>Above Ambient</option>"+
-    "</select><br><br>"+
-    "<input id='mySubmit' type='submit' value='Submit' class='select-css' onclick='handleSubmit()' ontouchstart='handleSubmit()'>"+
-    "<br><br>";
+    "</select>"+
+    "<h4>2) Select components that are currently running.</h4>"+
+    "<form>"+
+      "<input type='radio' name='evapFanMotor_btn' value='Evaporator Fan Motor'> Evaporator Fan Motor<br>"+
+      "<input type='radio' name='condenserFanMotor_btn' value='female'> Condenser Fan Motor<br>"+
+      "<input type='radio' name='compressor_btn' value='other'> Compressor" + 
+    "</form>"+
+    "<h4>3) Click Submit.</h4>"+
+    "<input id='mySubmit' type='submit' value='Submit' class='select-css' onclick='handleSubmit()' ontouchstart='handleSubmit()'>";
 
-  illustrationWindow.innerHTML = instructionStart;
+  // illustrationWindow.innerHTML = instructionStart;
 }
 handleHome();
 
