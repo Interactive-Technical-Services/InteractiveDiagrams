@@ -1,59 +1,96 @@
 document.title = "31-51493ITS"
 
 function handleHome(){
-  document.getElementById("illustrationWindow").innerHTML = 'Before Testing:<ul style="list-style-type: disc"><li>Fresh Food and Freezer section should be loaded to at least 75% capacity.</li><li>Set temperature control setting to "Normal".</li> <li>Allow unit to run for 24 hours.</li></ul>'
+  instructionWindow.innerHTML =
+    "Step 1: "+
+    "Select FF and FZ temperature range in forms below."+
+    "<br><br><br>Freezer Temperature<br>"+
+    "<select id='step1A' class='select-css'>"+
+    "<option value='fzCold'>Less than -15°F</option>"+
+    "<option value='fzNormal'>(-15°F) - (10°F)</option>"+
+    "<option value='fzWarm'>More than 10°F</option>"+
+    "</select>"+
+    "<br><br>"+
+    "Fresh Food Temperature"+
+    "<br>"+
+    "<select id='step1B' class='select-css'>"+
+    "<option value='ffCold'>Less than 34°F</option>"+
+    "<option value='ffNormal'>(35°F) - (43°F)</option>"+
+    "<option value='ffWarm'>More than 43°F</option>"+
+    "<option value='ffHot'>Above Room Temperature</option>"+
+    "</select><br><br>"+
+    "<input id='mySubmit' type='submit' value='Submit' class='select-css' onclick='handleSubmit()' ontouchstart='handleSubmit()'>"+
+    "<br><br>";
+
+  illustrationWindow.innerHTML = instructionStart;
+}
+handleHome();
+
+function changeImage(image){
+  illustrationWindow.innerHTML="<img src=" + image + " class='responsive'>"
 }
 
 function handleSubmit(){
   fzTemp = step1A.value;
   ffTemp = step1B.value;
 
-  var illustrationWindow = document.getElementById("illustrationWindow");
   if(step1A.value == "fzCold" && step1B.value == "ffCold"){
-   document.getElementById("illustrationWindow").innerHTML = "Replace Cold Control (Thermostat)<br><br><img src='coldControlImage.jpg' class='responsive'><br><br><img src='coldControlLoc.jpg' class='responsive'>"
+   illustrationWindow.innerHTML =
+    "<img src='coldControlImage.jpg' class='responsive'><br><br>"+
+    "<img src='coldControlLoc.jpg' class='responsive'>";
+   instructionWindow.innerHTML =
+    "Replace Cold Control (Thermostat)<br><br>"+
+    "<input id='myHome' type='submit' value='Start Over' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>";
   }
 
-  if(step1A.value == "fzCold" && step1B.value == "ffNormal"){
-    illustrationWindow.innerHTML = "Airfow between FF and FZ is restricted.<br><br>Check:<br><a href='returnDuct.jpg' target=&quot;_blank&quot;>Air supply</a> from freezer to fresh food.<br>Visually inspect for frost blocking return.<br><br><a href='returnDuct.jpg' target=&quot;_blank&quot;>Return air</a> from fresh food to freezer."
+  if(fzTemp == "fzCold" && ffTemp == "ffNormal"){
+    illustrationWindow.innerHTML="";
+
+    instructionWindow.innerHTML=
+      "<span class='negative'>Airfow between FF and FZ is restricted.</span><br><br>"+
+      "<span class='positive'><span style = color:green>Check:</span><br><a href='javascript:changeImage(&quot;coldControlLoc.jpg&quot;)'>Return air</a> from fresh food to freezer.<br>"+
+      "<a href='javascript:changeImage(&quot;coldControlImage.jpg&quot;)'>Supply air</a> from freezer to fresh food.<br><br>"+
+      "Visually inspect ducts for frost blocking airflow.</span><br><br>"+
+      "<input id='myHome' type='submit' value='Start Over' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>";
   }
 
-  if(step1A.value == "fzCold" && step1B.value == "ffWarm"){
-    illustrationWindow.innerHTML = "Check:<br>Air supply from freezer to fresh food.<br>Return air supply from fresh food to freezer."
+  if(fzTemp == "fzCold" && ffTemp == "ffWarm"){
+    illustrationWindow.innerHTML = fzColdffWarm;
   }
 
-  if(step1A.value == "fzCold" && step1B.value == "ffHot"){
-    illustrationWindow.innerHTML = "Check: Door switch.<br>Fresh food light is not turning off when door is closed."
+  if(fzTemp == "fzCold" && ffTemp == "ffHot"){
+    illustrationWindow.innerHTML = fzColdffWarm;
   }
 
-  if(step1A.value == "fzNormal" && step1B.value == "ffCold"){
+  if(fzTemp == "fzNormal" && ffTemp == "ffCold"){
     illustrationWindow.innerHTML = "Need to get."
   }
 
-  if(step1A.value == "fzNormal" && step1B.value == "ffNormal"){
+  if(fzTemp == "fzNormal" && ffTemp == "ffNormal"){
     illustrationWindow.innerHTML = "Intermittent Issue: Temperature readings are normal."
   }
 
-  if(step1A.value == "fzNormal" && step1B.value == "ffWarm"){
+  if(fzTemp == "fzNormal" && ffTemp == "ffWarm"){
     illustrationWindow.innerHTML = "Food load is blocking airflow in FF section."
   }
 
-  if(step1A.value == "fzNormal" && step1B.value == "ffWarm"){
+  if(fzTemp == "fzNormal" && ffTemp == "ffWarm"){
     illustrationWindow.innerHTML = "Check: Door switch.<br>Fresh food light is not turning off when door is closed."
   }
 
-  if(step1A.value == "fzWarm" && step1B.value == "ffCold"){
+  if(fzTemp == "fzWarm" && ffTemp == "ffCold"){
     illustrationWindow.innerHTML = "Need to get"
   }
 
-  if(step1A.value == "fzWarm" && step1B.value == "ffNormal"){
+  if(fzTemp == "fzWarm" && ffTemp == "ffNormal"){
     illustrationWindow.innerHTML = "Need to get"
   }
 
-  if(step1A.value == "fzWarm" && step1B.value == "ffWarm"){
+  if(fzTemp == "fzWarm" && ffTemp == "ffWarm"){
     illustrationWindow.innerHTML = "Need to do more checks."
   }
 
-  if(step1A.value == "fzWarm" && step1B.value == "ffHot"){
+  if(fzTemp == "fzWarm" && ffTemp == "ffHot"){
     illustrationWindow.innerHTML = "Check: Door switch.<br>Fresh food light is not turning off when door is closed."
   }
 
