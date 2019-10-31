@@ -6,13 +6,13 @@ body{
   top: 0px;
   left: 0px;
     display:inline-block;
-    font-size:1.5vw;
+    font-size:3vw;
     font-family: sans-serif;
     font-weight: 700;
     color: #444;
     line-height: 1;
     padding: .6em 1.4em .5em .8em;
-    width: 35%;
+    width: 70%;
     /*max-width: 100%; */
     /*box-sizing: border-box;*/
     margin: 0;
@@ -34,7 +34,7 @@ body{
   padding: 10px;
   color: black;
   font-family: "Arial", Times, serif;
-  font-size:1.5vw;
+  font-size:3vw;
 }
 
 #illustrationWindow{
@@ -49,7 +49,7 @@ body{
   padding: 10px;
   color: black;
   font-family: "Arial", Times, serif;
-  font-size:1.5vw;
+  font-size:3vw;
 }
 
 .hidden{
@@ -65,7 +65,7 @@ ul {
   list-style-type: circle;
   margin: 0;
   padding: 5%;
-  font-size:1.5vw;
+  font-size:3vw;
 }
 
 .responsive {
