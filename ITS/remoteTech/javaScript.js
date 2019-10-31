@@ -91,12 +91,19 @@ function handleSubmit(){
       "<input id='myHome' type='submit' value='Start Over' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>";
   }
 
-  if(fzTemp == "fzNormal" && ffTemp == "ffWarm"){
-    illustrationWindow.innerHTML = "Food load is blocking airflow in FF section."
-  }
+ 
 
   if(fzTemp == "fzNormal" && ffTemp == "ffWarm"){
-    illustrationWindow.innerHTML = "Check: Door switch.<br>Fresh food light is not turning off when door is closed."
+    illustrationWindow.innerHTML="";
+
+    instructionWindow.innerHTML = "Step 2: "+
+    "Is door sealing when closed?"+
+    "<br><br>"+
+    "<center><input id='fzNormalffWarmYes' type='submit' value='Yes' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>"+
+    "&nbsp;&nbsp;&nbsp;"+
+    "<input id='fzNormalffWarmNo' type='submit' value='No' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'>"+
+    "<br><br>"+
+    "<input id='myHome' type='submit' value='Start Over' class='select-css' onclick='handleHome()' ontouchstart='handleHome()'></center>";
   }
 
   if(fzTemp == "fzWarm" && ffTemp == "ffCold"){
@@ -114,19 +121,6 @@ function handleSubmit(){
   if(fzTemp == "fzWarm" && ffTemp == "ffHot"){
     illustrationWindow.innerHTML = "Check: Door switch.<br>Fresh food light is not turning off when door is closed."
   }
-
-  
-
-//   switch(step1a.value) {
-//   case x:
-//     // code block
-//     break;
-//   case y:
-//     // code block
-//     break;
-//   default:
-//     // code block
-// }
 }
 
 // Thermostat Issue:<ul style="list-style-type: disc"><li>Make sure food inside the Fresh Food compertment isnt <a href=""> blocking airflow from Freezer</a>.</li><li>Check Freezer return duct for blockage. <a href="">Blockage?</a>.</li><li>Replace Thermostat.</li></ul>
