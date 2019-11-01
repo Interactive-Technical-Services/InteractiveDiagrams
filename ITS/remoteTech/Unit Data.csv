@@ -1,5 +1,6 @@
 Problem,FZ Cold,FZ Normal,FZ Warm,FF Cold,FF Normal,FF Warm,FF Hot,Evap Fan,Cond Fan,Comp,Score
-Intermittent Cold Control  Sticking Closed,512,0,0,64,0,0,0,0,0,0,576
+"<p>Replace Cold Control</p>
+<p><img src=""returnDuct.jpg"" class=""responsive""></p>",512,0,0,64,0,0,0,0,0,0,576
 Intermittent Cold Control  Sticking Closed,512,0,0,64,0,0,0,0,0,1,577
 Intermittent Cold Control  Sticking Closed,512,0,0,64,0,0,0,0,2,0,578
 Intermittent Cold Control  Sticking Closed,512,0,0,64,0,0,0,0,2,1,579
@@ -85,7 +86,8 @@ Cold Control,0,0,128,0,0,16,0,0,2,0,146
 Evap Fan Motor,0,0,128,0,0,16,0,0,2,1,147
 Cond Fan Motor,0,0,128,0,0,16,0,4,0,0,148
 Cond Fan Motor,0,0,128,0,0,16,0,4,0,1,149
-Compressor,0,0,128,0,0,16,0,4,2,0,150
+"Compressor Is Not Running
+<br> Check voltage at relay and overload.",0,0,128,0,0,16,0,4,2,0,150
 Sealed System,0,0,128,0,0,16,0,4,2,1,151
 FF Light Switch,0,0,128,0,0,0,8,0,0,0,136
 FF Light Switch,0,0,128,0,0,0,8,0,0,1,137
