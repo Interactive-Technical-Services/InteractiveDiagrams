@@ -1,11 +1,12 @@
 document.title = "HVAC Parts"
 
-TweenMax.to(mainWindow, 0, {x:300, y:0});
+TweenMax.to(mainWindow, 0, {x:1200, y:400, scaleX:2, scaleY:2});
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
 for(i=0; i<diagram1PathsLength; i++){
   diagram1Paths[i].style['stroke-linecap']="round";
   diagram1Paths[i].style.stroke = "Black";
+  diagram1Paths[i].style["stroke-width"]= 3; 
   var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
   path.setAttribute('stroke','blue');
   path.setAttribute('fill','none');
@@ -42,9 +43,10 @@ function wireClicked(wire){
 }
 
 var partsList = [];
-var partNameGroupList = partNameGroup.getElementsByTagName("path");
+// var partNameGroupList = partNameGroup.getElementsByTagName("path");
+var partNameGroupList = ["mainBoardAcPower","fzDoorSwitch","inverterAcPower","singleSpeedCompressorAcPower","inverterDcPower","deliPanDcVoltage","humiditySensor","mainBoardEnclosureHeater","isolationWaterValve","mainBoardLeftDoorSwitchInput","doorBoardInterlockedAc","doorBoardAcPower","ffDoorLeftSwitch","ffDoorRightSwitch","defrostHeaterFf","defrostHeaterFz","heaterEqDuct","heaterIcePort","switchIceAndWaterCup","waterValveFzIcemaker","heaterFzIcemakerFillTube","fzIcemakerMoldHeater","fzIcemakerDCPower","fzIcemakerMoldThermistor","fzIcemakerRakePositionSensor","fzIcemakerFeelerArmSensor","fzIcemaker","featureBoard","featureBoardDcSupply","featureBoardAcSupply","waterValveSingleServe","heaterHotWater","switchBrewModule","switchNozzlePosition","featureBoardGEA2Communications","nozzleMotor","airPump","podValve","ventValve1","ventValve2","speaker","dispenserBoard","dispenserBoardDcSupply","dispenserBoardGeaCommunications","dispenserPaddleSwitchNotPressed","dispenserPaddleSwitchPressed","doorBoardGeaCommunications","doorBoard","doorBoardDCPowerSupply","flowMeter","motorDuctDoor","heaterRecess","heaterDoorIcemaker","heaterMullion","heaterIceBox","hotWaterThermistors","fzLights","iceBoxThermistor","augerMotor","coldWaterValve","dispenserWaterValve"];
 for(i=0; i<partNameGroupList.length; i++){
-  partName = partNameGroupList[i].id.split("_")
+  partName = partNameGroupList[i].split("_")
   partsList.push(partName[0]);
 }
 
@@ -114,6 +116,7 @@ schematic.addEventListener('gesturechange', function(e) {
 }, false); 
 
 function componentChange(){
+  TweenMax.to(path67358, .5, {rotation:0, transformOrigin: "100% 0%", ease: Power0.easeNone});
   highlightedWidth = 1.5;
   clearHighlights();
   blackArray = componentSelect.value + "BlackArray";
@@ -146,15 +149,11 @@ function componentChange(){
   try {
    partDataWindow.innerHTML = eval("obj =" + textArray);
  }catch(e){};
-  switch(componentSelect.value) {
-    case "indoorFanMotor":
 
-      IDFline.style.display = "block";
-      IDFarrow1.style.display = "block";
-      IDFarrow2.style.display = "block";
-      IDFarrow3.style.display = "block";
-      IDFarrow4.style.display = "block";
-      IDFarrow5.style.display = "block";
+  switch(componentSelect.value) {
+    case "dispenserPaddleSwitchPressed":
+      
+    TweenMax.to(path67358, .5, {rotation:80, transformOrigin: "100% 0%", ease: Power0.easeNone});
     break;
     case false:
     scaleUp = scaleUp + .1;
@@ -165,13 +164,7 @@ function componentChange(){
 
 
 function clearHighlights(){
-  IDFline.style.display = "none";
-      IDFarrow1.style.display = "none";
-      IDFarrow2.style.display = "none";
-      IDFarrow3.style.display = "none";
-      IDFarrow4.style.display = "none";
-      IDFarrow5.style.display = "none";
-  partDataWindow.innerHTML = "Select a component from the list."
+  // partDataWindow.innerHTML = "Select a component from the list."
   for(i=0; i<diagram1Paths.length; i++){
     part = diagram1Paths[i].id;
     part = part.split("copy")
