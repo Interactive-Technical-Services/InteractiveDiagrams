@@ -1,0 +1,207 @@
+document.title = "2019 Advantium Oven"
+xhr = new XMLHttpRequest();
+xhr.open("GET","schematic.svg",false);
+xhr.overrideMimeType("image/svg+xml");
+xhr.send("");
+var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement); 
+
+
+var NONEText = 'Select part from list.';
+
+// Switches LS1 and LS2 prove maximum and minimum position of the control rod. These switches are located in the control box switch compartment and have a limited range of adjustment. When the two nuts that secure the switches are loosened the switch will pivot on the inner stud and the outer stud can be moved up and down. The switches should be adjusted such that when the collar mounted on the actuator rod is moved into position and pushes in the lever on the switch, the switch will click to the “made” position, but the lever will not bottom out against the switch body. When properly adjusted the lever can move an additional 0.02 inches, as proven by slipping a feeler gauge between the switch lever and the collar when in the “made” position. The collar on the control rod should be adjusted so the switch lever it is actuating will rest squarely on the outer surface of the collar but only 0.03 inches from the edge. If the collar is located for an engagement that is longer than 0.03 inches, the collar may not reach the actuator on the other switch when at the other end of its stroke
+
+ var relayAndOverloadAcSupplyBlackArray = [];
+var relayAndOverloadAcSupplyDarkGrayArray = [];
+var relayAndOverloadAcSupplyLightGrayArray = [];
+var relayAndOverloadAcSupplyAquamarineArray = [];
+var relayAndOverloadAcSupplyBlueArray = [path126,path11922];
+var relayAndOverloadAcSupplyPurpleArray = [];
+var relayAndOverloadAcSupplyVioletArray = [];
+var relayAndOverloadAcSupplyPinkArray = [];
+var relayAndOverloadAcSupplyYellowGreenArray = [];
+var relayAndOverloadAcSupplyYellowArray = [];
+var relayAndOverloadAcSupplyOrangeArray = [];
+var relayAndOverloadAcSupplyRedArray = [path186,path190,path194,path198,path202,path206,path210,path214,path11902,path1092,path1104,path1108,path1116,path1164,path1240,path1248,path1264,path11774,path11776,path1252,path11815,path11907];
+var relayAndOverloadAcSupplyBrownArray = [];
+
+ var compressorStartWindingBlackArray = [];
+var compressorStartWindingDarkGrayArray = [];
+var compressorStartWindingLightGrayArray = [];
+var compressorStartWindingAquamarineArray = [];
+var compressorStartWindingBlueArray = [path126,path1504,path11922,path11933,path12661];
+var compressorStartWindingPurpleArray = [];
+var compressorStartWindingVioletArray = [];
+var compressorStartWindingPinkArray = [];
+var compressorStartWindingYellowGreenArray = [];
+var compressorStartWindingYellowArray = [];
+var compressorStartWindingOrangeArray = [path962];
+var compressorStartWindingRedArray = [path186,path190,path194,path198,path202,path206,path210,path214,path866,path878,path11902,path11912,path902,path11916,path1092,path1104,path1108,path1116,path1164,path1240,path1248,path1264,path11774,path11776,path1252,path11815,path11907];
+var compressorStartWindingBrownArray = [];
+
+ var compressorRunWindingBlackArray = [];
+var compressorRunWindingDarkGrayArray = [];
+var compressorRunWindingLightGrayArray = [];
+var compressorRunWindingAquamarineArray = [];
+var compressorRunWindingBlueArray = [path126,path966,path970,path11922,path12626,path11933,path11927,path12661];
+var compressorRunWindingPurpleArray = [];
+var compressorRunWindingVioletArray = [];
+var compressorRunWindingPinkArray = [];
+var compressorRunWindingYellowGreenArray = [];
+var compressorRunWindingYellowArray = [];
+var compressorRunWindingOrangeArray = [path962,path934];
+var compressorRunWindingRedArray = [path186,path190,path194,path198,path202,path206,path210,path214,path866,path878,path11902,path11912,path902,path11914,path11916,path1092,path1104,path1108,path1116,path1164,path1240,path1248,path1264,path11774,path11776,path1252,path11815,path11907];
+var compressorRunWindingBrownArray = [];
+
+ var fanMotorEvaporatorBlackArray = [];
+var fanMotorEvaporatorDarkGrayArray = [];
+var fanMotorEvaporatorLightGrayArray = [];
+var fanMotorEvaporatorAquamarineArray = [];
+var fanMotorEvaporatorBlueArray = [path126,path11810,path12694];
+var fanMotorEvaporatorPurpleArray = [];
+var fanMotorEvaporatorVioletArray = [];
+var fanMotorEvaporatorPinkArray = [];
+var fanMotorEvaporatorYellowGreenArray = [];
+var fanMotorEvaporatorYellowArray = [];
+var fanMotorEvaporatorOrangeArray = [path302];
+var fanMotorEvaporatorRedArray = [path186,path190,path194,path198,path202,path206,path210,path214,path11902,path1092,path1104,path1108,path1116,path1164,path1240,path1248,path1264,path11774,path11776,path1252,path11815,path11804];
+var fanMotorEvaporatorBrownArray = [];
+
+ var fanMotorCondenserBlackArray = [];
+var fanMotorCondenserDarkGrayArray = [];
+var fanMotorCondenserLightGrayArray = [];
+var fanMotorCondenserAquamarineArray = [];
+var fanMotorCondenserBlueArray = [path126,path11810,path12694];
+var fanMotorCondenserPurpleArray = [];
+var fanMotorCondenserVioletArray = [];
+var fanMotorCondenserPinkArray = [];
+var fanMotorCondenserYellowGreenArray = [];
+var fanMotorCondenserYellowArray = [];
+var fanMotorCondenserOrangeArray = [path302];
+var fanMotorCondenserRedArray = [path186,path190,path194,path198,path202,path206,path210,path214,path11902,path1092,path1104,path1108,path1116,path1164,path1240,path1248,path1264,path11774,path11776,path1252,path11815,path11804];
+var fanMotorCondenserBrownArray = [];
+
+ var sealedSystemOnBlackArray = [];
+var sealedSystemOnDarkGrayArray = [];
+var sealedSystemOnLightGrayArray = [];
+var sealedSystemOnAquamarineArray = [];
+var sealedSystemOnBlueArray = [path126,path130,path218,path222,path226,path230,path966,path970,path11799,path11922,path12526,path11810,path11753,path12626,path11933,path11927,path12661,path12694];
+var sealedSystemOnPurpleArray = [];
+var sealedSystemOnVioletArray = [];
+var sealedSystemOnPinkArray = [];
+var sealedSystemOnYellowGreenArray = [];
+var sealedSystemOnYellowArray = [];
+var sealedSystemOnOrangeArray = [path302,path278,path962,path934];
+var sealedSystemOnRedArray = [path186,path190,path194,path198,path202,path206,path210,path214,path866,path878,path11902,path11912,path902,path11914,path11916,path1092,path1104,path1108,path1116,path1164,path1240,path1248,path1264,path11774,path11776,path1252,path11768,path11815,path11804,path11907];
+var sealedSystemOnBrownArray = [];
+
+ var defrostHeaterOnBlackArray = [];
+var defrostHeaterOnDarkGrayArray = [];
+var defrostHeaterOnLightGrayArray = [];
+var defrostHeaterOnAquamarineArray = [];
+var defrostHeaterOnBlueArray = [path126,path130,path218,path222,path226,path230,path1034,path11797,path11799,path12526,path12694,path11830,path1050];
+var defrostHeaterOnPurpleArray = [];
+var defrostHeaterOnVioletArray = [];
+var defrostHeaterOnPinkArray = [];
+var defrostHeaterOnYellowGreenArray = [];
+var defrostHeaterOnYellowArray = [];
+var defrostHeaterOnOrangeArray = [path11851];
+var defrostHeaterOnRedArray = [path194,path198,path202,path206,path210,path214,path1092,path1104,path1108,path1116,path1240,path1264,path1398,path11774,path11776,path1252,path11822,path11890,path1248];
+var defrostHeaterOnBrownArray = [];
+
+var defrostThermostatOpenBlackArray = [];
+var defrostThermostatOpenDarkGrayArray = [];
+var defrostThermostatOpenLightGrayArray = [];
+var defrostThermostatOpenAquamarineArray = [];
+var defrostThermostatOpenBlueArray = [path126,path130,path218,path222,path226,path230,path11797,path11799,path12526,path12694,path11830];
+var defrostThermostatOpenPurpleArray = [];
+var defrostThermostatOpenVioletArray = [];
+var defrostThermostatOpenPinkArray = [];
+var defrostThermostatOpenYellowGreenArray = [];
+var defrostThermostatOpenYellowArray = [];
+var defrostThermostatOpenOrangeArray = [];
+var defrostThermostatOpenRedArray = [path194,path198,path202,path206,path210,path214,path1034,path1092,path1104,path1108,path1116,path1240,path1264,path1398,path11774,path11776,path1252,path11851,path1050,path11822,path11890,path1248];
+var defrostThermostatOpenBrownArray = [];
+
+ var defrostFuseOpenBlackArray = [path1398];
+var defrostFuseOpenDarkGrayArray = [];
+var defrostFuseOpenLightGrayArray = [];
+var defrostFuseOpenAquamarineArray = [];
+var defrostFuseOpenBlueArray = [path126,path130,path218,path222,path226,path230,path1034,path11797,path11799,path12526,path12694,path11851,path11830,path1050,path11890];
+var defrostFuseOpenPurpleArray = [];
+var defrostFuseOpenVioletArray = [];
+var defrostFuseOpenPinkArray = [];
+var defrostFuseOpenYellowGreenArray = [];
+var defrostFuseOpenYellowArray = [];
+var defrostFuseOpenOrangeArray = [];
+var defrostFuseOpenRedArray = [path194,path198,path202,path206,path210,path214,path1092,path1104,path1108,path1116,path1240,path1264,path11774,path11776,path1252,path11822,path1248];
+var defrostFuseOpenBrownArray = [];
+
+ var defrostTimerMotorBlackArray = [];
+var defrostTimerMotorDarkGrayArray = [];
+var defrostTimerMotorLightGrayArray = [];
+var defrostTimerMotorAquamarineArray = [];
+var defrostTimerMotorBlueArray = [path126,path130,path182,path218,path222,path226,path230,path11795,path11797,path11799,path12526,path12694];
+var defrostTimerMotorPurpleArray = [];
+var defrostTimerMotorVioletArray = [];
+var defrostTimerMotorPinkArray = [];
+var defrostTimerMotorYellowGreenArray = [];
+var defrostTimerMotorYellowArray = [];
+var defrostTimerMotorOrangeArray = [path1268];
+var defrostTimerMotorRedArray = [path194,path198,path202,path206,path210,path214,path1092,path1104,path1108,path1116,path1264,path11776,path1252];
+var defrostTimerMotorBrownArray = [];
+
+ var temperatureControlOpenBlackArray = [];
+var temperatureControlOpenDarkGrayArray = [];
+var temperatureControlOpenLightGrayArray = [];
+var temperatureControlOpenAquamarineArray = [];
+var temperatureControlOpenBlueArray = [];
+var temperatureControlOpenPurpleArray = [];
+var temperatureControlOpenVioletArray = [];
+var temperatureControlOpenPinkArray = [];
+var temperatureControlOpenYellowGreenArray = [];
+var temperatureControlOpenYellowArray = [];
+var temperatureControlOpenOrangeArray = [];
+var temperatureControlOpenRedArray = [path194,path198,path202,path206,path210,path214,path1092,path1104,path1108,path1264,path11774,path11776,path1252];
+var temperatureControlOpenBrownArray = [];
+
+var lightOnBlackArray = [];
+var lightOnDarkGrayArray = [];
+var lightOnLightGrayArray = [];
+var lightOnAquamarineArray = [];
+var lightOnBlueArray = [path126,path130,path218,path222,path226,path230,path11793,path11795,path11797,path11799,path11787,path12526,path12694];
+var lightOnPurpleArray = [];
+var lightOnVioletArray = [];
+var lightOnPinkArray = [];
+var lightOnYellowGreenArray = [];
+var lightOnYellowArray = [];
+var lightOnOrangeArray = [path138];
+var lightOnRedArray = [path194,path198,path202,path206,path210,path214,path262,path1092,path1104,path1108,path1112,path11774,path11776,path134];
+var lightOnBrownArray = [];
+
+ var iceMakerPowerBlackArray = [];
+var iceMakerPowerDarkGrayArray = [];
+var iceMakerPowerLightGrayArray = [];
+var iceMakerPowerAquamarineArray = [];
+var iceMakerPowerBlueArray = [path126,path130,path9313,path9311,path146,path218,path222,path226,path230,path458,path11793,path11795,path11797,path11799,path12526,path12694];
+var iceMakerPowerPurpleArray = [];
+var iceMakerPowerVioletArray = [];
+var iceMakerPowerPinkArray = [];
+var iceMakerPowerYellowGreenArray = [];
+var iceMakerPowerYellowArray = [];
+var iceMakerPowerOrangeArray = [path154];
+var iceMakerPowerRedArray = [path9330,path150,path194,path198,path202,path206,path1092,path1104,path1108,path12751,path1472];
+var iceMakerPowerBrownArray = [];
+
+ var iceMakerWaterValveBlackArray = [];
+var iceMakerWaterValveDarkGrayArray = [];
+var iceMakerWaterValveLightGrayArray = [];
+var iceMakerWaterValveAquamarineArray = [];
+var iceMakerWaterValveBlueArray = [path126,path462,path12694];
+var iceMakerWaterValvePurpleArray = [];
+var iceMakerWaterValveVioletArray = [];
+var iceMakerWaterValvePinkArray = [];
+var iceMakerWaterValveYellowGreenArray = [];
+var iceMakerWaterValveYellowArray = [];
+var iceMakerWaterValveOrangeArray = [path466];
+var iceMakerWaterValveRedArray = [path106,path9309,path9307,path9305,path142,path9332,path9330,path150,path194,path198,path202,path206,path470,path1092,path1104,path1108,path12751,path1472,path12820,path12822,path12824];
+var iceMakerWaterValveBrownArray = [];
