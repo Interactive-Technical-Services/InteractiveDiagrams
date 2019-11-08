@@ -1,0 +1,207 @@
+document.title = "2019 Advantium Oven"
+xhr = new XMLHttpRequest();
+xhr.open("GET","schematic.svg",false);
+xhr.overrideMimeType("image/svg+xml");
+xhr.send("");
+var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement); 
+
+
+var NONEText = 'Select part from list.';
+
+// Switches LS1 and LS2 prove maximum and minimum position of the control rod. These switches are located in the control box switch compartment and have a limited range of adjustment. When the two nuts that secure the switches are loosened the switch will pivot on the inner stud and the outer stud can be moved up and down. The switches should be adjusted such that when the collar mounted on the actuator rod is moved into position and pushes in the lever on the switch, the switch will click to the “made” position, but the lever will not bottom out against the switch body. When properly adjusted the lever can move an additional 0.02 inches, as proven by slipping a feeler gauge between the switch lever and the collar when in the “made” position. The collar on the control rod should be adjusted so the switch lever it is actuating will rest squarely on the outer surface of the collar but only 0.03 inches from the edge. If the collar is located for an engagement that is longer than 0.03 inches, the collar may not reach the actuator on the other switch when at the other end of its stroke
+
+ var compressorRunWindingBlackArray = [];
+var compressorRunWindingDarkGrayArray = [];
+var compressorRunWindingLightGrayArray = [];
+var compressorRunWindingAquamarineArray = [];
+var compressorRunWindingBlueArray = [path9263,path9795,path9797,path9793];
+var compressorRunWindingPurpleArray = [];
+var compressorRunWindingVioletArray = [];
+var compressorRunWindingPinkArray = [];
+var compressorRunWindingYellowGreenArray = [];
+var compressorRunWindingYellowArray = [];
+var compressorRunWindingOrangeArray = [path3568];
+var compressorRunWindingRedArray = [path9261,path9311,path9307,path9305,path9303,path9301,path9299,path9297,path2688,path2700,path2956,path3528,path3540,path9547,path3728,path9367,path9369,path9769,path9800,path9802,path9804,path3904,path9845];
+var compressorRunWindingBrownArray = [];
+
+ var compressorStartWindingBlackArray = [];
+var compressorStartWindingDarkGrayArray = [];
+var compressorStartWindingLightGrayArray = [];
+var compressorStartWindingAquamarineArray = [];
+var compressorStartWindingBlueArray = [path9263,path4004,path9795,path9787,path9793];
+var compressorStartWindingPurpleArray = [];
+var compressorStartWindingVioletArray = [];
+var compressorStartWindingPinkArray = [];
+var compressorStartWindingYellowGreenArray = [];
+var compressorStartWindingYellowArray = [];
+var compressorStartWindingOrangeArray = [path9467];
+var compressorStartWindingRedArray = [path9261,path9311,path9307,path9305,path9303,path9301,path9299,path9297,path2688,path2700,path2956,path3528,path3540,path9547,path3728,path9367,path9369,path9800,path9802,path9804,path3904,path9845,path9767];
+var compressorStartWindingBrownArray = [];
+
+ var defrostFuseOpenBlackArray = [path3930];
+var defrostFuseOpenDarkGrayArray = [];
+var defrostFuseOpenLightGrayArray = [];
+var defrostFuseOpenAquamarineArray = [];
+var defrostFuseOpenBlueArray = [path9263,path9295,path2632,path9581,path3052,path3616,path3648,path3652,path3656,path9384,path9386,path9827,path9877,path9879];
+var defrostFuseOpenPurpleArray = [];
+var defrostFuseOpenVioletArray = [];
+var defrostFuseOpenPinkArray = [];
+var defrostFuseOpenYellowGreenArray = [];
+var defrostFuseOpenYellowArray = [];
+var defrostFuseOpenOrangeArray = [];
+var defrostFuseOpenRedArray = [path9261,path9311,path9303,path9301,path9299,path9297,path2688,path9579,path3728,path9367,path9369];
+var defrostFuseOpenBrownArray = [];
+
+ var defrostHeaterOnBlackArray = [];
+var defrostHeaterOnDarkGrayArray = [];
+var defrostHeaterOnLightGrayArray = [];
+var defrostHeaterOnAquamarineArray = [];
+var defrostHeaterOnBlueArray = [path9263,path9295,path2632,path3052,path3616,path3648,path3652,path3656,path3804,path9384,path9386,path9877,path9879];
+var defrostHeaterOnPurpleArray = [];
+var defrostHeaterOnVioletArray = [];
+var defrostHeaterOnPinkArray = [];
+var defrostHeaterOnYellowGreenArray = [];
+var defrostHeaterOnYellowArray = [];
+var defrostHeaterOnOrangeArray = [path9581];
+var defrostHeaterOnRedArray = [path9261,path9311,path9303,path9301,path9299,path9297,path2688,path9579,path3728,path3930,path9367,path9369,path9827];
+var defrostHeaterOnBrownArray = [];
+
+ var defrostThermostatOpenBlackArray = [];
+var defrostThermostatOpenDarkGrayArray = [];
+var defrostThermostatOpenLightGrayArray = [];
+var defrostThermostatOpenAquamarineArray = [];
+var defrostThermostatOpenBlueArray = [path9263,path9295,path2632,path3052,path9384,path9386,path9877,path9879];
+var defrostThermostatOpenPurpleArray = [];
+var defrostThermostatOpenVioletArray = [];
+var defrostThermostatOpenPinkArray = [];
+var defrostThermostatOpenYellowGreenArray = [];
+var defrostThermostatOpenYellowArray = [];
+var defrostThermostatOpenOrangeArray = [];
+var defrostThermostatOpenRedArray = [path9261,path9311,path9303,path9301,path9299,path9297,path2688,path9581,path9579,path3616,path3648,path3652,path3656,path3728,path3804,path3930,path9367,path9369,path9827];
+var defrostThermostatOpenBrownArray = [];
+
+ var fanMotorCondenserBlackArray = [];
+var fanMotorCondenserDarkGrayArray = [];
+var fanMotorCondenserLightGrayArray = [];
+var fanMotorCondenserAquamarineArray = [];
+var fanMotorCondenserBlueArray = [path9263,path9823,path9879];
+var fanMotorCondenserPurpleArray = [];
+var fanMotorCondenserVioletArray = [];
+var fanMotorCondenserPinkArray = [];
+var fanMotorCondenserYellowGreenArray = [];
+var fanMotorCondenserYellowArray = [];
+var fanMotorCondenserOrangeArray = [path2712];
+var fanMotorCondenserRedArray = [path9261,path9311,path9307,path9305,path9303,path9301,path9299,path9297,path2688,path2700,path2956,path9547,path3728,path9367,path9802,path9804,path9821];
+var fanMotorCondenserBrownArray = [];
+
+ var fanMotorEvaporatorBlackArray = [];
+var fanMotorEvaporatorDarkGrayArray = [];
+var fanMotorEvaporatorLightGrayArray = [];
+var fanMotorEvaporatorAquamarineArray = [];
+var fanMotorEvaporatorBlueArray = [path9263,path9295,path2632,path9386,path9817,path9877,path9879];
+var fanMotorEvaporatorPurpleArray = [];
+var fanMotorEvaporatorVioletArray = [];
+var fanMotorEvaporatorPinkArray = [];
+var fanMotorEvaporatorYellowGreenArray = [];
+var fanMotorEvaporatorYellowArray = [];
+var fanMotorEvaporatorOrangeArray = [path2704];
+var fanMotorEvaporatorRedArray = [path9261,path9311,path9303,path9301,path9299,path9297,path2688,path2700,path2956,path9547,path3728,path9367,path9369,path9811];
+var fanMotorEvaporatorBrownArray = [];
+
+ var iceMakerPowerBlackArray = [];
+var iceMakerPowerDarkGrayArray = [];
+var iceMakerPowerLightGrayArray = [];
+var iceMakerPowerAquamarineArray = [];
+var iceMakerPowerBlueArray = [path9263,path9399,path9397,path2596,path9295,path2632,path9563,path9380,path9382,path9384,path9386,path9877,path9879];
+var iceMakerPowerPurpleArray = [];
+var iceMakerPowerVioletArray = [];
+var iceMakerPowerPinkArray = [];
+var iceMakerPowerYellowGreenArray = [];
+var iceMakerPowerYellowArray = [];
+var iceMakerPowerOrangeArray = [path2608,path2616,path2620,path3060];
+var iceMakerPowerRedArray = [path9261,path9635,path2604,path2612,path9311,path9303,path9301,path3992];
+var iceMakerPowerBrownArray = [];
+
+ var iceMakerWaterValveBlackArray = [];
+var iceMakerWaterValveDarkGrayArray = [];
+var iceMakerWaterValveLightGrayArray = [];
+var iceMakerWaterValveAquamarineArray = [];
+var iceMakerWaterValveBlueArray = [path9263,path9843,path9879];
+var iceMakerWaterValvePurpleArray = [];
+var iceMakerWaterValveVioletArray = [];
+var iceMakerWaterValvePinkArray = [];
+var iceMakerWaterValveYellowGreenArray = [];
+var iceMakerWaterValveYellowArray = [];
+var iceMakerWaterValveOrangeArray = [path2960];
+var iceMakerWaterValveRedArray = [path9261,path9395,path9393,path9391,path2564,path9637,path9635,path2604,path2612,path9311,path9303,path9301,path3056,path3992,path9841,path9929,path9931,path9933];
+var iceMakerWaterValveBrownArray = [];
+
+ var lightOnBlackArray = [];
+var lightOnDarkGrayArray = [];
+var lightOnLightGrayArray = [];
+var lightOnAquamarineArray = [];
+var lightOnBlueArray = [path9263,path9295,path2632,path9378,path9380,path9382,path9384,path9386,path9877,path9879];
+var lightOnPurpleArray = [];
+var lightOnVioletArray = [];
+var lightOnPinkArray = [];
+var lightOnYellowGreenArray = [];
+var lightOnYellowArray = [];
+var lightOnOrangeArray = [path2544];
+var lightOnRedArray = [path9261,path9311,path9303,path9301,path9299,path9297,path2676,path3728,path9831,path3814,path3944,path9367,path9372,path9374,path9376];
+var lightOnBrownArray = [];
+
+ var lightOffBlackArray = [];
+var lightOffDarkGrayArray = [];
+var lightOffLightGrayArray = [];
+var lightOffAquamarineArray = [];
+var lightOffBlueArray = [path9263,path2544,path9295,path2632,path9831,path3814,path9372,path9374,path9376,path9378,path9380,path9382,path9384,path9386,path9877,path9879];
+var lightOffPurpleArray = [];
+var lightOffVioletArray = [];
+var lightOffPinkArray = [];
+var lightOffYellowGreenArray = [];
+var lightOffYellowArray = [];
+var lightOffOrangeArray = [];
+var lightOffRedArray = [path9261,path9311,path9303,path9301,path9299,path9297,path2676,path3728,path3944,path9367];
+var lightOffBrownArray = [];
+
+ var relayAndOverloadAcSupplyBlackArray = [];
+var relayAndOverloadAcSupplyDarkGrayArray = [];
+var relayAndOverloadAcSupplyLightGrayArray = [];
+var relayAndOverloadAcSupplyAquamarineArray = [];
+var relayAndOverloadAcSupplyBlueArray = [path9263,path9793];
+var relayAndOverloadAcSupplyPurpleArray = [];
+var relayAndOverloadAcSupplyVioletArray = [];
+var relayAndOverloadAcSupplyPinkArray = [];
+var relayAndOverloadAcSupplyYellowGreenArray = [];
+var relayAndOverloadAcSupplyYellowArray = [];
+var relayAndOverloadAcSupplyOrangeArray = [path3424];
+var relayAndOverloadAcSupplyRedArray = [path9261,path9311,path9307,path9305,path9303,path9301,path9299,path9297,path2688,path2700,path2956,path9547,path3728,path9367,path9369,path9802,path9804,path9845];
+var relayAndOverloadAcSupplyBrownArray = [];
+
+ var sealedSystemOnBlackArray = [];
+var sealedSystemOnDarkGrayArray = [];
+var sealedSystemOnLightGrayArray = [];
+var sealedSystemOnAquamarineArray = [];
+var sealedSystemOnBlueArray = [path9263,path9481,path3572,path9795,path9797,path9787,path9793,path9774];
+var sealedSystemOnPurpleArray = [];
+var sealedSystemOnVioletArray = [];
+var sealedSystemOnPinkArray = [];
+var sealedSystemOnYellowGreenArray = [];
+var sealedSystemOnYellowArray = [];
+var sealedSystemOnOrangeArray = [path2704,path2712,path9467,path3568];
+var sealedSystemOnRedArray = [path9261,path9311,path9307,path9305,path9303,path9301,path9299,path9297,path2688,path2700,path2956,path3528,path3540,path9547,path3720,path3728,path9367,path9800,path9802,path9804,path9821,path3904,path9845,path9767,path9769,path9811];
+var sealedSystemOnBrownArray = [];
+
+ var temperatureControlOpenBlackArray = [];
+var temperatureControlOpenDarkGrayArray = [];
+var temperatureControlOpenLightGrayArray = [];
+var temperatureControlOpenAquamarineArray = [];
+var temperatureControlOpenBlueArray = [];
+var temperatureControlOpenPurpleArray = [];
+var temperatureControlOpenVioletArray = [];
+var temperatureControlOpenPinkArray = [];
+var temperatureControlOpenYellowGreenArray = [];
+var temperatureControlOpenYellowArray = [];
+var temperatureControlOpenOrangeArray = [];
+var temperatureControlOpenRedArray = [path9261,path9311,path9303,path9301,path9299,path9297,path2688,path2700,path9547,path3728,path9367,path9369];
+var temperatureControlOpenBrownArray = [];

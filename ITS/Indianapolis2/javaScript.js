@@ -43,7 +43,7 @@ function wireClicked(wire){
 
 var partsList = [];
 // var partNameGroupList = partNameGroup.getElementsByTagName("path");
-var partNameGroupList = ["relayAndOverloadAcSupply","compressorStartWinding","compressorRunWinding","fanMotorEvaporator","fanMotorCondenser","sealedSystemOn","defrostHeaterOn","defrostThermostatOpen","defrostFuseOpen","defrostTimerMotor","temperatureControlOpen","lightOn","iceMakerPower","iceMakerWaterValve"];
+var partNameGroupList = ["relayAndOverloadAcSupply","compressorStartWinding","compressorRunWinding","fanMotorEvaporator","fanMotorCondenser","sealedSystemOn","defrostHeaterOn","defrostThermostatOpen","defrostFuseOpen","temperatureControlOpen","lightOn","lightOff","iceMakerPower","iceMakerWaterValve"];
 for(i=0; i<partNameGroupList.length; i++){
   partName = partNameGroupList[i].split("_")
   partsList.push(partName[0]);
@@ -115,11 +115,11 @@ schematic.addEventListener('gesturechange', function(e) {
 }, false); 
 
 function componentChange(){
-  TweenMax.to(path1264, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-  TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-  TweenMax.to(path1034, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-  TweenMax.to(path1264, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-  TweenMax.to(path12824, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+  TweenMax.to(path2688, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+  TweenMax.to(path9933, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+  TweenMax.to(path2676, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+  TweenMax.to(path2700, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+  // TweenMax.to(path12824, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
   
   highlightedWidth = 1.5;
   clearHighlights();
@@ -156,41 +156,41 @@ function componentChange(){
 
   switch(componentSelect.value) {
     case "relayAndOverloadAcSupply":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+      // TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "compressorStartWinding":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+      // TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "compressorRunWinding":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+      // TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "fanMotorEvaporator":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+      // TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "fanMotorCondenser":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+      // TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "sealedSystemOn":
-    TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    // TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "defrostHeaterOn":
-    TweenMax.to(path1248, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    TweenMax.to(path2688, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "defrostThermostatOpen":
-    TweenMax.to(path1248, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
-    TweenMax.to(path1034, .5, {rotation:28, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    TweenMax.to(path2688, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    TweenMax.to(path3648, .5, {rotation:28, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "defrostFuseOpen":
-    TweenMax.to(path1248, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    TweenMax.to(path2688, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "temperatureControlOpen":
-    TweenMax.to(path1264, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    TweenMax.to(path2700, .5, {rotation:28, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "lightOn":
-    TweenMax.to(path262, .5, {rotation:-30, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    TweenMax.to(path2676, .5, {rotation:-30, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
     case "iceMakerWaterValve":
-    TweenMax.to(path12824, .5, {rotation:-30, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    TweenMax.to(path9933, .5, {rotation:-30, transformOrigin: "0% 0%", ease: Power0.easeNone});
     break;
 
 
