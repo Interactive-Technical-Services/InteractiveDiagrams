@@ -1,4 +1,4 @@
-document.title = "Timer/Cold Control Refrigerator"
+document.title = "Top Freezer - Timer"
 
 // TweenMax.to(mainWindow, 0, {x:1200, y:400, scaleX:2, scaleY:2});
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
@@ -18,6 +18,15 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
   diagram1.appendChild(path);
   path.style["stroke-width"]= 3;  
+}
+
+var buttons = document.getElementById("partNameGroup").getElementsByTagName("rect");
+var partNameGroupLength = buttons.length;
+console.log(partNameGroupLength)
+for(i=0; i<partNameGroupLength; i++){
+  console.log(buttons[i].id)
+  buttons[i].setAttribute('onmouseover','this.style.cursor = "pointer"');
+  buttons[i].setAttribute('onclick','changeDropDown(this.id);'); 
 }
 
 function overPath(wire){
@@ -42,10 +51,11 @@ function wireClicked(wire){
 }
 
 var partsList = [];
-// var partNameGroupList = partNameGroup.getElementsByTagName("path");
-var partNameGroupList = ["relayAndOverloadAcSupply","compressorStartWinding","compressorRunWinding","fanMotorEvaporator","fanMotorCondenser","sealedSystemOn","defrostHeaterOn","defrostThermostatOpen","defrostFuseOpen","defrostTimerMotor","temperatureControlOpen","lightOn","iceMakerPower","iceMakerWaterValve"];
+var partNameGroupList = partNameGroup.getElementsByTagName("rect");
+// var partNameGroupList = [];
+
 for(i=0; i<partNameGroupList.length; i++){
-  partName = partNameGroupList[i].split("_")
+  partName = partNameGroupList[i].id.split("_");
   partsList.push(partName[0]);
 }
 
@@ -53,16 +63,15 @@ partsList.sort();
 
 for(i=0; i<partsList.length; i++){
   partName = partsList[i].split("_")
-var result = partName[0].replace( /([A-Z])/g, " $1" );
+  var result = partName[0].replace( /([A-Z])/g, " $1" );
   var finalResult = result.charAt(0).toUpperCase() + result.slice(1);
-
   var option = document.createElement("option");
   option.value = partName[0];
   option.text = finalResult;
   componentSelect.add(option);
 }
 
-var schematicDrag = Draggable.create(schematic, {zIndexBoost:false});
+var schematicDrag = Draggable.create(mainWindow, {zIndexBoost:false});
 
 //Chrome Zoom
 mainWindow.addEventListener('mousewheel', chromeMouseWheelEvent);
@@ -112,17 +121,25 @@ schematic.addEventListener('gesturechange', function(e) {
         scaleUp = scaleUp + .01;
       TweenMax.to(schematic, .5, {scaleX:scaleUp, scaleY:scaleUp, transformOrigin: "50% 50%", ease: Power0.easeNone});
     }
-}, false); 
+}, false);
+
+function changeDropDown(e){
+  newDropDownValue = e.split("_")[0];
+  for(i=0; i<componentSelect.length; i++){
+    if(newDropDownValue == componentSelect[i].value){
+      componentSelect.value = newDropDownValue;
+      componentChange()
+    }
+    
+  }
+}
 
 function componentChange(){
-  TweenMax.to(path1264, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-  TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-  TweenMax.to(path1034, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-  TweenMax.to(path1264, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-  TweenMax.to(path12824, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+
   
   highlightedWidth = 1.5;
   clearHighlights();
+  console.log(componentSelect.value)
   blackArray = componentSelect.value + "BlackArray";
   darkGrayArray = componentSelect.value + "DarkGrayArray";
   lightGrayArray = componentSelect.value + "LightGrayArray";
@@ -154,50 +171,59 @@ function componentChange(){
    partDataWindow.innerHTML = eval("obj =" + textArray);
  }catch(e){};
 
+ TweenMax.to([path1034,path1034copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+ TweenMax.to([path1248,path1248copy], .5, {rotation:15, transformOrigin: "0% 100%", ease: Power0.easeNone});
+ TweenMax.to([path262,path262copy], .5, {rotation:30, transformOrigin: "0% 100%", ease: Power0.easeNone});
+ TweenMax.to([path12824,path12824copy], .5, {rotation:30, transformOrigin: "0% 100%", ease: Power0.easeNone});
+ TweenMax.to([path1264,path1264copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+
   switch(componentSelect.value) {
-    case "relayAndOverloadAcSupply":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    case "defrostThermostatClosed":
+    TweenMax.to([path1034,path1034copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    TweenMax.to([path1248,path1248copy], .5, {rotation:-15, transformOrigin: "0% 100%", ease: Power0.easeNone});
     break;
-    case "compressorStartWinding":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-    break;
-    case "compressorRunWinding":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-    break;
-    case "fanMotorEvaporator":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-    break;
-    case "fanMotorCondenser":
-      TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-    break;
-    case "sealedSystemOn":
-    TweenMax.to(path1248, .5, {rotation:0, transformOrigin: "0% 0%", ease: Power0.easeNone});
-    break;
-    case "defrostHeaterOn":
-    TweenMax.to(path1248, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
-    break;
+
     case "defrostThermostatOpen":
-    TweenMax.to(path1248, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
-    TweenMax.to(path1034, .5, {rotation:28, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    TweenMax.to([path1034,path1034copy], .5, {rotation:30, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    TweenMax.to([path1248,path1248copy], .5, {rotation:-15, transformOrigin: "0% 100%", ease: Power0.easeNone});
     break;
-    case "defrostFuseOpen":
-    TweenMax.to(path1248, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
+
+   case "defrostHeater":
+    TweenMax.to([path1034,path1034copy], .5, {rotation:30, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    TweenMax.to([path1248,path1248copy], .5, {rotation:-15, transformOrigin: "0% 100%", ease: Power0.easeNone});
     break;
-    case "temperatureControlOpen":
-    TweenMax.to(path1264, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
+
+    case "fuseOpen":
+    TweenMax.to([path1248,path1248copy], .5, {rotation:-15, transformOrigin: "0% 100%", ease: Power0.easeNone});
     break;
-    case "lightOn":
-    TweenMax.to(path262, .5, {rotation:-30, transformOrigin: "0% 0%", ease: Power0.easeNone});
+
+    case "fuseClosed":
+    TweenMax.to([path1248,path1248copy], .5, {rotation:-15, transformOrigin: "0% 100%", ease: Power0.easeNone});
     break;
+
+    case "fFLightOn":
+    TweenMax.to([path262,path262copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
+    case "fFLightOff":
+    TweenMax.to([path262,path262copy], .5, {rotation:30, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
     case "iceMakerWaterValve":
-    TweenMax.to(path12824, .5, {rotation:-30, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    TweenMax.to([path12824,path12824copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
     break;
 
-
-    // TweenMax.to(path1264, .5, {rotation:-28, transformOrigin: "0% 0%", ease: Power0.easeNone});
+    case "temperatureControlSatisfied":
+    TweenMax.to([path1264,path1264copy], .5, {rotation:35, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
     }
+
+
+
+
 }
 
+componentChange()
 
 function clearHighlights(){
   // partDataWindow.innerHTML = "Select a component from the list."

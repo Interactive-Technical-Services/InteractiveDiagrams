@@ -20,14 +20,12 @@ for(i=0; i<diagram1PathsLength; i++){
   path.style["stroke-width"]= 3;  
 }
 
-// var buttons = document.getElementById("partNameGroup").getElementsByTagName("path");
-// var partNameGroupLength = buttons.length;
-// console.log(partNameGroupLength)
-// for(i=0; i<partNameGroupLength; i++){
-//   console.log(buttons[i].id)
-//   buttons[i].setAttribute('onmouseover','this.style.cursor = "pointer"');
-//   buttons[i].setAttribute('onclick','changeDropDown(this.id);'); 
-// }
+var buttons = document.getElementById("partNameGroup").getElementsByTagName("rect");
+var partNameGroupLength = buttons.length;
+for(i=0; i<partNameGroupLength; i++){
+  buttons[i].setAttribute('onmouseover','this.style.cursor = "pointer"');
+  buttons[i].setAttribute('onclick','changeDropDown(this.id);'); 
+}
 
 function overPath(wire){
   wire.setAttribute("opacity", ".5"); 
@@ -51,7 +49,7 @@ function wireClicked(wire){
 }
 
 var partsList = [];
-var partNameGroupList = partNameGroup.getElementsByTagName("path");
+var partNameGroupList = partNameGroup.getElementsByTagName("rect");
 // var partNameGroupList = [];
 
 for(i=0; i<partNameGroupList.length; i++){
@@ -139,7 +137,6 @@ function componentChange(){
   
   highlightedWidth = 1.5;
   clearHighlights();
-  console.log(componentSelect.value)
   blackArray = componentSelect.value + "BlackArray";
   darkGrayArray = componentSelect.value + "DarkGrayArray";
   lightGrayArray = componentSelect.value + "LightGrayArray";

@@ -20,14 +20,14 @@ for(i=0; i<diagram1PathsLength; i++){
   path.style["stroke-width"]= 3;  
 }
 
-// var buttons = document.getElementById("partNameGroup").getElementsByTagName("path");
-// var partNameGroupLength = buttons.length;
-// console.log(partNameGroupLength)
-// for(i=0; i<partNameGroupLength; i++){
-//   console.log(buttons[i].id)
-//   buttons[i].setAttribute('onmouseover','this.style.cursor = "pointer"');
-//   buttons[i].setAttribute('onclick','changeDropDown(this.id);'); 
-// }
+var buttons = document.getElementById("partNameGroup").getElementsByTagName("rect");
+var partNameGroupLength = buttons.length;
+console.log(partNameGroupLength)
+for(i=0; i<partNameGroupLength; i++){
+  console.log(buttons[i].id)
+  buttons[i].setAttribute('onmouseover','this.style.cursor = "pointer"');
+  buttons[i].setAttribute('onclick','changeDropDown(this.id);'); 
+}
 
 function overPath(wire){
   wire.setAttribute("opacity", ".5"); 
@@ -51,7 +51,7 @@ function wireClicked(wire){
 }
 
 var partsList = [];
-var partNameGroupList = partNameGroup.getElementsByTagName("path");
+var partNameGroupList = partNameGroup.getElementsByTagName("rect");
 // var partNameGroupList = [];
 
 for(i=0; i<partNameGroupList.length; i++){
@@ -140,6 +140,11 @@ function componentChange(){
   TweenMax.to([path1993,path1993copy], .5, {rotation:-15, transformOrigin: "100% 0%", ease: Power0.easeNone});
   TweenMax.to([path1999,path1999copy], .5, {rotation:-10, transformOrigin: "100% 0%", ease: Power0.easeNone});
   TweenMax.to([path1991,path1991copy], .5, {rotation:0, transformOrigin: "100% 0%", ease: Power0.easeNone});
+  TweenMax.to([path2109,path2109copy], .5, {rotation:0, transformOrigin: "100% 0%", ease: Power0.easeNone});
+  TweenMax.to([path2111,path2111copy], .5, {rotation:0, transformOrigin: "100% 0%", ease: Power0.easeNone});
+  TweenMax.to([path1986,path1986copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+  TweenMax.to([path1445,path1445copy], .5, {rotation:0, transformOrigin: "100% 0%", ease: Power0.easeNone});
+  TweenMax.to([path1496,path1496copy], .5, {rotation:0, transformOrigin: "100% 0%", ease: Power0.easeNone});
   
   highlightedWidth = 1.5;
   clearHighlights();
@@ -199,8 +204,41 @@ function componentChange(){
     TweenMax.to([path1999,path1999copy], .5, {rotation:-10, transformOrigin: "100% 0%", ease: Power0.easeNone});
     TweenMax.to([path1427,path1427copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
     break;
-    }
 
+    case "csmOpen":
+    TweenMax.to([path2109,path2109copy], .5, {rotation:35, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    TweenMax.to([path2111,path2111copy], .5, {rotation:35, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    break;
+    
+
+    case "csmClosed":
+    TweenMax.to([path1999,path1999copy], .5, {rotation:-10, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    TweenMax.to([path1427,path1427copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
+    case "floodSwitchClosed":
+    TweenMax.to([path1427,path1427copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    TweenMax.to([path1993,path1993copy], .5, {rotation:-43, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    break;
+
+    case "floodSwitchOpen":
+    TweenMax.to([path1427,path1427copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    TweenMax.to([path1993,path1993copy], .5, {rotation:-43, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    TweenMax.to([path1986,path1986copy], .5, {rotation:43, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
+    case "l1DoorSwitchOpen":
+    TweenMax.to([path1445,path1445copy], .5, {rotation:-43, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    break;
+
+    case "neutralDoorSwitchClosed":
+    TweenMax.to([path1496,path1496copy], .5, {rotation:0, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    break;
+
+    case "neutralDoorSwitchOpen":
+    TweenMax.to([path1496,path1496copy], .5, {rotation:-40, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    break;
+}
 
 
 

@@ -146,3 +146,17 @@ var burnerRRYellowArray = [];
 var burnerRROrangeArray = [surfaceUnitLIght,path4338];
 var burnerRRRedArray = [path3630,path3726,path3858,rrbH2,path4034,path4114,path4130,path4250];
 var burnerRRBrownArray = [];
+
+ var ercACPowerBlackArray = [];
+var ercACPowerDarkGrayArray = [];
+var ercACPowerLightGrayArray = [];
+var ercACPowerAquamarineArray = [];
+var ercACPowerBlueArray = [path2446];
+var ercACPowerPurpleArray = [];
+var ercACPowerVioletArray = [];
+var ercACPowerPinkArray = [];
+var ercACPowerYellowGreenArray = [];
+var ercACPowerYellowArray = [];
+var ercACPowerOrangeArray = [path1550];
+var ercACPowerRedArray = [path2010,path2538,path13753];
+var ercACPowerBrownArray = [];
