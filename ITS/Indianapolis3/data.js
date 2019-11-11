@@ -1,4 +1,3 @@
-document.title = "2019 Advantium Oven"
 xhr = new XMLHttpRequest();
 xhr.open("GET","schematic.svg",false);
 xhr.overrideMimeType("image/svg+xml");
