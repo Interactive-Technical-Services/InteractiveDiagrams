@@ -64,7 +64,7 @@ var drainSolenoidOrangeArray = [drainSolenoid];
 var drainSolenoidRedArray = [path228,path256,path452,path460,path652,path1445,path1427,path1993];
 var drainSolenoidBrownArray = [];
 
- var heaterBlackArray = [path228,path256,path326,path330,path354,path388,path652,path1445,path1556,path1427,path1997,path1999];
+ var heaterRedArray = [path228,path256,path326,path330,path354,path388,path652,path1445,path1556,path1427,path1997,path1999];
 var heaterDarkGrayArray = [];
 var heaterLightGrayArray = [];
 var heaterAquamarineArray = [];
@@ -75,7 +75,7 @@ var heaterPinkArray = [];
 var heaterYellowGreenArray = [];
 var heaterYellowArray = [];
 var heaterOrangeArray = [path420];
-var heaterRedArray = [];
+var heaterBlackArray = [];
 var heaterBrownArray = [];
 
  var waterValveBlackArray = [];

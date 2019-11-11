@@ -139,6 +139,7 @@ function componentChange(){
   TweenMax.to([path1556,path1556copy], .5, {rotation:-40, transformOrigin: "100% 0%", ease: Power0.easeNone});
   TweenMax.to([path1993,path1993copy], .5, {rotation:-15, transformOrigin: "100% 0%", ease: Power0.easeNone});
   TweenMax.to([path1999,path1999copy], .5, {rotation:-10, transformOrigin: "100% 0%", ease: Power0.easeNone});
+  TweenMax.to([path1991,path1991copy], .5, {rotation:0, transformOrigin: "100% 0%", ease: Power0.easeNone});
   
   highlightedWidth = 1.5;
   clearHighlights();
@@ -186,6 +187,7 @@ function componentChange(){
     case "drainSolenoid":
     TweenMax.to([path1993,path1993copy], .5, {rotation:-20, transformOrigin: "100% 0%", ease: Power0.easeNone});
     TweenMax.to([path1427,path1427copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    TweenMax.to([path1991,path1991copy], .5, {rotation:-43, transformOrigin: "100% 0%", ease: Power0.easeNone});
     break;
 
     case "waterValve":
