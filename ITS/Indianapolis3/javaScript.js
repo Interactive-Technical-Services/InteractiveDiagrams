@@ -77,7 +77,7 @@ var schematicDrag = Draggable.create(mainWindow, {zIndexBoost:false});
 mainWindow.addEventListener('mousewheel', chromeMouseWheelEvent);
 function chromeMouseWheelEvent(e){
   e.preventDefault();
-  switch(e.wheelDelta<0 && scaleUp>1) {
+  switch(e.wheelDelta<0 && scaleUp>.5) {
     case true:
     if(scaleUp > .5 ){
       scaleUp = scaleUp - .1;
@@ -97,7 +97,7 @@ mainWindow.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, fal
 var scaleUp = 1;
 function zoomSchematic(e){
   e.preventDefault();
-  switch(e.detail>0 && scaleUp>1) {
+  switch(e.detail>0 && scaleUp>.5) {
     case true:
     if(scaleUp > .5 ){
       scaleUp = scaleUp - .1;
