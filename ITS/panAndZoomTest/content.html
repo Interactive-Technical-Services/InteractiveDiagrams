@@ -9,7 +9,7 @@
     <script src="svgPanZoom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
+    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.com/jquery-1.11.1.min.js"></script> -->
 
     <style type="text/css">
       svg {
@@ -20,12 +20,12 @@
     </style>
 </head>
 <body>
-  
-    
-      <select id="componentSelect" onChange="componentChange(this.selectedIndex.value);">
+  <div id="mainWindow"></div>
+    <span style="position: fixed; top: 0px; right: 5px; width: 20%; margin: 0; padding: 0; z-index: 1;">
+      <select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex.value);">
         <option value="NONE">CLEAR HIGHLIGHTS</option>
       </select>
-      <select id="colorPicker" onChange="colorPickerChange(this.selectedIndex);">
+      <select id="colorPicker" class="select-css" onChange="colorPickerChange(this.selectedIndex);">
         <option value="#000000" style="background-color: Black;color: #FFFFFF;">COLOR PICKER</option>
         <option value="#000000" style="background-color: Black;color: #FFFFFF;">Black</option>
         <option value="#A9A9A9" style="background-color: DarkGray;">DarkGray</option>
@@ -42,12 +42,29 @@
         <option value="#FF0000" style="background-color: Red;">Red</option>
         <option value="#A52A2A" style="background-color: Brown;">Brown</option>
       </select>
-      <button onclick="getColors()">Get Wire Colors</button>
-    
-    <div id="mainWindow"></div>
+      <!-- <button class="select-css" onclick="getColors()">Get Wire Colors</button> -->
+    </span>
 </body>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
 
 <script src="javaScript.js"></script>
 <script src="data.js"></script>
+
+<script>
+      // Don't use window.onLoad like this in production, because it can only listen to one function.
+      // window.onload = function() {
+      //   var panZoom = window.panZoom = svgPanZoom('#mobile-svg', {
+      //     zoomEnabled: true,
+      //     controlIconsEnabled: true,
+      //     fit: 1,
+      //     center: 1
+      //   });
+
+      //   $(window).resize(function(){
+      //     panZoom.resize();
+      //     panZoom.fit();
+      //     panZoom.center();
+      //   })
+      // };
+    </script>
 </html>
