@@ -5,6 +5,8 @@ xhr.open("GET","schematic.svg",false);
 xhr.overrideMimeType("image/svg+xml");
 xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
+
+TweenMax.to(diagram, .5, {scaleX:.5, scaleY:.5, transformOrigin: "50% 50%", ease: Power0.easeNone});
       
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
