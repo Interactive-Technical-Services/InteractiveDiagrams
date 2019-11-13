@@ -7,8 +7,9 @@ xhr.send("");
 
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
-if(screen.width <= 500){
-// TweenMax.to(mainDiagram, .5, {scaleX:.5, scaleY:.5, x:250, y:400, transformOrigin: "50% 50%", ease: Power0.easeNone});
+if(screen.width >= 800){
+schematic.setAttribute("width", "1500");
+schematic.setAttribute("height", "1500"); 
 }
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
