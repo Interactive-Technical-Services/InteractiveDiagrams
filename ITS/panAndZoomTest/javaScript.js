@@ -8,7 +8,7 @@ xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
 if(screen.width <= 500){
-TweenMax.to(mainDiagram, .5, {scaleX:.5, scaleY:.5, x:150, y:400, transformOrigin: "50% 50%", ease: Power0.easeNone});
+TweenMax.to(mainDiagram, .5, {scaleX:.5, scaleY:.5, x:500, y:400, transformOrigin: "50% 50%", ease: Power0.easeNone});
 }
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
