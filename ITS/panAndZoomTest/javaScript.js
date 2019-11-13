@@ -1,4 +1,10 @@
 document.title = "Dishwasher Timer Model"
+
+xhr = new XMLHttpRequest();
+xhr.open("GET","schematic.svg",false);
+xhr.overrideMimeType("image/svg+xml");
+xhr.send("");
+var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
       
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
@@ -10,7 +16,8 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('fill','none');
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
-  path.setAttribute('onclick','wireClicked(this);');
+  path.setAttribute('onclick','wireClicked(this); notOverPathTouchEnd(this);');
+  path.setAttribute('ontouch','wireClicked(this);');
   path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
   path.setAttribute('onmouseout','notOverPath(this);');
   path.style['stroke-linecap']="round";
@@ -34,6 +41,11 @@ function notOverPath(wire){
   wire.setAttribute("opacity", "0");
 }
 
+function notOverPathTouchEnd(wire){
+  console.log("touch")
+  wire.setAttribute("opacity", "0");
+}
+
 var highlightedWidth = 1.5;
 function colorPickerChange(e){
   var highlightColor = document.getElementById("colorPicker").value;
@@ -49,7 +61,6 @@ function wireClicked(wire){
 
 var partsList = [];
 var partNameGroupList = partNameGroup.getElementsByTagName("rect");
-// var partNameGroupList = [];
 
 for(i=0; i<partNameGroupList.length; i++){
   partName = partNameGroupList[i].id.split("_");
@@ -68,16 +79,13 @@ for(i=0; i<partsList.length; i++){
   componentSelect.add(option);
 }
 
-
-
 function changeDropDown(e){
   newDropDownValue = e.split("_")[0];
   for(i=0; i<componentSelect.length; i++){
     if(newDropDownValue == componentSelect[i].value){
       componentSelect.value = newDropDownValue;
       componentChange()
-    }
-    
+    } 
   }
 }
 
@@ -110,21 +118,21 @@ function componentChange(){
   brownArray = componentSelect.value + "BrownArray";
   textArray = componentSelect.value + "Text";
   
-  TweenMax.to(eval("obj =" + blackArray), .1, {stroke:"rgb(0, 0, 0)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + darkGrayArray), .1, {stroke:"rgb(169, 169, 169)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + lightGrayArray), .1, {stroke:"rgb(211, 211, 211)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + aquamarineArray), .1, {stroke:"rgb(127, 255, 212)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + blueArray), .1, {stroke:"rgb(0, 0, 255)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + violetArray), .1, {stroke:"rgb(238, 130, 238)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + pinkArray), .1, {stroke:"rgb(255, 192, 203)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + yellowGreenArray), .1, {stroke:"rgb(154, 205, 50)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + yellowArray), .1, {stroke:"rgb(255, 255, 0)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + orangeArray), .1, {stroke:"rgb(255, 165, 0)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + redArray), .1, {stroke:"rgb(255, 0, 0)", strokeWidth:highlightedWidth});
-  TweenMax.to(eval("obj =" + brownArray), .1, {stroke:"rgb(165, 42, 42)", strokeWidth:highlightedWidth});
   try {
+    TweenMax.to(eval("obj =" + blackArray), .1, {stroke:"rgb(0, 0, 0)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + darkGrayArray), .1, {stroke:"rgb(169, 169, 169)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + lightGrayArray), .1, {stroke:"rgb(211, 211, 211)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + aquamarineArray), .1, {stroke:"rgb(127, 255, 212)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + blueArray), .1, {stroke:"rgb(0, 0, 255)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + violetArray), .1, {stroke:"rgb(238, 130, 238)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + pinkArray), .1, {stroke:"rgb(255, 192, 203)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + yellowGreenArray), .1, {stroke:"rgb(154, 205, 50)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + yellowArray), .1, {stroke:"rgb(255, 255, 0)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + orangeArray), .1, {stroke:"rgb(255, 165, 0)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + redArray), .1, {stroke:"rgb(255, 0, 0)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + brownArray), .1, {stroke:"rgb(165, 42, 42)", strokeWidth:highlightedWidth});
    partDataWindow.innerHTML = eval("obj =" + textArray);
- }catch(e){};
+  }catch(e){};
   switch(componentSelect.value) {
     case "timerMotor":
     TweenMax.to([path1427,path1427copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
@@ -193,7 +201,6 @@ function componentChange(){
 componentChange()
 
 function clearHighlights(){
-  // partDataWindow.innerHTML = "Select a component from the list."
   for(i=0; i<diagram1Paths.length; i++){
     part = diagram1Paths[i].id;
     part = part.split("copy")
@@ -207,7 +214,6 @@ function clearHighlights(){
 }
 clearHighlights();
 
-///////////////////////////////////////////////////////////////ColorPicker Colors
 var blackArray = [];
 var grayArray = [];
 var lightGrayArray = [];

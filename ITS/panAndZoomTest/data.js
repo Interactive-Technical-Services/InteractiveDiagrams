@@ -1,12 +1,6 @@
 
-xhr = new XMLHttpRequest();
-xhr.open("GET","schematic.svg",false);
-xhr.overrideMimeType("image/svg+xml");
-xhr.send("");
-var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement); 
+ 
 
-
-var NONEText = 'Select part from list.';
 
  var NONEBlackArray = [];
 var NONEDarkGrayArray = [];
