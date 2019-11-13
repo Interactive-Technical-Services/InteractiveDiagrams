@@ -1,18 +1,4 @@
 document.title = "Dishwasher Timer Model"
-
-var panZoom = window.panZoom = svgPanZoom('#mobile-svg', {
-          zoomEnabled: true,
-          controlIconsEnabled: true,
-          fit: 1,
-          center: 1
-        });
-
-        $(window).resize(function(){
-          console.log("fired resize")
-          panZoom.resize();
-          panZoom.fit();
-          panZoom.center();
-        })
       
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;

@@ -46,6 +46,13 @@ window.onload = function() {
             this.hammer.destroy()
           }
         }
+
+        $(window).resize(function(){
+          console.log("fired resize")
+          panZoom.resize();
+          panZoom.fit();
+          panZoom.center();
+        })
         // Expose to window namespace for testing purposes
         window.panZoom = svgPanZoom('#mobile-svg', {
           zoomEnabled: true
@@ -55,7 +62,6 @@ window.onload = function() {
         , customEventsHandler: eventsHandler
         });
       };
-
       // svg-pan-zoom v3.6.1
 // https://github.com/ariutta/svg-pan-zoom
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
@@ -95,15 +101,15 @@ module.exports = {
     zoomGroup.setAttribute("class", "svg-pan-zoom-control");
 
     // Control elements
-    // zoomGroup.appendChild(this._createZoomIn(instance));
-    // zoomGroup.appendChild(this._createZoomReset(instance));
-    // zoomGroup.appendChild(this._createZoomOut(instance));
+    zoomGroup.appendChild(this._createZoomIn(instance));
+    zoomGroup.appendChild(this._createZoomReset(instance));
+    zoomGroup.appendChild(this._createZoomOut(instance));
 
     // Finally append created element
-    // instance.svg.appendChild(zoomGroup);
+    instance.svg.appendChild(zoomGroup);
 
     // Cache control instance
-    // instance.controlIcons = zoomGroup;
+    instance.controlIcons = zoomGroup;
   },
 
   _createZoomIn: function(instance) {
@@ -2298,5 +2304,3 @@ function requestTimeout(timeout) {
 }
 
 },{}]},{},[3]);
-
-
