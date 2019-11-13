@@ -4,9 +4,12 @@ xhr = new XMLHttpRequest();
 xhr.open("GET","schematic.svg",false);
 xhr.overrideMimeType("image/svg+xml");
 xhr.send("");
+
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
-TweenMax.to(mainDiagram, .5, {scaleX:.5, scaleY:.5, x:0, y:400, transformOrigin: "50% 50%", ease: Power0.easeNone});
+if(screen.width <= 500){
+TweenMax.to(mainDiagram, .5, {scaleX:.5, scaleY:.5, x:150, y:400, transformOrigin: "50% 50%", ease: Power0.easeNone});
+}
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
 for(i=0; i<diagram1PathsLength; i++){
