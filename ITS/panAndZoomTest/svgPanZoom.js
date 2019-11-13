@@ -95,9 +95,9 @@ module.exports = {
     zoomGroup.setAttribute("class", "svg-pan-zoom-control");
 
     // Control elements
-    zoomGroup.appendChild(this._createZoomIn(instance));
-    zoomGroup.appendChild(this._createZoomReset(instance));
-    zoomGroup.appendChild(this._createZoomOut(instance));
+    // zoomGroup.appendChild(this._createZoomIn(instance));
+    // zoomGroup.appendChild(this._createZoomReset(instance));
+    // zoomGroup.appendChild(this._createZoomOut(instance));
 
     // Finally append created element
     instance.svg.appendChild(zoomGroup);
@@ -2298,3 +2298,5 @@ function requestTimeout(timeout) {
 }
 
 },{}]},{},[3]);
+
+

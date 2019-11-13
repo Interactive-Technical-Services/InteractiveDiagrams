@@ -1,6 +1,19 @@
 document.title = "Dishwasher Timer Model"
 
-// TweenMax.to(mainWindow, 0, {x:1200, y:400, scaleX:2, scaleY:2});
+var panZoom = window.panZoom = svgPanZoom('#mobile-svg', {
+          zoomEnabled: true,
+          controlIconsEnabled: true,
+          fit: 1,
+          center: 1
+        });
+
+        $(window).resize(function(){
+          console.log("fired resize")
+          panZoom.resize();
+          panZoom.fit();
+          panZoom.center();
+        })
+      
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
 for(i=0; i<diagram1PathsLength; i++){
@@ -22,9 +35,7 @@ for(i=0; i<diagram1PathsLength; i++){
 
 var buttons = document.getElementById("partNameGroup").getElementsByTagName("rect");
 var partNameGroupLength = buttons.length;
-console.log(partNameGroupLength)
 for(i=0; i<partNameGroupLength; i++){
-  console.log(buttons[i].id)
   buttons[i].setAttribute('onmouseover','this.style.cursor = "pointer"');
   buttons[i].setAttribute('onclick','changeDropDown(this.id);'); 
 }
@@ -98,7 +109,6 @@ function componentChange(){
   
   highlightedWidth = 1.5;
   clearHighlights();
-  console.log(componentSelect.value)
   blackArray = componentSelect.value + "BlackArray";
   darkGrayArray = componentSelect.value + "DarkGrayArray";
   lightGrayArray = componentSelect.value + "LightGrayArray";
@@ -277,7 +287,6 @@ brownArray = [];
           break;
       case "rgb(255, 165, 0)":
         orangeArray.push(diagram1Paths[i].id);
-        console.log("fired")
           break;
       case "rgb(255, 0, 0)":
         redArray.push(diagram1Paths[i].id);
