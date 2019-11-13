@@ -71,13 +71,13 @@
      inkscape:window-height="837"
      id="namedview4"
      showgrid="false"
-     inkscape:zoom="0.27643022"
-     inkscape:cx="1081.6887"
-     inkscape:cy="3810.2104"
+     inkscape:zoom="4.4228836"
+     inkscape:cx="896.11647"
+     inkscape:cy="4661.2495"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="partNameGroup"
+     inkscape:current-layer="diagram1"
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
@@ -427,14 +427,9 @@
 
 <path
    id="pump"
-   style="fill:#010202;fill-opacity:1;fill-rule:evenodd;stroke:none"
-   d="m 794.17879,646.76387 c -3.995,0 -7.19,-3.195 -7.19,-7.189 0,-3.994 3.195,-7.19 7.19,-7.19 3.992,0 7.189,3.196 7.189,7.19 0,3.994 -3.197,7.189 -7.189,7.189 m 0,0.464 c 4.252,0 7.653,-3.402 7.653,-7.653 0,-4.252 -3.401,-7.654 -7.653,-7.654 -4.253,0 -7.654,3.402 -7.654,7.654 0,4.251 3.401,7.653 7.654,7.653"
-   inkscape:label="#path686"
-   inkscape:connector-curvature="0" /><path
-   inkscape:connector-curvature="0"
-   id="path1463"
    style="font-variant:normal;font-weight:bold;font-size:4.94770002px;font-family:GEInspira;-inkscape-font-specification:GEInspira-Bold;writing-mode:lr-tb;fill:#010202;fill-opacity:1;fill-rule:nonzero;stroke:none"
-   d="m 796.47388,637.92287 h -0.92287 v 2.40862 l -0.66678,-1.56307 h -0.6402 l -0.66678,1.56307 v -2.40862 h -0.87454 v 3.59723 h 1.07747 l 0.80932,-1.80466 0.8069,1.80466 h 1.07748 z" />
+   d="m 796.47388,637.92287 h -0.92287 v 2.40862 l -0.66678,-1.56307 h -0.6402 l -0.66678,1.56307 v -2.40862 h -0.87454 v 3.59723 h 1.07747 l 0.80932,-1.80466 0.8069,1.80466 h 1.07748 z m -2.29509,8.841 c -3.995,0 -7.19,-3.195 -7.19,-7.189 0,-3.994 3.195,-7.19 7.19,-7.19 3.992,0 7.189,3.196 7.189,7.19 0,3.994 -3.197,7.189 -7.189,7.189 m 0,0.464 c 4.252,0 7.653,-3.402 7.653,-7.653 0,-4.252 -3.401,-7.654 -7.653,-7.654 -4.253,0 -7.654,3.402 -7.654,7.654 0,4.251 3.401,7.653 7.654,7.653"
+   inkscape:label="#path1463" />
 <path
    inkscape:connector-curvature="0"
    id="path1986"
