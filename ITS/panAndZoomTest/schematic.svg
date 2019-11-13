@@ -13,9 +13,9 @@
    version="1.1"
    id="mobile-svg"
    xml:space="preserve"
-   width="1400"
-   height="1400"
-   viewBox="0 0 1400 1400"
+   width="709.52356"
+   height="545.01886"
+   viewBox="0 0 709.52356 545.01886"
    sodipodi:docname="schematic.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><metadata
      id="metadata8"><rdf:RDF><cc:Work
@@ -72,8 +72,8 @@
      id="namedview4"
      showgrid="false"
      inkscape:zoom="0.78186274"
-     inkscape:cx="549.34382"
-     inkscape:cy="984.03871"
+     inkscape:cx="536.04616"
+     inkscape:cy="143.88304"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -85,7 +85,7 @@
      id="g10"
      inkscape:groupmode="layer"
      inkscape:label="31-30630-2"
-     transform="matrix(1.3333333,0,0,-1.3333333,-91.344032,1953.2761)"><g
+     transform="matrix(1.3333333,0,0,-1.3333333,-104.64169,1938.4506)"><g
    id="diagram1"
    inkscape:label="#g5338"
    transform="matrix(1.5282214,0,0,1.5282214,-517.66467,277.69391)"><g
