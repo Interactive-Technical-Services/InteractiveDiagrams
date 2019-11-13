@@ -17,8 +17,7 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
   path.setAttribute('onclick','wireClicked(this);');
-  path.setAttribute('ontouch','wireClicked(this); ');
-  path.setAttribute('ontouchend','notOverPathTouchEnd(this);');
+  path.setAttribute('ontouch','wireClicked(this);');
   path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
   path.setAttribute('onmouseout','notOverPath(this);');
   path.style['stroke-linecap']="round";
@@ -39,11 +38,6 @@ function overPath(wire){
 }
 
 function notOverPath(wire){
-  wire.setAttribute("opacity", "0");
-}
-
-function notOverPathTouchEnd(wire){
-  console.log("touch")
   wire.setAttribute("opacity", "0");
 }
 
