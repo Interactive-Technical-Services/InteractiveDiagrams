@@ -22,10 +22,10 @@
 <body>
   
     
-      <select id="componentSelect" class="select-css" onChange="componentChange(this.selectedIndex.value);">
+      <select id="componentSelect" onChange="componentChange(this.selectedIndex.value);">
         <option value="NONE">CLEAR HIGHLIGHTS</option>
       </select>
-      <select id="colorPicker" class="select-css" onChange="colorPickerChange(this.selectedIndex);">
+      <select id="colorPicker" onChange="colorPickerChange(this.selectedIndex);">
         <option value="#000000" style="background-color: Black;color: #FFFFFF;">COLOR PICKER</option>
         <option value="#000000" style="background-color: Black;color: #FFFFFF;">Black</option>
         <option value="#A9A9A9" style="background-color: DarkGray;">DarkGray</option>
@@ -42,7 +42,7 @@
         <option value="#FF0000" style="background-color: Red;">Red</option>
         <option value="#A52A2A" style="background-color: Brown;">Brown</option>
       </select>
-      <button class="select-css" onclick="getColors()">Get Wire Colors</button>
+      <button onclick="getColors()">Get Wire Colors</button>
     
     <div id="mainWindow"></div>
 </body>
