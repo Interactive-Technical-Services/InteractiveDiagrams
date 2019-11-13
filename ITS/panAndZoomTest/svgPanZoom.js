@@ -100,10 +100,10 @@ module.exports = {
     // zoomGroup.appendChild(this._createZoomOut(instance));
 
     // Finally append created element
-    instance.svg.appendChild(zoomGroup);
+    // instance.svg.appendChild(zoomGroup);
 
     // Cache control instance
-    instance.controlIcons = zoomGroup;
+    // instance.controlIcons = zoomGroup;
   },
 
   _createZoomIn: function(instance) {
