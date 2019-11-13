@@ -681,7 +681,14 @@
 <g
    id="partNameGroup"
    inkscape:label="#g1218"
-   transform="matrix(1.5282214,0,0,1.5282214,-693.48433,-194.81967)"><text
+   transform="matrix(1.5282214,0,0,1.5282214,-693.48433,-194.81967)"><rect
+   style="opacity:0.25;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:0.49076661;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+   id="rect1102"
+   width="415.43716"
+   height="300.03793"
+   x="594.48395"
+   y="-1091.406"
+   transform="scale(1,-1)" /><text
    xml:space="preserve"
    style="font-style:normal;font-weight:normal;font-size:6.54355431px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.49076658"
    x="744.39056"
