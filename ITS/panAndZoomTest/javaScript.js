@@ -8,34 +8,33 @@ xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
 
-// window.addEventListener('orientationchange', doOnOrientationChange);
-// function doOnOrientationChange() {
-//     switch(window.orientation) {  
-//       case -90: case 90:
-//         alert('landscape');
-//         schematic.setAttribute("width", screen.width);
-//   schematic.setAttribute("height", screen.height); 
-//         break; 
-//       default:
-//         alert('portrait');
-//         schematic.setAttribute("width", screen.width);
-//   schematic.setAttribute("height", screen.height); 
-//         break; 
-//     }
-// }
-// doOnOrientationChange();
+window.addEventListener('orientationchange', doOnOrientationChange);
+function doOnOrientationChange() {
+    switch(window.orientation) {  
+      case -90: case 90:
+        alert('landscape');
+        schematic.setAttribute("width", 800);
+        schematic.setAttribute("height", 400); 
+        break; 
+      default:
+        alert('portrait');
+        schematic.setAttribute("width", 400);
+  schematic.setAttribute("height", 800); 
+        break; 
+    }
+}
+doOnOrientationChange();
 
 var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   deviceType="mobile"
-  document.getElementById("mobile-svg").setAttribute("viewBox", "0 0 500 750");
 }
 
-// schematic.setAttribute("width", screen.width);
-// schematic.setAttribute("height", screen.height); 
+schematic.setAttribute("width", screen.width);
+schematic.setAttribute("height", screen.height); 
 
-console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
-document.getElementById("mobile-svg").setAttribute("viewBox", "300 -100 500 750");
+// console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
+// document.getElementById("mobile-svg").setAttribute("viewBox", "-250 -250 500 750");
 
 // if(screen.width <= 800){
 //   schematic.setAttribute("width", screen.width);
