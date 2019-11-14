@@ -8,7 +8,7 @@ xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
 var userAgent = navigator.userAgent;
-alert(userAgent);
+alert(iPad|iPhone|iPod/i.test(userAgent);
 
 if(screen.width >= 800){
 schematic.setAttribute("width", "1500");
