@@ -13,8 +13,8 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
 if(screen.width <= 800){
-  schematic.setAttribute("width", "800");
-  schematic.setAttribute("height", "1500"); 
+  schematic.setAttribute("width", screen.width);
+  schematic.setAttribute("height", screen.height); 
 }else{
   schematic.setAttribute("width", screen.width);
   schematic.setAttribute("height", screen.height);
