@@ -405,7 +405,6 @@ var svgPanZoom = require("./svg-pan-zoom.js");
 
 },{"./svg-pan-zoom.js":4}],4:[function(require,module,exports){
 var Wheel = require("./uniwheel"),
-  ControlIcons = require("./control-icons"),
   Utils = require("./utilities"),
   SvgUtils = require("./svg-utilities"),
   ShadowViewport = require("./shadow-viewport");
@@ -417,7 +416,6 @@ var SvgPanZoom = function(svg, options) {
 var optionsDefaults = {
   viewportSelector: ".svg-pan-zoom_viewport", // Viewport selector. Can be querySelector string or SVGElement
   panEnabled: true, // enable or disable panning (default enabled)
-  controlIconsEnabled: false, // insert icons to give user an option in addition to mouse events to control pan/zoom (default disabled)
   zoomEnabled: true, // enable or disable zooming (default enabled)
   dblClickZoomEnabled: true, // enable or disable zooming by double clicking (default enabled)
   mouseWheelZoomEnabled: true, // enable or disable zooming by mouse wheel (default enabled)
@@ -510,9 +508,7 @@ SvgPanZoom.prototype.init = function(svg, options) {
   publicInstance.setOnPan(this.options.onPan);
   publicInstance.setOnUpdatedCTM(this.options.onUpdatedCTM);
 
-  if (this.options.controlIconsEnabled) {
-    ControlIcons.enable(this);
-  }
+  
 
   // Init events handlers
   this.lastMouseWheelEventTime = Date.now();
@@ -857,13 +853,7 @@ SvgPanZoom.prototype.handleDblClick = function(evt) {
     }
   }
 
-  // Check if target was a control button
-  if (this.options.controlIconsEnabled) {
-    var targetClass = evt.target.getAttribute("class") || "";
-    if (targetClass.indexOf("svg-pan-zoom-control") > -1) {
-      return false;
-    }
-  }
+ 
 
   var zoomFactor;
 
@@ -1057,12 +1047,6 @@ SvgPanZoom.prototype.resize = function() {
   viewport.options.width = this.width;
   viewport.options.height = this.height;
   viewport.processCTM();
-
-  // Reposition control icons by re-enabling them
-  if (this.options.controlIconsEnabled) {
-    this.getPublicInstance().disableControlIcons();
-    this.getPublicInstance().enableControlIcons();
-  }
 };
 
 /**
@@ -1099,9 +1083,6 @@ SvgPanZoom.prototype.destroy = function() {
 
   // Unbind wheelListener
   this.disableMouseWheelZoom();
-
-  // Remove control icons
-  this.getPublicInstance().disableControlIcons();
 
   // Reset zoom and pan
   this.reset();
@@ -1182,23 +1163,9 @@ SvgPanZoom.prototype.getPublicInstance = function() {
       isZoomEnabled: function() {
         return !!that.options.zoomEnabled;
       },
-      enableControlIcons: function() {
-        if (!that.options.controlIconsEnabled) {
-          that.options.controlIconsEnabled = true;
-          ControlIcons.enable(that);
-        }
-        return that.pi;
-      },
-      disableControlIcons: function() {
-        if (that.options.controlIconsEnabled) {
-          that.options.controlIconsEnabled = false;
-          ControlIcons.disable(that);
-        }
-        return that.pi;
-      },
-      isControlIconsEnabled: function() {
-        return !!that.options.controlIconsEnabled;
-      },
+      
+      
+      
       // Double click zoom
       enableDblClickZoom: function() {
         that.options.dblClickZoomEnabled = true;
