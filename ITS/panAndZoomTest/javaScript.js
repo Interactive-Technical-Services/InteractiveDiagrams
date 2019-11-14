@@ -7,6 +7,11 @@ xhr.send("");
 
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
+var deviceType = "";
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ alert(navigator.userAgent)
+ deviceType="mobile"
+}
 
 if(screen.width >= 800){
 schematic.setAttribute("width", "1500");
@@ -22,14 +27,18 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('fill','none');
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
+
+  if(deviceType == "mobile"){
+    path.setAttribute('onclick','wireClicked(this);');
+  }else{
   path.setAttribute('onclick','wireClicked(this);');
-  path.setAttribute('ontouchend','notOverPath(this);');
   path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
   path.setAttribute('onmouseout','notOverPath(this);');
   path.style['stroke-linecap']="round";
   path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
   diagram1.appendChild(path);
-  path.style["stroke-width"]= 3;  
+  path.style["stroke-width"]= 3; 
+  } 
 }
 
 var buttons = document.getElementById("partNameGroup").getElementsByTagName("rect");
