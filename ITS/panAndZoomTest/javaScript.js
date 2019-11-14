@@ -7,6 +7,10 @@ xhr.send("");
 
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ alert("mobile")
+}
+
 if(screen.width >= 800){
 schematic.setAttribute("width", "1500");
 schematic.setAttribute("height", "1500"); 
