@@ -9,19 +9,20 @@ var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXM
 
 var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- 
- deviceType="mobile"
- alert(deviceType)
-}else{
-  alert(deviceType)
+  deviceType="mobile"
 }
 
-if(screen.width >= 800){
-schematic.setAttribute("width", "1500");
-schematic.setAttribute("height", "1500"); 
+if(screen.width <= 800){
+  schematic.setAttribute("width", "800");
+  schematic.setAttribute("height", "1500"); 
+}else{
+  schematic.setAttribute("width", screen.width);
+  schematic.setAttribute("height", screen.height);
 }
+
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
+
 for(i=0; i<diagram1PathsLength; i++){
   diagram1Paths[i].style['stroke-linecap']="round";
   diagram1Paths[i].style.stroke = "Black"; 
@@ -36,15 +37,15 @@ for(i=0; i<diagram1PathsLength; i++){
     path.setAttribute('ontouchstart','wireClicked(this);');
     path.setAttribute('ontouchend','wireClicked(this);');
     path.setAttribute('onmouseover','wireClicked(this);');
-  }else{
-  path.setAttribute('onclick','wireClicked(this);');
-  path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
-  path.setAttribute('onmouseout','notOverPath(this);');
-}
-  path.style['stroke-linecap']="round";
-  path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
-  diagram1.appendChild(path);
-  path.style["stroke-width"]= 3; 
+    }else{
+      path.setAttribute('onclick','wireClicked(this);');
+      path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
+      path.setAttribute('onmouseout','notOverPath(this);');
+    }
+    path.style['stroke-linecap']="round";
+    path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
+    diagram1.appendChild(path);
+    path.style["stroke-width"]= 3; 
 }
 
 var buttons = document.getElementById("partNameGroup").getElementsByTagName("rect");
@@ -147,7 +148,7 @@ function componentChange(){
     TweenMax.to(eval("obj =" + orangeArray), .1, {stroke:"rgb(255, 165, 0)", strokeWidth:highlightedWidth});
     TweenMax.to(eval("obj =" + redArray), .1, {stroke:"rgb(255, 0, 0)", strokeWidth:highlightedWidth});
     TweenMax.to(eval("obj =" + brownArray), .1, {stroke:"rgb(165, 42, 42)", strokeWidth:highlightedWidth});
-   partDataWindow.innerHTML = eval("obj =" + textArray);
+    partDataWindow.innerHTML = eval("obj =" + textArray);
   }catch(e){};
   switch(componentSelect.value) {
     case "timerMotor":
@@ -208,10 +209,7 @@ function componentChange(){
     case "neutralDoorSwitchOpen":
     TweenMax.to([path1496,path1496copy], .5, {rotation:-40, transformOrigin: "100% 0%", ease: Power0.easeNone});
     break;
-}
-
-
-
+  }
 }
 
 componentChange()
@@ -228,6 +226,7 @@ function clearHighlights(){
     } 
   }
 }
+
 clearHighlights();
 
 var blackArray = [];
