@@ -48,7 +48,6 @@ window.onload = function() {
         }
 
         $(window).resize(function(){
-          console.log("fired resize")
           panZoom.resize();
           panZoom.fit();
           panZoom.center();
