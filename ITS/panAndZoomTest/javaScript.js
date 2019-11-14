@@ -28,13 +28,14 @@ var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXM
 var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   deviceType="mobile"
+  document.getElementById("mobile-svg").setAttribute("viewBox", "0 0 500 750");
 }
 
 schematic.setAttribute("width", screen.width);
 schematic.setAttribute("height", screen.height); 
 
 console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
-document.getElementById("mobile-svg").setAttribute("viewBox", "0 0 500 750");
+document.getElementById("mobile-svg").setAttribute("viewBox", "300 -100 500 750");
 
 // if(screen.width <= 800){
 //   schematic.setAttribute("width", screen.width);
