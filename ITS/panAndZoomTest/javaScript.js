@@ -7,18 +7,6 @@ xhr.send("");
 
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
-var userAgent = navigator.userAgent;
-var osName = "Not known"; 
-if (navigator.appVersion.indexOf("Win") != -1) osName =  
-  "WindowsOS"; 
-if (navigator.appVersion.indexOf("Mac") != -1) osName =  
-  "MacOS"; 
-if (navigator.appVersion.indexOf("X11") != -1) osName =  
-  "UNIXOS"; 
-if (navigator.appVersion.indexOf("Linux") != -1) osName =  
-  "LinuxOS";
-
-
 if(screen.width >= 800){
 schematic.setAttribute("width", "1500");
 schematic.setAttribute("height", "1500"); 
@@ -33,31 +21,10 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('fill','none');
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
-
-
-
-  switch(osName) {
-    case /windows phone/i.test(userAgent):
-      path.setAttribute('ontouchstart','wireClicked(this.id);');
-      path.setAttribute('ontouchend','wireClicked(this.id);');
-      path.setAttribute('onmouseover','wireClicked(this.id);');
-    break;
-
-    case /android/i.test(userAgent):
-      path.setAttribute('ontouchend','wireClicked(this);');
-    break;
-
-    case /iPad|iPhone|iPod/i.test(userAgent):
-      path.setAttribute('ontouchend','wireClicked(this);');
-    break;
-  }
-
-
-
-  // path.setAttribute('onclick','wireClicked(this.id);');
-  // path.setAttribute('ontouchend','wireClicked(this);');
-  // path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
-  // path.setAttribute('onmouseout','notOverPath(this);');
+  path.setAttribute('onclick','wireClicked(this);');
+  path.setAttribute('ontouchend','wireClicked(this);');
+  path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
+  path.setAttribute('onmouseout','notOverPath(this);');
   path.style['stroke-linecap']="round";
   path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
   diagram1.appendChild(path);
@@ -85,8 +52,7 @@ function colorPickerChange(e){
 }
 
 function wireClicked(wire){
-  alert(wire)
-  nameSplit = wire.split("copy");
+  nameSplit = wire.id.split("copy");
   wire2 = document.getElementById(nameSplit[0]);
   wire2.style["stroke-width"]= 1.25;
   wire2.style["stroke"]= document.getElementById("colorPicker").value;
