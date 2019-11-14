@@ -25,15 +25,15 @@ for(i=0; i<diagram1PathsLength; i++){
 
   switch(userAgent) {
     case /windows phone/i.test(userAgent):
-      console.log("Windows Phone");
+      alert("Windows Phone");
     break;
 
     case /android/i.test(userAgent):
-      console.log("Andriod");
+      alert("Andriod");
     break;
 
     case /iPad|iPhone|iPod/i.test(userAgent):
-      console.log("ios");
+      alert("ios");
     break;
   }
 console.log(userAgent)
