@@ -33,8 +33,6 @@ for(i=0; i<diagram1PathsLength; i++){
 
   if(deviceType == "mobile"){
     path.setAttribute('onclick','wireClicked(this);');
-    path.setAttribute('ontouchstart','wireClicked(this);');
-    path.setAttribute('ontouchend','wireClicked(this);');
   }else{
   path.setAttribute('onclick','wireClicked(this);');
   path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
@@ -67,7 +65,6 @@ function colorPickerChange(e){
 }
 
 function wireClicked(wire){
-  alert("touch fired")
   nameSplit = wire.id.split("copy");
   wire2 = document.getElementById(nameSplit[0]);
   wire2.style["stroke-width"]= 1.25;
