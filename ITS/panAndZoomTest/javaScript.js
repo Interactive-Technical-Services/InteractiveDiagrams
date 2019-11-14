@@ -8,16 +8,16 @@ xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
 var userAgent = navigator.userAgent;
-var Name = "Not known"; 
-        if (navigator.appVersion.indexOf("Win") != -1) Name =  
-          "Windows OS"; 
-        if (navigator.appVersion.indexOf("Mac") != -1) Name =  
-          "MacOS"; 
-        if (navigator.appVersion.indexOf("X11") != -1) Name =  
-          "UNIX OS"; 
-        if (navigator.appVersion.indexOf("Linux") != -1) Name =  
-          "Linux OS";
-        alert("name" + Name)
+var osName = "Not known"; 
+if (navigator.appVersion.indexOf("Win") != -1) osName =  
+  "WindowsOS"; 
+if (navigator.appVersion.indexOf("Mac") != -1) osName =  
+  "MacOS"; 
+if (navigator.appVersion.indexOf("X11") != -1) osName =  
+  "UNIXOS"; 
+if (navigator.appVersion.indexOf("Linux") != -1) osName =  
+  "LinuxOS";
+
 
 if(screen.width >= 800){
 schematic.setAttribute("width", "1500");
@@ -36,7 +36,7 @@ for(i=0; i<diagram1PathsLength; i++){
 
 
 
-  switch(userAgent) {
+  switch(osName) {
     case /windows phone/i.test(userAgent):
       path.setAttribute('ontouchstart','wireClicked(this.id);');
       path.setAttribute('ontouchend','wireClicked(this.id);');
