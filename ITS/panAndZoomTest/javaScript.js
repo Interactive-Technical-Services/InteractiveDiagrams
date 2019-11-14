@@ -21,7 +21,7 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('fill','none');
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
-  path.setAttribute('onclick','wireClicked(this);');
+  path.setAttribute('onclick','wireClicked(this.id);');
   path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
   path.setAttribute('onmouseout','notOverPath(this);');
   path.style['stroke-linecap']="round";
@@ -52,11 +52,11 @@ function colorPickerChange(e){
 
 function wireClicked(wire){
   alert("change")
-  // nameSplit = wire.id.split("copy");
-  // wire2 = document.getElementById(nameSplit[0]);
-  // wire2.style["stroke-width"]= 1.25;
-  // wire2.style["stroke"]= document.getElementById("colorPicker").value;
-  // selectedPart = wire2.id;
+  nameSplit = wire.split("copy");
+  wire2 = document.getElementById(nameSplit[0]);
+  wire2.style["stroke-width"]= 1.25;
+  wire2.style["stroke"]= document.getElementById("colorPicker").value;
+  selectedPart = wire2.id;
 }
 
 var partsList = [];
