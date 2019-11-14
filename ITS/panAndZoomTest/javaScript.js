@@ -29,7 +29,7 @@ for(i=0; i<diagram1PathsLength; i++){
     case /windows phone/i.test(userAgent):
       path.setAttribute('ontouchstart','wireClicked(this.id);');
       path.setAttribute('ontouchend','wireClicked(this.id);');
-      path.setAttribute('onclick','wireClicked(this.id);');
+      path.setAttribute('onmouseover','wireClicked(this.id);');
     break;
 
     case /android/i.test(userAgent):
