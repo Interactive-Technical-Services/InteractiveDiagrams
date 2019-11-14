@@ -52,11 +52,11 @@ function colorPickerChange(e){
 
 function wireClicked(wire){
   alert("change")
-  nameSplit = wire.id.split("copy");
-  wire2 = document.getElementById(nameSplit[0]);
-  wire2.style["stroke-width"]= 1.25;
-  wire2.style["stroke"]= document.getElementById("colorPicker").value;
-  selectedPart = wire2.id;
+  // nameSplit = wire.id.split("copy");
+  // wire2 = document.getElementById(nameSplit[0]);
+  // wire2.style["stroke-width"]= 1.25;
+  // wire2.style["stroke"]= document.getElementById("colorPicker").value;
+  // selectedPart = wire2.id;
 }
 
 var partsList = [];
