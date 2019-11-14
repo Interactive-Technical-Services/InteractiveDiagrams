@@ -33,6 +33,7 @@ for(i=0; i<diagram1PathsLength; i++){
 
   if(deviceType == "mobile"){
     path.setAttribute('onclick','wireClicked(this);');
+    path.setAttribute('ontouchstart','wireClicked(this);');
   }else{
   path.setAttribute('onclick','wireClicked(this);');
   path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
