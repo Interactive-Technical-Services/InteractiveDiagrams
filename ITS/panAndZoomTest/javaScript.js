@@ -89,6 +89,7 @@ function changeDropDown(e){
 }
 
 function componentChange(){
+  alert("change")
   TweenMax.to([path1427,path1427copy], .5, {rotation:40, transformOrigin: "0% 100%", ease: Power0.easeNone});
   TweenMax.to([path1556,path1556copy], .5, {rotation:-40, transformOrigin: "100% 0%", ease: Power0.easeNone});
   TweenMax.to([path1993,path1993copy], .5, {rotation:-15, transformOrigin: "100% 0%", ease: Power0.easeNone});
