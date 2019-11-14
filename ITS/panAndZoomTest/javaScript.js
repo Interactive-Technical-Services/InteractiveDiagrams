@@ -39,11 +39,11 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('onclick','wireClicked(this);');
   path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
   path.setAttribute('onmouseout','notOverPath(this);');
+}
   path.style['stroke-linecap']="round";
   path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
   diagram1.appendChild(path);
   path.style["stroke-width"]= 3; 
-  } 
 }
 
 var buttons = document.getElementById("partNameGroup").getElementsByTagName("rect");
@@ -67,6 +67,7 @@ function colorPickerChange(e){
 }
 
 function wireClicked(wire){
+  alert("touch fired")
   nameSplit = wire.id.split("copy");
   wire2 = document.getElementById(nameSplit[0]);
   wire2.style["stroke-width"]= 1.25;
