@@ -7,10 +7,13 @@ xhr.send("");
 
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
-var deviceType = "";
+var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- alert(navigator.userAgent)
+ 
  deviceType="mobile"
+ alert(deviceType)
+}else{
+  alert(deviceType)
 }
 
 if(screen.width >= 800){
