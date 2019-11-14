@@ -29,8 +29,10 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
 
   if(deviceType == "mobile"){
+    alert("isMobile")
     path.setAttribute('onclick','wireClicked(this);');
   }else{
+    alert("isNotMobile")
   path.setAttribute('onclick','wireClicked(this);');
   path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
   path.setAttribute('onmouseout','notOverPath(this);');
