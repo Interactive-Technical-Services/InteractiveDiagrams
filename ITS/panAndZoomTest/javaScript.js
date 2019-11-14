@@ -22,7 +22,7 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
   var userAgent = navigator.userAgent;
-
+  alert(userAgent);
   switch(userAgent) {
     case /windows phone/i.test(userAgent):
       alert("Windows Phone");
