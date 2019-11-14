@@ -21,7 +21,26 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('fill','none');
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
-  // path.setAttribute('onclick','wireClicked(this);');
+  var userAgent = navigator.userAgent;
+
+  switch(userAgent) {
+    case /windows phone/i.test(userAgent):
+      console.log("Windows Phone");
+    break;
+
+    case /android/i.test(userAgent):
+      console.log("Andriod");
+    break;
+
+    case /iPad|iPhone|iPod/i.test(userAgent):
+      console.log("ios");
+    break;
+  }
+console.log(userAgent)
+
+
+
+  path.setAttribute('onclick','wireClicked(this);');
   path.setAttribute('ontouchend','wireClicked(this);');
   path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
   path.setAttribute('onmouseout','notOverPath(this);');
