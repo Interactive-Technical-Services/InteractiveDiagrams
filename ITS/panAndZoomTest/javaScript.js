@@ -7,28 +7,14 @@ xhr.send("");
 
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
-
-window.addEventListener('orientationchange', doOnOrientationChange);
-function doOnOrientationChange() {
-    switch(window.orientation) {  
-      case -90: case 90:
-        alert('landscape');
-        break; 
-      default:
-        alert('portrait');
-        break; 
-    }
-}
-doOnOrientationChange();
-
 var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   deviceType="mobile"
 }
 
 if(screen.width <= 800){
-  schematic.setAttribute("width", screen.width);
-  schematic.setAttribute("height", screen.height); 
+  schematic.setAttribute("width", "800");
+  schematic.setAttribute("height", "1500"); 
 }else{
   schematic.setAttribute("width", screen.width);
   schematic.setAttribute("height", screen.height);
