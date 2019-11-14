@@ -7,6 +7,9 @@ xhr.send("");
 
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
+var userAgent = navigator.userAgent;
+alert(userAgent);
+
 if(screen.width >= 800){
 schematic.setAttribute("width", "1500");
 schematic.setAttribute("height", "1500"); 
@@ -21,29 +24,28 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('fill','none');
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
-  var userAgent = navigator.userAgent;
-  alert(userAgent);
+
   switch(userAgent) {
     case /windows phone/i.test(userAgent):
-      alert("Windows Phone");
+      path.setAttribute('ontouchend','wireClicked(this);');
     break;
 
     case /android/i.test(userAgent):
-      alert("Andriod");
+      path.setAttribute('ontouchend','wireClicked(this);');
     break;
 
     case /iPad|iPhone|iPod/i.test(userAgent):
-      alert("ios");
+      path.setAttribute('ontouchend','wireClicked(this);');
     break;
   }
 console.log(userAgent)
 
 
 
-  path.setAttribute('onclick','wireClicked(this);');
-  path.setAttribute('ontouchend','wireClicked(this);');
-  path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
-  path.setAttribute('onmouseout','notOverPath(this);');
+  // path.setAttribute('onclick','wireClicked(this);');
+  // path.setAttribute('ontouchend','wireClicked(this);');
+  // path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
+  // path.setAttribute('onmouseout','notOverPath(this);');
   path.style['stroke-linecap']="round";
   path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
   diagram1.appendChild(path);
