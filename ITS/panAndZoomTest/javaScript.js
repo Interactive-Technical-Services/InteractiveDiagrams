@@ -7,14 +7,33 @@ xhr.send("");
 
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
+var svgWindow = document.getElementById("mainWindow");
+var svg = d3.select(schematic);
+function myredraw(){
+  console.log("fired")
+  var width = svgWindow.clientWidth;
+  var height = svgWindow.clientHeight;
+  svg
+  .attr("width", width)
+  .attr("height", height)
+}
+myredraw();
+window.addEventListener("resize", myredraw)
+
 
 var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   deviceType="mobile"
+
 }
 
-schematic.setAttribute("width", screen.width);
-schematic.setAttribute("height", screen.height); 
+
+
+// console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
+// document.getElementById("mobile-svg").setAttribute("viewBox", "x: 0, y: 0, width: 0, height: 0");
+// document.getElementById("mobile-svg").setAttribute("viewBox", "0 0 500 750");
+// schematic.setAttribute("width", screen.width);
+// schematic.setAttribute("height", screen.height); 
 
 // console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
 // document.getElementById("mobile-svg").setAttribute("viewBox", "-250 -250 500 750");
