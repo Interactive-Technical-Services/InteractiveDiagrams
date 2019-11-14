@@ -1,51 +1,39 @@
 document.title = "Dishwasher Timer Model"
 
+var deviceType = "not mobile";
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  deviceType="mobile"
+}
+
 xhr = new XMLHttpRequest();
 xhr.open("GET","schematic.svg",false);
 xhr.overrideMimeType("image/svg+xml");
 xhr.send("");
 
+
+
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
+// console.log(screen.width)
+// console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
+// document.getElementById("mobile-svg").setAttribute("viewBox", "0 0 500 750");
+schematic.setAttribute("width", screen.width);
+schematic.setAttribute("height", screen.height); 
+
+//Resize Window
 var svgWindow = document.getElementById("mainWindow");
 var svg = d3.select(schematic);
 function myredraw(){
-  console.log("fired")
   var width = svgWindow.clientWidth;
   var height = svgWindow.clientHeight;
   svg
   .attr("width", width)
-  .attr("height", height)
+  .attr("height", height);
 }
 myredraw();
 window.addEventListener("resize", myredraw)
 
-
-var deviceType = "not mobile";
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  deviceType="mobile"
-
-}
-
-
-
-// console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
-// document.getElementById("mobile-svg").setAttribute("viewBox", "x: 0, y: 0, width: 0, height: 0");
-// document.getElementById("mobile-svg").setAttribute("viewBox", "0 0 500 750");
-// schematic.setAttribute("width", screen.width);
-// schematic.setAttribute("height", screen.height); 
-
-// console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
-// document.getElementById("mobile-svg").setAttribute("viewBox", "-250 -250 500 750");
-
-// if(screen.width <= 800){
-//   schematic.setAttribute("width", screen.width);
-//   schematic.setAttribute("height", screen.height); 
-// }else{
-//   schematic.setAttribute("width", screen.width);
-//   schematic.setAttribute("height", screen.height);
-// }
-
+//Set Path Codes
 var diagram1Paths = document.getElementById("diagram1").getElementsByTagName("path");
 var diagram1PathsLength = diagram1Paths.length;
 
