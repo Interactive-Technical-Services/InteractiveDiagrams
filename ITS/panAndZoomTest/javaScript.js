@@ -13,13 +13,14 @@ function doOnOrientationChange() {
     switch(window.orientation) {  
       case -90: case 90:
         alert('landscape');
+        schematic.setAttribute("width", screen.width);
+  schematic.setAttribute("height", screen.height); 
         break; 
       default:
         alert('portrait');
+        schematic.setAttribute("width", screen.width);
+  schematic.setAttribute("height", screen.height); 
         break; 
-        panZoom.resize();
-          panZoom.fit();
-          panZoom.center();
     }
 }
 doOnOrientationChange();
