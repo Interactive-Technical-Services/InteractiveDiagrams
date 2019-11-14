@@ -27,7 +27,7 @@ for(i=0; i<diagram1PathsLength; i++){
 
   switch(userAgent) {
     case /windows phone/i.test(userAgent):
-      path.setAttribute('ontouchstart','wireClicked(this);');
+      path.setAttribute('ontouchstart','wireClicked(this.id);');
     break;
 
     case /android/i.test(userAgent):
@@ -72,7 +72,8 @@ function colorPickerChange(e){
 }
 
 function wireClicked(wire){
-  nameSplit = wire.id.split("copy");
+  alert("touch")
+  nameSplit = wire.split("copy");
   wire2 = document.getElementById(nameSplit[0]);
   wire2.style["stroke-width"]= 1.25;
   wire2.style["stroke"]= document.getElementById("colorPicker").value;
