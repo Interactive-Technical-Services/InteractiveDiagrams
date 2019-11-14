@@ -27,7 +27,7 @@ for(i=0; i<diagram1PathsLength; i++){
 
   switch(userAgent) {
     case /windows phone/i.test(userAgent):
-      path.setAttribute('ontouchend','wireClicked(this);');
+      path.setAttribute('ontouchstart','wireClicked(this);');
     break;
 
     case /android/i.test(userAgent):
@@ -38,7 +38,6 @@ for(i=0; i<diagram1PathsLength; i++){
       path.setAttribute('ontouchend','wireClicked(this);');
     break;
   }
-console.log(userAgent)
 
 
 
