@@ -31,7 +31,10 @@ if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(naviga
 }
 
 schematic.setAttribute("width", screen.width);
-  schematic.setAttribute("height", screen.height); 
+schematic.setAttribute("height", screen.height); 
+
+console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
+document.getElementById("mobile-svg").setAttribute("viewBox", "0 0 500 750");
 
 // if(screen.width <= 800){
 //   schematic.setAttribute("width", screen.width);
