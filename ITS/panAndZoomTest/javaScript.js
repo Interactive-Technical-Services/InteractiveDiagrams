@@ -74,7 +74,7 @@ function colorPickerChange(e){
 }
 
 function wireClicked(wire){
-  alert("touch")
+  alert(wire)
   nameSplit = wire.split("copy");
   wire2 = document.getElementById(nameSplit[0]);
   wire2.style["stroke-width"]= 1.25;
