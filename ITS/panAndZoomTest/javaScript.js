@@ -13,13 +13,13 @@ function doOnOrientationChange() {
     switch(window.orientation) {  
       case -90: case 90:
         alert('landscape');
-        schematic.setAttribute("width", 800);
-        schematic.setAttribute("height", 400); 
+        schematic.setAttribute("width", 1000);
+        schematic.setAttribute("height", 1000); 
         break; 
       default:
         alert('portrait');
-        schematic.setAttribute("width", 400);
-  schematic.setAttribute("height", 800); 
+        schematic.setAttribute("width", screen.height);
+  schematic.setAttribute("height", screen.width); 
         break; 
     }
 }
