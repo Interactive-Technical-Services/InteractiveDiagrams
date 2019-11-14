@@ -1,27 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>loading</title>
-  <meta charset="UTF-8">
-  <!DOCTYPE html>
-  <link rel="stylesheet" href="../JavaScriptLibraries/interactiveSchematic.css">
-  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+  <head>
+    <title>loading</title>
+    <meta charset="UTF-8">
+    <!DOCTYPE html>
+    <link rel="stylesheet" href="../JavaScriptLibraries/interactiveSchematic.css">
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <script src="svgPanZoom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.12.0/d3.js"></script>
-    
-    <style type="text/css">
-      /*svg {
-        height: 0%;
-        width: 100%;
-      }*/
-
-    </style>
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
+  </head>
 <body>
   <div id="mainWindow"></div>
-    <span style="position: fixed; top: 0px; left: 5px; width: 20%; margin: 0; padding: 0; z-index: 1; display: inline-block;">
+    <span style="position: fixed; top: 10px; left: 5px; width: 20%; margin: 0; padding: 0; z-index: 1; display: inline-block;">
       <select id="componentSelect" onChange="componentChange(this.selectedIndex.value);">
         <option value="NONE">CLEAR HIGHLIGHTS</option>
       </select>
@@ -45,11 +38,8 @@
       <!-- <button onclick="getColors()">Get Wire Colors</button> -->
     </span>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.1/TweenMax.min.js"></script>
-
 <script src="javaScript.js"></script>
 <script src="data.js"></script>
-
 <script>
         var eventsHandler;
         eventsHandler = {
@@ -89,13 +79,8 @@
           }
         }
 
-        $(window).resize(function(){
-
-          panZoom.resize();
-          panZoom.fit();
-          panZoom.center();
-        })
-        window.panZoom = svgPanZoom('#mobile-svg', {
+        
+        window.panZoom = svgPanZoom(schematic, {
           zoomEnabled: true
         , controlIconsEnabled: true
         , fit: 1
