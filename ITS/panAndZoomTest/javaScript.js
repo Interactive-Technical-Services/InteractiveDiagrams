@@ -8,7 +8,16 @@ xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
 var userAgent = navigator.userAgent;
-alert(iPad|iPhone|iPod/i.test(userAgent);
+var Name = "Not known"; 
+        if (navigator.appVersion.indexOf("Win") != -1) Name =  
+          "Windows OS"; 
+        if (navigator.appVersion.indexOf("Mac") != -1) Name =  
+          "MacOS"; 
+        if (navigator.appVersion.indexOf("X11") != -1) Name =  
+          "UNIX OS"; 
+        if (navigator.appVersion.indexOf("Linux") != -1) Name =  
+          "Linux OS";
+        alert("name" + Name)
 
 if(screen.width >= 800){
 schematic.setAttribute("width", "1500");
@@ -24,6 +33,8 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('fill','none');
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
+
+
 
   switch(userAgent) {
     case /windows phone/i.test(userAgent):
