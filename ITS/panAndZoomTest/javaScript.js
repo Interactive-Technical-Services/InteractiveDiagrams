@@ -7,7 +7,9 @@ xhr.send("");
 
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
-alert(window.orientation)
+window.addEventListener(orientationEvent, function() {
+    alert('HOLY ROTATING SCREENS BATMAN:' + window.orientation + " " + screen.width);
+}, false);
 
 var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
