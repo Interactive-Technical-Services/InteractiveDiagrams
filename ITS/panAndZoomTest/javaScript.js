@@ -51,6 +51,7 @@ function colorPickerChange(e){
 }
 
 function wireClicked(wire){
+  alert("change")
   nameSplit = wire.id.split("copy");
   wire2 = document.getElementById(nameSplit[0]);
   wire2.style["stroke-width"]= 1.25;
@@ -89,7 +90,6 @@ function changeDropDown(e){
 }
 
 function componentChange(){
-  alert("change")
   TweenMax.to([path1427,path1427copy], .5, {rotation:40, transformOrigin: "0% 100%", ease: Power0.easeNone});
   TweenMax.to([path1556,path1556copy], .5, {rotation:-40, transformOrigin: "100% 0%", ease: Power0.easeNone});
   TweenMax.to([path1993,path1993copy], .5, {rotation:-15, transformOrigin: "100% 0%", ease: Power0.easeNone});
