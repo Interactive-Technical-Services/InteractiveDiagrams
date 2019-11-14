@@ -8,23 +8,6 @@ xhr.send("");
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
 
-window.addEventListener('orientationchange', doOnOrientationChange);
-function doOnOrientationChange() {
-    switch(window.orientation) {  
-      case -90: case 90:
-        alert('landscape');
-        schematic.setAttribute("width", 1000);
-        schematic.setAttribute("height", 1000); 
-        break; 
-      default:
-        alert('portrait');
-        schematic.setAttribute("width", screen.height);
-  schematic.setAttribute("height", screen.width); 
-        break; 
-    }
-}
-doOnOrientationChange();
-
 var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   deviceType="mobile"
