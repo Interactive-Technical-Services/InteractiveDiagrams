@@ -85,7 +85,14 @@
      id="g10"
      inkscape:groupmode="layer"
      inkscape:label="31-30630-2"
-     transform="matrix(1.3333333,0,0,-1.3333333,-139.14743,2157.6458)"><g
+     transform="matrix(1.3333333,0,0,-1.3333333,-139.14743,2157.6458)"><rect
+   style="opacity:0.25;fill:#0000ff;fill-opacity:1;stroke:#000000;stroke-width:0.75;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
+   id="rect5765"
+   width="519.57056"
+   height="404.26117"
+   x="104.36058"
+   y="-1620.2643"
+   transform="scale(1,-1)" /><g
    id="diagram1"
    inkscape:label="#g5338"
    transform="matrix(1.5282214,0,0,1.5282214,-509.52518,451.33629)"><g
