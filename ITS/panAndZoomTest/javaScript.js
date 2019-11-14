@@ -28,6 +28,8 @@ for(i=0; i<diagram1PathsLength; i++){
   switch(userAgent) {
     case /windows phone/i.test(userAgent):
       path.setAttribute('ontouchstart','wireClicked(this.id);');
+      path.setAttribute('ontouchend','wireClicked(this.id);');
+      path.setAttribute('onclick','wireClicked(this.id);');
     break;
 
     case /android/i.test(userAgent):
@@ -41,7 +43,7 @@ for(i=0; i<diagram1PathsLength; i++){
 
 
 
-  // path.setAttribute('onclick','wireClicked(this);');
+  // path.setAttribute('onclick','wireClicked(this.id);');
   // path.setAttribute('ontouchend','wireClicked(this);');
   // path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
   // path.setAttribute('onmouseout','notOverPath(this);');
