@@ -13,9 +13,9 @@
    version="1.1"
    id="mobile-svg"
    xml:space="preserve"
-   width="818.55396"
-   height="556.29382"
-   viewBox="0 0 818.55395 556.29382"
+   width="818.56616"
+   height="793.24341"
+   viewBox="0 0 818.56616 793.24341"
    sodipodi:docname="schematic.svg"
    inkscape:version="0.92.4 (5da689c313, 2019-01-14)"><metadata
      id="metadata8"><rdf:RDF><cc:Work
@@ -73,7 +73,7 @@
      showgrid="false"
      inkscape:zoom="0.55286044"
      inkscape:cx="628.74998"
-     inkscape:cy="146.33228"
+     inkscape:cy="363.38525"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -85,7 +85,7 @@
      id="g10"
      inkscape:groupmode="layer"
      inkscape:label="31-30630-2"
-     transform="matrix(1.3333333,0,0,-1.3333333,-96.912675,2180.7546)"><g
+     transform="matrix(1.3333333,0,0,-1.3333333,-96.906593,2197.0276)"><g
    id="diagram1"
    inkscape:label="#g5338"
    transform="matrix(1.5282214,0,0,1.5282214,-509.52518,451.33629)"><g
@@ -1232,11 +1232,4 @@
    d="M 392.64737,1587.5471 H 409.1013"
    id="path2125"
    inkscape:connector-curvature="0"
-   sodipodi:nodetypes="cc" /><rect
-   style="opacity:0.25;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.62805384;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-   id="rect5755"
-   width="613.28741"
-   height="416.59232"
-   x="72.998535"
-   y="-1635.252"
-   transform="scale(1,-1)" /></g></svg>
+   sodipodi:nodetypes="cc" /></g></svg>
