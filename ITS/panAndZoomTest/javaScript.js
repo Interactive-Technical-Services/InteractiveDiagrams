@@ -21,9 +21,9 @@ for(i=0; i<diagram1PathsLength; i++){
   path.setAttribute('fill','none');
   path.setAttribute('opacity',0);
   path.setAttribute('id',diagram1Paths[i].id + 'copy');
-  path.setAttribute('onclick','wireClicked(this.id);');
-  path.setAttribute('onmouseover','this.style.cursor = "default"; overPath(this);');
-  path.setAttribute('onmouseout','notOverPath(this);');
+  // path.setAttribute('onclick','wireClicked(this.id);');
+  path.setAttribute('onmouseover','this.style.cursor = "default"; wireClicked(this.id)');
+  // path.setAttribute('onmouseout','notOverPath(this);');
   path.style['stroke-linecap']="round";
   path.setAttribute("d", diagram1Paths[i].getAttribute("d"));
   diagram1.appendChild(path);
