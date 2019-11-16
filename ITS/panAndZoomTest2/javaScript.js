@@ -1,4 +1,4 @@
-document.title = "Dishwasher Timer Model"
+document.title = "Louisville Built Bottom Freezer"
 
 var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
@@ -10,13 +10,8 @@ xhr.open("GET","schematic.svg",false);
 xhr.overrideMimeType("image/svg+xml");
 xhr.send("");
 
-
-
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
-// console.log(screen.width)
-// console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
-// document.getElementById("mobile-svg").setAttribute("viewBox", "0 0 500 750");
 schematic.setAttribute("width", screen.width);
 schematic.setAttribute("height", screen.height); 
 
@@ -62,6 +57,7 @@ for(i=0; i<diagram1PathsLength; i++){
     path.style["stroke-width"]= 3; 
 }
 
+//Set Button Codes
 var buttons = document.getElementById("partNameGroup").getElementsByTagName("rect");
 var partNameGroupLength = buttons.length;
 for(i=0; i<partNameGroupLength; i++){
@@ -110,6 +106,7 @@ for(i=0; i<partsList.length; i++){
   componentSelect.add(option);
 }
 
+//Change DropDown when component is clicked on diagram.
 function changeDropDown(e){
   newDropDownValue = e.split("_")[0];
   for(i=0; i<componentSelect.length; i++){
@@ -120,8 +117,10 @@ function changeDropDown(e){
   }
 }
 
+//Do when Dropdown is changed.
 function componentChange(){
-  // TweenMax.to([path1427,path1427copy], .5, {rotation:40, transformOrigin: "0% 100%", ease: Power0.easeNone});
+  //Edit Here/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  TweenMax.to([path10626,path10626copy], .5, {rotation:40, transformOrigin: "0% 100%", ease: Power0.easeNone});
   
   highlightedWidth = 1.5;
   clearHighlights();
@@ -156,10 +155,10 @@ function componentChange(){
     partDataWindow.innerHTML = eval("obj =" + textArray);
   }catch(e){};
   switch(componentSelect.value) {
-    case "mainBoardAcPower":
-    TweenMax.to([path1427,path1427copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    //Edit Here/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    case "fzDoorSwitchClosed":
+    TweenMax.to([path10626,path10626copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
     break;
-
   }
 }
 
@@ -196,66 +195,66 @@ var redArray = [];
 var brownArray = [];
 
 function getColors(){
-blackArray = [];
-grayArray = [];
-lightGrayArray = [];
-darkGrayArray = [];
-aquamarineArray = [];
-blueArray = [];
-purpleArray = [];
-violetArray = [];
-pinkArray = [];
-yellowGreenArray = [];
-yellowArray = [];
-orangeArray = [];
-redArray = [];
-brownArray = [];
-  for(i=0; i<diagram1PathsLength; i++){
-    if(diagram1Paths[i].style["stroke-width"] != "0.75px") {
-      switch(diagram1Paths[i].style.stroke) {
-      case "rgb(0, 0, 0)":
-        blackArray.push(diagram1Paths[i].id);
-      break;
-      case "rgb(169, 169, 169)":
-        darkGrayArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(211, 211, 211)":
-        lightGrayArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(127, 255, 212)":
-        aquamarineArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(0, 0, 255)":
-        blueArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(128, 0, 128)":
-        purpleArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(238, 130, 238)":
-        violetArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(255, 192, 203)":
-        pinkArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(154, 205, 50)":
-        yellowGreenArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(255, 255, 0)":
-        yellowArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(255, 165, 0)":
-        orangeArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(255, 0, 0)":
-        redArray.push(diagram1Paths[i].id);
-          break;
-      case "rgb(165, 42, 42)":
-        brownArray.push(diagram1Paths[i].id);
-          break;
+  blackArray = [];
+  grayArray = [];
+  lightGrayArray = [];
+  darkGrayArray = [];
+  aquamarineArray = [];
+  blueArray = [];
+  purpleArray = [];
+  violetArray = [];
+  pinkArray = [];
+  yellowGreenArray = [];
+  yellowArray = [];
+  orangeArray = [];
+  redArray = [];
+  brownArray = [];
+    for(i=0; i<diagram1PathsLength; i++){
+      if(diagram1Paths[i].style["stroke-width"] != "0.75px") {
+        switch(diagram1Paths[i].style.stroke) {
+        case "rgb(0, 0, 0)":
+          blackArray.push(diagram1Paths[i].id);
+        break;
+        case "rgb(169, 169, 169)":
+          darkGrayArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(211, 211, 211)":
+          lightGrayArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(127, 255, 212)":
+          aquamarineArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(0, 0, 255)":
+          blueArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(128, 0, 128)":
+          purpleArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(238, 130, 238)":
+          violetArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(255, 192, 203)":
+          pinkArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(154, 205, 50)":
+          yellowGreenArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(255, 255, 0)":
+          yellowArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(255, 165, 0)":
+          orangeArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(255, 0, 0)":
+          redArray.push(diagram1Paths[i].id);
+            break;
+        case "rgb(165, 42, 42)":
+          brownArray.push(diagram1Paths[i].id);
+            break;
         }
       }
-  }
-  console.log("var " + componentSelect.value + "BlackArray = [" + blackArray + "];" + "\n" + "var " + componentSelect.value + "DarkGrayArray = [" + darkGrayArray + "];" + "\n" + "var " + componentSelect.value + "LightGrayArray = [" + lightGrayArray + "];" + "\n" + "var " + componentSelect.value + "AquamarineArray = [" + aquamarineArray + "];" + "\n" + "var " + componentSelect.value + "BlueArray = [" + blueArray + "];" + "\n" + "var " + componentSelect.value + "PurpleArray = [" + purpleArray + "];" + "\n" + "var " + componentSelect.value + "VioletArray = [" + violetArray + "];" + "\n" + "var " + componentSelect.value + "PinkArray = [" + pinkArray + "];" + "\n" + "var " + componentSelect.value + "YellowGreenArray = [" + yellowGreenArray + "];" + "\n" + "var " + componentSelect.value + "YellowArray = [" + yellowArray + "];" + "\n" + "var " + componentSelect.value + "OrangeArray = [" + orangeArray + "];" + "\n" + "var " + componentSelect.value + "RedArray = [" + redArray + "];" + "\n" + "var " + componentSelect.value + "BrownArray = [" + brownArray + "];");
+    }
+    console.log("var " + componentSelect.value + "BlackArray = [" + blackArray + "];" + "\n" + "var " + componentSelect.value + "DarkGrayArray = [" + darkGrayArray + "];" + "\n" + "var " + componentSelect.value + "LightGrayArray = [" + lightGrayArray + "];" + "\n" + "var " + componentSelect.value + "AquamarineArray = [" + aquamarineArray + "];" + "\n" + "var " + componentSelect.value + "BlueArray = [" + blueArray + "];" + "\n" + "var " + componentSelect.value + "PurpleArray = [" + purpleArray + "];" + "\n" + "var " + componentSelect.value + "VioletArray = [" + violetArray + "];" + "\n" + "var " + componentSelect.value + "PinkArray = [" + pinkArray + "];" + "\n" + "var " + componentSelect.value + "YellowGreenArray = [" + yellowGreenArray + "];" + "\n" + "var " + componentSelect.value + "YellowArray = [" + yellowArray + "];" + "\n" + "var " + componentSelect.value + "OrangeArray = [" + orangeArray + "];" + "\n" + "var " + componentSelect.value + "RedArray = [" + redArray + "];" + "\n" + "var " + componentSelect.value + "BrownArray = [" + brownArray + "];");
 }
 
 
