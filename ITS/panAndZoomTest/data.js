@@ -1,8 +1,4 @@
-
- 
-
-
- var NONEBlackArray = [];
+var NONEBlackArray = [];
 var NONEDarkGrayArray = [];
 var NONELightGrayArray = [];
 var NONEAquamarineArray = [];
