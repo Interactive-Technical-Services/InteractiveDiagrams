@@ -10,15 +10,10 @@ xhr.open("GET","schematic.svg",false);
 xhr.overrideMimeType("image/svg+xml");
 xhr.send("");
 
-
-
 var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement);
 
-// console.log(screen.width)
-// console.log(document.getElementById("mobile-svg").getAttribute('viewBox'))
-// document.getElementById("mobile-svg").setAttribute("viewBox", "0 0 500 750");
-schematic.setAttribute("width", screen.width);
-schematic.setAttribute("height", screen.height); 
+// schematic.setAttribute("width", screen.width);
+// schematic.setAttribute("height", screen.height); 
 
 //Resize Window
 var svgWindow = document.getElementById("mainWindow");
