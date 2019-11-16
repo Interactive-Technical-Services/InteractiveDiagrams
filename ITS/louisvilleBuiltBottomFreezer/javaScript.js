@@ -1,5 +1,15 @@
 document.title = "Louisville Built Bottom Freezer"
 
+//Toggle Edit Functions
+getWireColors.style.display="none";
+window.addEventListener("keydown", toggleEditor);
+function toggleEditor(){
+  if(event.keyCode == 16 && event.ctrlKey){
+    getColors();
+  }
+}
+
+
 var deviceType = "not mobile";
 if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
   deviceType="mobile"
