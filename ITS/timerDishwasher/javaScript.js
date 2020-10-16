@@ -323,3 +323,69 @@ function getColors(){
 
   
 
+console.log('loaded')
+
+ let scene, camera, renderer, cube;
+    let ADD = 0.1;
+    
+    let createCube = function() {
+        let geometry = new THREE.BoxGeometry(1, 1, 1);
+        let material = new THREE.MeshBasicMaterial({color: 0x00a1cb, transparent: true});
+        cube = new THREE.Mesh( geometry, material );
+        scene.add(cube);
+        cube.name = 'cube1'
+    };
+
+    
+    
+    // set up the environment - 
+    // initiallize scene, camera, objects and renderer
+    let init = function() {
+        // create the scene
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0xffffee);
+        
+        // create an locate the camera
+        camera = new THREE.PerspectiveCamera(75, 
+                        window.innerWidth / window.innerHeight, 
+                        1, 1000);
+        camera.position.z = 5;
+        
+        createCube();
+        
+        // create the renderer   
+        renderer = new THREE.WebGLRenderer();   
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        
+        // document.body.appendChild(renderer.domElement);
+        document.getElementById('ThreeDContent').appendChild(renderer.domElement)
+        
+    };
+   
+    
+    // main animation loop - calls every 50-60 ms.
+    let mainLoop = function() {   
+        // cube.rotation.y += ADD;
+        
+        renderer.render(scene, camera);
+        requestAnimationFrame(mainLoop);
+    };
+    
+    ///////////////////////////////////////////////
+    init();
+    mainLoop();
+var object = scene.getObjectByName( "cube1");
+var targetColor = new THREE.Color(0xffffff);
+var add = .1;
+console.log(renderer)
+
+TweenMax.to( object.rotation, 2, {y:10});
+TweenMax.to( object.material.color, 2, { r: 1, g: 0, b: 0});
+TweenMax.to(object.position, 5, {z:3});
+TweenMax.to(object.material, 1, {opacity:0, delay:6});
+TweenMax.to(ThreeDContent, 1, {autoAlpha:0, delay:1});
+// scene.visible = true;
+
+
+
+

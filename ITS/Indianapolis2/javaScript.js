@@ -93,7 +93,7 @@ function chromeMouseWheelEvent(e){
 
 
 //Firfox Zoom
-mainWindow.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
+schematic.addEventListener("DOMMouseScroll", function(e){zoomSchematic(e)}, false);
 var scaleUp = 1;
 function zoomSchematic(e){
   e.preventDefault();

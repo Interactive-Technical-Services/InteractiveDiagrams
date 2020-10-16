@@ -1,302 +1,545 @@
+var filterBoardBlackArray = [];
+var filterBoardDarkGrayArray = [];
+var filterBoardLightGrayArray = [];
+var filterBoardAquamarineArray = [];
+var filterBoardBlueArray = [];
+var filterBoardPurpleArray = [];
+var filterBoardVioletArray = [];
+var filterBoardPinkArray = [];
+var filterBoardYellowGreenArray = [];
+var filterBoardYellowArray = [];
+var filterBoardOrangeArray = [path4430];
+var filterBoardRedArray = [];
+var filterBoardBrownArray = [];
 
-    var arrays = {ovenLampArray:['<a href="images/ovenLamp.pdf" target="_blank" width="100%"><img src="images/ovenLamp.png" width="100%"/></a><center>CLICK IMAGE TO ENLARGE</center><hr><ul><li>Used as a safety to disable entire unit if oven cavity gets too hot.</li><li>Not Resettable</li><li>Normally Closed</li><li>Opens: 293 degrees</li><li>Operating Votage: 120 VAC</li></ul></div>'], ovenTCOArray:['<a href="images/ovenTCO.pdf" target="_blank" width="100%"><img src="images/ovenTCO.png" width="100%"/></a><center>CLICK IMAGE TO ENLARGE</center><hr><ul><li>Used as a safety to disable entire unit if oven cavity gets too hot.</li><li>Not Resettable</li><li>Normally Closed</li><li>Opens: 293 degrees</li><li>Operating Votage: 120 VAC</li></ul>'], magnetronTCOArray:['<a href="images/magnetronTCO.png" target="_blank" width="100%"><img src="images/magnetronTCO.png" width="100%"/></a><ul><li>Used as a safety to disable entire unit if convection fan airflow is interrupted.</li> <li>Not Resettable</li><li>Opens: 320 degrees</li><li>Operating Votage: 120 VAC</li></ul></div>'], convHeaterTCOArray:['<a href="images/convHeaterTCO.pdf" target="_blank" width="100%"><img src="images/convHeaterTCO.png" width="100%"/></a><ul><li>Used as a safety to disable entire unit if magnetron overheats.</li><li>Not Resettable</li><li>Opens: 320 degrees</li><li>Operating Votage: 120 VAC</li></ul>']};
+var fuse20AmpBlackArray = [];
+var fuse20AmpDarkGrayArray = [];
+var fuse20AmpLightGrayArray = [];
+var fuse20AmpAquamarineArray = [];
+var fuse20AmpBlueArray = [];
+var fuse20AmpPurpleArray = [];
+var fuse20AmpVioletArray = [];
+var fuse20AmpPinkArray = [];
+var fuse20AmpYellowGreenArray = [];
+var fuse20AmpYellowArray = [];
+var fuse20AmpOrangeArray = [fuse];
+var fuse20AmpRedArray = [];
+var fuse20AmpBrownArray = [];
 
-document.title = "2019 Advantium Oven"
-xhr = new XMLHttpRequest();
-xhr.open("GET","schematic.svg",false);
-xhr.overrideMimeType("image/svg+xml");
-xhr.send("");
-var schematic = document.getElementById("mainWindow").appendChild(xhr.responseXML.documentElement); 
+var ovenTCOBlackArray = [];
+var ovenTCODarkGrayArray = [];
+var ovenTCOLightGrayArray = [];
+var ovenTCOAquamarineArray = [];
+var ovenTCOBlueArray = [];
+var ovenTCOPurpleArray = [];
+var ovenTCOVioletArray = [];
+var ovenTCOPinkArray = [];
+var ovenTCOYellowGreenArray = [];
+var ovenTCOYellowArray = [];
+var ovenTCOOrangeArray = [ovenTCOD];
+var ovenTCORedArray = [];
+var ovenTCOBrownArray = [];
 
-var NONEText = 'Select part from list.';
+var heaterTCOBlackArray = [];
+var heaterTCODarkGrayArray = [];
+var heaterTCOLightGrayArray = [];
+var heaterTCOAquamarineArray = [];
+var heaterTCOBlueArray = [];
+var heaterTCOPurpleArray = [];
+var heaterTCOVioletArray = [];
+var heaterTCOPinkArray = [];
+var heaterTCOYellowGreenArray = [];
+var heaterTCOYellowArray = [];
+var heaterTCOOrangeArray = [heaterTCOD];
+var heaterTCORedArray = [];
+var heaterTCOBrownArray = [];
 
-var ovenLampText = '<a href="images/ovenLamp.pdf" target="_blank" width="100%"><img src="images/ovenLamp.png" width="100%"/></a><center>CLICK IMAGE TO ENLARGE</center><hr><ul><li>Used as a safety to disable entire unit if oven cavity gets too hot.</li><li>Not Resettable</li><li>Normally Closed</li><li>Opens: 293 degrees</li><li>Operating Votage: 120 VAC</li></ul></div>';
+var lampOvenBlackArray = [path4394,ovenTCOD,heaterTCOD,path10442,path10444,path14249,path14247,fuse,path14232,path14236];
+var lampOvenDarkGrayArray = [];
+var lampOvenLightGrayArray = [];
+var lampOvenAquamarineArray = [];
+var lampOvenBlueArray = [];
+var lampOvenPurpleArray = [];
+var lampOvenVioletArray = [];
+var lampOvenPinkArray = [];
+var lampOvenYellowGreenArray = [];
+var lampOvenYellowArray = [];
+var lampOvenOrangeArray = [path3872,path10008,ry2Blade,path10528,path10586,path10734,path10736,path11626,path17156,path14654,path14656];
+var lampOvenRedArray = [ovenLamp];
+var lampOvenBrownArray = [];
 
-var convMotorText = '<a href="images/convMotor.pdf" target="_blank" width="100%"><img src="images/convMotor.png" width="100%"/></a><center>CLICK IMAGE TO ENLARGE</center><hr><ul><li>Used as a safety to disable entire unit if oven cavity gets too hot.</li><li>Not Resettable</li><li>Normally Closed</li><li>Opens:  degrees</li><li>Operating Votage: 120 VAC</li></ul>';
+var motorFanBlackArray = [path4394,pathmagnetronTCO,ovenTCOD,PISBlade,path6738,heaterTCOD,path10442,path10444,path10478,path10480,path10482,path10730,path11778,fuse,path14232,path14236];
+var motorFanDarkGrayArray = [];
+var motorFanLightGrayArray = [];
+var motorFanAquamarineArray = [];
+var motorFanBlueArray = [];
+var motorFanPurpleArray = [];
+var motorFanVioletArray = [];
+var motorFanPinkArray = [];
+var motorFanYellowGreenArray = [];
+var motorFanYellowArray = [];
+var motorFanOrangeArray = [path3872,path5808,ry3Blade,path5914,path10008,path10734,path10736,path14656,path18201,path5828];
+var motorFanRedArray = [fanMotor];
+var motorFanBrownArray = [];
 
+var conFanMotorBlackArray = [path4394,pathmagnetronTCO,ovenTCOD,PISBlade,path6738,heaterTCOD,path10442,path10444,path10480,path10482,path10730,path11688,path11778,fuse,path14232,path14236];
+var conFanMotorDarkGrayArray = [];
+var conFanMotorLightGrayArray = [];
+var conFanMotorAquamarineArray = [];
+var conFanMotorBlueArray = [];
+var conFanMotorPurpleArray = [];
+var conFanMotorVioletArray = [];
+var conFanMotorPinkArray = [];
+var conFanMotorYellowGreenArray = [];
+var conFanMotorYellowArray = [];
+var conFanMotorOrangeArray = [path3872,ry5Blade,path6266,path6268,path10008,path10734,path10736,path11700,path11702,path14656,path18201,path18235,path18269];
+var conFanMotorRedArray = [convectionFanMotor];
+var conFanMotorBrownArray = [];
 
-var NONEBlackArray = [];
-var NONEDarkGrayArray = [];
-var NONELightGrayArray = [];
-var NONEAquamarineArray = [];
-var NONEBlueArray = [];
-var NONEPurpleArray = [];
-var NONEVioletArray = [];
-var NONEPinkArray = [];
-var NONEYellowGreenArray = [];
-var NONEYellowArray = [];
-var NONEOrangeArray = [];
-var NONERedArray = [];
-var NONEBrownArray = [];
+var motorTurntableBlackArray = [path4394,pathmagnetronTCO,ovenTCOD,PISBlade,path6738,heaterTCOD,path10442,path10444,path10478,path10480,path10482,path10730,path10748,path11694,path11778,fuse,path14232,path14236];
+var motorTurntableDarkGrayArray = [];
+var motorTurntableLightGrayArray = [];
+var motorTurntableAquamarineArray = [];
+var motorTurntableBlueArray = [];
+var motorTurntablePurpleArray = [];
+var motorTurntableVioletArray = [];
+var motorTurntablePinkArray = [];
+var motorTurntableYellowGreenArray = [];
+var motorTurntableYellowArray = [];
+var motorTurntableOrangeArray = [path3872,ry7Blade,path6458,path10008,path10734,path10736,path11710,path11712,path14656,path5422,path18201,path18235,path18269];
+var motorTurntableRedArray = [turntableMotor];
+var motorTurntableBrownArray = [];
 
-var ovenLampBlackArray = [path4394,ovenTCO,heaterTCO,path10442,path10444,path14249,path14247,fuse,path14232,path14236];
-var ovenLampDarkGrayArray = [];
-var ovenLampLightGrayArray = [];
-var ovenLampAquamarineArray = [];
-var ovenLampBlueArray = [path3872,path10008,ry2Blade,path10528,path10586,path10734,path10736,path11626,path17156,path14654,path14656];
-var ovenLampPurpleArray = [];
-var ovenLampVioletArray = [];
-var ovenLampPinkArray = [];
-var ovenLampYellowGreenArray = [];
-var ovenLampYellowArray = [];
-var ovenLampOrangeArray = [ovenLamp];
-var ovenLampRedArray = [];
-var ovenLampBrownArray = [];
+var motorDamperBlackArray = [path4394,pathmagnetronTCO,ovenTCOD,PISBlade,path6738,heaterTCOD,path10442,path10444,path10480,path10730,fuse,path14232,path14236];
+var motorDamperDarkGrayArray = [];
+var motorDamperLightGrayArray = [];
+var motorDamperAquamarineArray = [];
+var motorDamperBlueArray = [];
+var motorDamperPurpleArray = [];
+var motorDamperVioletArray = [];
+var motorDamperPinkArray = [];
+var motorDamperYellowGreenArray = [];
+var motorDamperYellowArray = [];
+var motorDamperOrangeArray = [path3872,ry4Blade,path6100,path6102,path10008,path10734,path10736,path10746,path14656,path18201,path18235];
+var motorDamperRedArray = [damperMotor];
+var motorDamperBrownArray = [];
 
-var convMotorBlackArray = [];
-var convMotorDarkGrayArray = [];
-var convMotorLightGrayArray = [];
-var convMotorAquamarineArray = [];
-var convMotorBlueArray = [path3872,ry5Blade,path6266,path6268,path10008,path10734,path10736,path11700,path11702,path14656,path18201,path18235,path18269];
-var convMotorPurpleArray = [];
-var convMotorVioletArray = [];
-var convMotorPinkArray = [];
-var convMotorYellowGreenArray = [];
-var convMotorYellowArray = [];
-var convMotorOrangeArray = [convectionFanMotor];
-var convMotorRedArray = [path4394,magnetronTCO,ovenTCO,PISBlade,path6738,heaterTCO,path10442,path10444,path10480,path10482,path10730,path11688,path11778,fuse,path14232,path14236];
-var convMotorBrownArray = [];
+var heaterUpper1BlackArray = [path4394,pathmagnetronTCO,ovenTCOD,PISBlade,path6738,path7622,path7632,heaterTCOD,path10442,path10444,path10466,path10730,path11718,path11720,fuse,path14232,path14236];
+var heaterUpper1DarkGrayArray = [];
+var heaterUpper1LightGrayArray = [];
+var heaterUpper1AquamarineArray = [];
+var heaterUpper1BlueArray = [];
+var heaterUpper1PurpleArray = [];
+var heaterUpper1VioletArray = [];
+var heaterUpper1PinkArray = [];
+var heaterUpper1YellowGreenArray = [];
+var heaterUpper1YellowArray = [];
+var heaterUpper1OrangeArray = [ry15Blade,path3476,path3478,path3872,path3900,path3902,path10008,path10488,path10490,path10734,path11754,dlbRelaySwitch,path18514,path18517,path19994];
+var heaterUpper1RedArray = [upperHeater1];
+var heaterUpper1BrownArray = [];
 
+var heaterUpper2BlackArray = [path4394,pathmagnetronTCO,ovenTCOD,PISBlade,path6738,path7622,path7632,heaterTCOD,path10442,path10444,path10466,path10730,path11726,fuse,path14232,path14236];
+var heaterUpper2DarkGrayArray = [];
+var heaterUpper2LightGrayArray = [];
+var heaterUpper2AquamarineArray = [];
+var heaterUpper2BlueArray = [];
+var heaterUpper2PurpleArray = [];
+var heaterUpper2VioletArray = [];
+var heaterUpper2PinkArray = [];
+var heaterUpper2YellowGreenArray = [];
+var heaterUpper2YellowArray = [];
+var heaterUpper2OrangeArray = [path3662,path3664,path3872,path3900,path3902,path10008,path10734,path11760,path11762,dlbRelaySwitch,ry16Blade,path19994];
+var heaterUpper2RedArray = [upperHeater2];
+var heaterUpper2BrownArray = [];
 
+var heaterLowerBlackArray = [path4394,pathmagnetronTCO,ovenTCOD,PISBlade,path6738,heaterTCOD,path10442,path10444,path10478,path10480,path10482,path10730,path10748,path11730,path11778,fuse,path14232,path14236];
+var heaterLowerDarkGrayArray = [];
+var heaterLowerLightGrayArray = [];
+var heaterLowerAquamarineArray = [];
+var heaterLowerBlueArray = [];
+var heaterLowerPurpleArray = [];
+var heaterLowerVioletArray = [];
+var heaterLowerPinkArray = [];
+var heaterLowerYellowGreenArray = [];
+var heaterLowerYellowArray = [];
+var heaterLowerOrangeArray = [path3782,path3784,path3872,path3900,path3902,path10008,path10492,path19982,path10734,path11766,dlbRelaySwitch,ry13Blade];
+var heaterLowerRedArray = [lowerHeaterCeramic];
+var heaterLowerBrownArray = [];
 
+var heaterConvectionBlackArray = [path4394,convectionHeaterTCO,path5062,pathmagnetronTCO,ovenTCOD,PISBlade,path6738,heaterTCOD,path10442,path10444,path10480,path10482,path10730,path11780,fuse,path14232,path14236];
+var heaterConvectionDarkGrayArray = [];
+var heaterConvectionLightGrayArray = [];
+var heaterConvectionAquamarineArray = [];
+var heaterConvectionBlueArray = [];
+var heaterConvectionPurpleArray = [];
+var heaterConvectionVioletArray = [];
+var heaterConvectionPinkArray = [];
+var heaterConvectionYellowGreenArray = [];
+var heaterConvectionYellowArray = [];
+var heaterConvectionOrangeArray = [path3872,path3900,path3902,path3986,path3988,path10008,path10490,path10734,path11772,path11774,dlbRelaySwitch,ry11Blade,path19994];
+var heaterConvectionRedArray = [convectionHeater];
+var heaterConvectionBrownArray = [];
 
+var switchPrimaryBlackArray = [];
+var switchPrimaryDarkGrayArray = [];
+var switchPrimaryLightGrayArray = [];
+var switchPrimaryAquamarineArray = [];
+var switchPrimaryBlueArray = [];
+var switchPrimaryPurpleArray = [];
+var switchPrimaryVioletArray = [];
+var switchPrimaryPinkArray = [];
+var switchPrimaryYellowGreenArray = [];
+var switchPrimaryYellowArray = [];
+var switchPrimaryOrangeArray = [PISBlade];
+var switchPrimaryRedArray = [];
+var switchPrimaryBrownArray = [];
 
+var switchMonitorBlackArray = [];
+var switchMonitorDarkGrayArray = [];
+var switchMonitorLightGrayArray = [];
+var switchMonitorAquamarineArray = [];
+var switchMonitorBlueArray = [];
+var switchMonitorPurpleArray = [];
+var switchMonitorVioletArray = [];
+var switchMonitorPinkArray = [];
+var switchMonitorYellowGreenArray = [];
+var switchMonitorYellowArray = [];
+var switchMonitorOrangeArray = [MISBlade];
+var switchMonitorRedArray = [];
+var switchMonitorBrownArray = [];
 
- 
-         
+var hvTransformerBlackArray = [];
+var hvTransformerDarkGrayArray = [];
+var hvTransformerLightGrayArray = [];
+var hvTransformerAquamarineArray = [];
+var hvTransformerBlueArray = [];
+var hvTransformerPurpleArray = [];
+var hvTransformerVioletArray = [];
+var hvTransformerPinkArray = [];
+var hvTransformerYellowGreenArray = [];
+var hvTransformerYellowArray = [];
+var hvTransformerOrangeArray = [highVoltageTransformer];
+var hvTransformerRedArray = [];
+var hvTransformerBrownArray = [];
 
+var magBlackArray = [];
+var magDarkGrayArray = [];
+var magLightGrayArray = [];
+var magAquamarineArray = [];
+var magBlueArray = [];
+var magPurpleArray = [];
+var magVioletArray = [];
+var magPinkArray = [];
+var magYellowGreenArray = [];
+var magYellowArray = [];
+var magOrangeArray = [path8843];
+var magRedArray = [];
+var magBrownArray = [];
 
- //      <div id="PISBladeDiv" style="display:none;" >
- //        <center><h3>PRIMARY INTERLOCK SWITCH</h3></center>
- //        <a href="images/primaryInterlockSwitch.png" target="_blank" width="100%"><img src="images/primaryInterlockSwitch.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var diodeBlackArray = [];
+var diodeDarkGrayArray = [];
+var diodeLightGrayArray = [];
+var diodeAquamarineArray = [];
+var diodeBlueArray = [];
+var diodePurpleArray = [];
+var diodeVioletArray = [];
+var diodePinkArray = [];
+var diodeYellowGreenArray = [];
+var diodeYellowArray = [];
+var diodeOrangeArray = [rectifier];
+var diodeRedArray = [];
+var diodeBrownArray = [];
 
- //      <div id="MISBladeDiv" style="display:none;" >
- //        <center><h3>MONITOR INTERLOCK SWITCH</h3></center>
- //        <a href="images/monitorSwitch.png" target="_blank" width="100%"><img src="images/monitorSwitch.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var capacitorBlackArray = [];
+var capacitorDarkGrayArray = [];
+var capacitorLightGrayArray = [];
+var capacitorAquamarineArray = [];
+var capacitorBlueArray = [];
+var capacitorPurpleArray = [];
+var capacitorVioletArray = [];
+var capacitorPinkArray = [];
+var capacitorYellowGreenArray = [];
+var capacitorYellowArray = [];
+var capacitorOrangeArray = [path8941];
+var capacitorRedArray = [];
+var capacitorBrownArray = [];
 
- //      <div id="doorSwitchBladeDiv" style="display:none;" >
- //        <center><h3>DOOR SWITCH</h3></center>
- //        <a href="images/doorSwitch.png" target="_blank" width="100%"><img src="images/doorSwitch.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var hvTransformerPrimaryBlackArray = [];
+var hvTransformerPrimaryDarkGrayArray = [];
+var hvTransformerPrimaryLightGrayArray = [];
+var hvTransformerPrimaryAquamarineArray = [];
+var hvTransformerPrimaryBlueArray = [];
+var hvTransformerPrimaryPurpleArray = [];
+var hvTransformerPrimaryVioletArray = [];
+var hvTransformerPrimaryPinkArray = [];
+var hvTransformerPrimaryYellowGreenArray = [];
+var hvTransformerPrimaryYellowArray = [];
+var hvTransformerPrimaryOrangeArray = [path4906];
+var hvTransformerPrimaryRedArray = [];
+var hvTransformerPrimaryBrownArray = [];
 
- //      <div id="humiditySensorDiv" style="display:none;" >
- //        <center><h3>HUMIDITY SENSOR</h3></center>
- //        <a href="images/humiditySensor.png" target="_blank" width="100%"><img src="images/humiditySensor.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var hvTransformerSecondary2000BlackArray = [];
+var hvTransformerSecondary2000DarkGrayArray = [];
+var hvTransformerSecondary2000LightGrayArray = [];
+var hvTransformerSecondary2000AquamarineArray = [];
+var hvTransformerSecondary2000BlueArray = [];
+var hvTransformerSecondary2000PurpleArray = [];
+var hvTransformerSecondary2000VioletArray = [];
+var hvTransformerSecondary2000PinkArray = [];
+var hvTransformerSecondary2000YellowGreenArray = [];
+var hvTransformerSecondary2000YellowArray = [];
+var hvTransformerSecondary2000OrangeArray = [path4835];
+var hvTransformerSecondary2000RedArray = [];
+var hvTransformerSecondary2000BrownArray = [];
 
- //      <div id="damperSwitchDiv" style="display:none;" >
- //        <center><h3>DAMPER SWITCH</h3></center>
- //        <a href="images/damperSwitch.png" target="_blank" width="100%"><img src="images/damperSwitch.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var hvTransformerSecondary3vBlackArray = [];
+var hvTransformerSecondary3vDarkGrayArray = [];
+var hvTransformerSecondary3vLightGrayArray = [];
+var hvTransformerSecondary3vAquamarineArray = [];
+var hvTransformerSecondary3vBlueArray = [];
+var hvTransformerSecondary3vPurpleArray = [];
+var hvTransformerSecondary3vVioletArray = [];
+var hvTransformerSecondary3vPinkArray = [];
+var hvTransformerSecondary3vYellowGreenArray = [];
+var hvTransformerSecondary3vYellowArray = [];
+var hvTransformerSecondary3vOrangeArray = [highVoltageTransformer];
+var hvTransformerSecondary3vRedArray = [];
+var hvTransformerSecondary3vBrownArray = [];
 
- //      <div id="damperMotorDiv" style="display:none;" >
- //        <center><h3>DAMPER Motor</h3></center>
- //        <a href="images/damperMotor.png" target="_blank" width="100%"><img src="images/damperMotor.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var hvTransformerBlackArray = [];
+var hvTransformerDarkGrayArray = [];
+var hvTransformerLightGrayArray = [];
+var hvTransformerAquamarineArray = [];
+var hvTransformerBlueArray = [];
+var hvTransformerPurpleArray = [];
+var hvTransformerVioletArray = [];
+var hvTransformerPinkArray = [];
+var hvTransformerYellowGreenArray = [];
+var hvTransformerYellowArray = [];
+var hvTransformerOrangeArray = [path4906,path4835,highVoltageTransformer];
+var hvTransformerRedArray = [];
+var hvTransformerBrownArray = [];
 
- //      <div id="ovenLampDiv" style="display:none;" >
- //        <center><h3>OVEN LAMP</h3></center>
- //        <a href="images/ovenLamp.png" target="_blank" width="100%"><img src="images/ovenLamp.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+ var thermistor1BlackArray = [];
+var thermistor1DarkGrayArray = [];
+var thermistor1LightGrayArray = [];
+var thermistor1AquamarineArray = [];
+var thermistor1BlueArray = [path5075,path5077];
+var thermistor1PurpleArray = [];
+var thermistor1VioletArray = [];
+var thermistor1PinkArray = [];
+var thermistor1YellowGreenArray = [];
+var thermistor1YellowArray = [];
+var thermistor1OrangeArray = [path5093,thermistor];
+var thermistor1RedArray = [path7740,path7912,path5073];
+var thermistor1BrownArray = [];
 
- //      <div id="fanMotorDiv" style="display:none;" >
- //        <center><h3>FAN MOTOR</h3></center>
- //        <a href="images/fanMotor.png" target="_blank" width="100%"><img src="images/fanMotor.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var humiditySensorsBlackArray = [path7764,path7812,path5153];
+var humiditySensorsDarkGrayArray = [];
+var humiditySensorsLightGrayArray = [];
+var humiditySensorsAquamarineArray = [];
+var humiditySensorsBlueArray = [path5149,path5151];
+var humiditySensorsPurpleArray = [];
+var humiditySensorsVioletArray = [];
+var humiditySensorsPinkArray = [];
+var humiditySensorsYellowGreenArray = [];
+var humiditySensorsYellowArray = [];
+var humiditySensorsOrangeArray = [path5123,humiditySensor];
+var humiditySensorsRedArray = [];
+var humiditySensorsBrownArray = [];
 
- //      <div id="convMotorDiv" style="display:none;" >
- //        <center><h3>CONVECTION MOTOR</h3></center>
- //        <a href="images/convectionFanMotor.pdf" target="_blank" width="100%"><img src="images/convectionFanMotor.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var switchDoorBlackArray = [];
+var switchDoorDarkGrayArray = [];
+var switchDoorLightGrayArray = [];
+var switchDoorAquamarineArray = [];
+var switchDoorBlueArray = [];
+var switchDoorPurpleArray = [];
+var switchDoorVioletArray = [];
+var switchDoorPinkArray = [];
+var switchDoorYellowGreenArray = [];
+var switchDoorYellowArray = [];
+var switchDoorOrangeArray = [doorSwitchBlade];
+var switchDoorRedArray = [];
+var switchDoorBrownArray = [];
 
- //      <div id="turntableMotorDiv" style="display:none;" >
- //        <center><h3>TURNTABLE MOTOR</h3></center>
- //        <a href="images/turntableMotor.png" target="_blank" width="100%"><img src="images/turntableMotor.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var switchDamperBlackArray = [];
+var switchDamperDarkGrayArray = [];
+var switchDamperLightGrayArray = [];
+var switchDamperAquamarineArray = [];
+var switchDamperBlueArray = [];
+var switchDamperPurpleArray = [];
+var switchDamperVioletArray = [];
+var switchDamperPinkArray = [];
+var switchDamperYellowGreenArray = [];
+var switchDamperYellowArray = [];
+var switchDamperOrangeArray = [damperSwitch];
+var switchDamperRedArray = [];
+var switchDamperBrownArray = [];
 
- //      <div id="lowerHeaterCeramicDiv" style="display:none;" >
- //        <center><h3>LOWER HEATER</h3></center>
- //        <a href="images/lowerHeater.png" target="_blank" width="100%"><img src="images/lowerHeater.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+ var switchDoorOpenBlackArray = [];
+var switchDoorOpenDarkGrayArray = [];
+var switchDoorOpenLightGrayArray = [];
+var switchDoorOpenAquamarineArray = [];
+var switchDoorOpenBlueArray = [];
+var switchDoorOpenPurpleArray = [];
+var switchDoorOpenVioletArray = [];
+var switchDoorOpenPinkArray = [];
+var switchDoorOpenYellowGreenArray = [];
+var switchDoorOpenYellowArray = [];
+var switchDoorOpenOrangeArray = [];
+var switchDoorOpenRedArray = [doorSwitchBlade,doorIn];
+var switchDoorOpenBrownArray = [];
 
- //      <div id="upperHeater1Div" style="display:none;" >
- //        <center><h3>Upper HEATER 1</h3></center>
- //        <a href="images/upperHeater1.png" target="_blank" width="100%"><img src="images/upperHeater1.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var switchDoorCloseBlackArray = [];
+var switchDoorCloseDarkGrayArray = [];
+var switchDoorCloseLightGrayArray = [];
+var switchDoorCloseAquamarineArray = [];
+var switchDoorCloseBlueArray = [];
+var switchDoorClosePurpleArray = [];
+var switchDoorCloseVioletArray = [];
+var switchDoorClosePinkArray = [];
+var switchDoorCloseYellowGreenArray = [];
+var switchDoorCloseYellowArray = [];
+var switchDoorCloseOrangeArray = [];
+var switchDoorCloseRedArray = [doorSwitchBlade,doorOut,doorIn];
+var switchDoorCloseBrownArray = [];
 
- //      <div id="upperHeater2Div" style="display:none;" >
- //        <center><h3>Upper HEATER 2</h3></center>
- //        <a href="images/upperHeater2.png" target="_blank" width="100%"><img src="images/upperHeater2.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var switchDamperOpenBlackArray = [];
+var switchDamperOpenDarkGrayArray = [];
+var switchDamperOpenLightGrayArray = [];
+var switchDamperOpenAquamarineArray = [];
+var switchDamperOpenBlueArray = [];
+var switchDamperOpenPurpleArray = [];
+var switchDamperOpenVioletArray = [];
+var switchDamperOpenPinkArray = [];
+var switchDamperOpenYellowGreenArray = [];
+var switchDamperOpenYellowArray = [];
+var switchDamperOpenOrangeArray = [];
+var switchDamperOpenRedArray = [damperSwitch,doorIn];
+var switchDamperOpenBrownArray = [];
 
- //      <div id="convectionHeaterDiv" style="display:none;" >
- //        <center><h3>CONVECTION HEATER</h3></center>
- //        <a href="images/convectionHeater.png" target="_blank" width="100%"><img src="images/convectionHeater.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+ var switchDamperCloseBlackArray = [];
+var switchDamperCloseDarkGrayArray = [];
+var switchDamperCloseLightGrayArray = [];
+var switchDamperCloseAquamarineArray = [];
+var switchDamperCloseBlueArray = [];
+var switchDamperClosePurpleArray = [];
+var switchDamperCloseVioletArray = [];
+var switchDamperClosePinkArray = [];
+var switchDamperCloseYellowGreenArray = [];
+var switchDamperCloseYellowArray = [];
+var switchDamperCloseOrangeArray = [];
+var switchDamperCloseRedArray = [path9880,damperSwitch,path9964,doorIn];
+var switchDamperCloseBrownArray = [];
 
- //      <div id="highVoltageTransformerDiv" style="display:none;" >
- //        <center><h3>HIGH VOLTAGE TRANSFORMER</h3></center>
- //        <a href="images/highVoltageTransformer.png" target="_blank" width="100%"><img src="images/highVoltageTransformer.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+ var boardRelayBlackArray = [];
+var boardRelayDarkGrayArray = [];
+var boardRelayLightGrayArray = [];
+var boardRelayAquamarineArray = [];
+var boardRelayBlueArray = [];
+var boardRelayPurpleArray = [];
+var boardRelayVioletArray = [];
+var boardRelayPinkArray = [];
+var boardRelayYellowGreenArray = [];
+var boardRelayYellowArray = [];
+var boardRelayOrangeArray = [path7662];
+var boardRelayRedArray = [];
+var boardRelayBrownArray = [];
 
- //      <div id="highVoltageCapacitorDiv" style="display:none;" >
- //        <center><h3>HIGH VOLTAGE CAPACITOR</h3></center>
- //        <a href="images/highVoltageCapacitor.png" target="_blank" width="100%"><img src="images/highVoltageCapacitor.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+ var boardSmartBlackArray = [];
+var boardSmartDarkGrayArray = [];
+var boardSmartLightGrayArray = [];
+var boardSmartAquamarineArray = [];
+var boardSmartBlueArray = [];
+var boardSmartPurpleArray = [];
+var boardSmartVioletArray = [];
+var boardSmartPinkArray = [];
+var boardSmartYellowGreenArray = [];
+var boardSmartYellowArray = [];
+var boardSmartOrangeArray = [path8084];
+var boardSmartRedArray = [];
+var boardSmartBrownArray = [];
 
- //      <div id="rectifierDiv" style="display:none;" >
- //        <center><h3>HIGH VOLTAGE DIODE (RECTIFIER)</h3></center>
- //        <a href="images/rectifier.png" target="_blank" width="100%"><img src="images/rectifier.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+var boardPowerPCBBlackArray = [];
+var boardPowerPCBDarkGrayArray = [];
+var boardPowerPCBLightGrayArray = [];
+var boardPowerPCBAquamarineArray = [];
+var boardPowerPCBBlueArray = [];
+var boardPowerPCBPurpleArray = [];
+var boardPowerPCBVioletArray = [];
+var boardPowerPCBPinkArray = [];
+var boardPowerPCBYellowGreenArray = [];
+var boardPowerPCBYellowArray = [];
+var boardPowerPCBOrangeArray = [path7686];
+var boardPowerPCBRedArray = [];
+var boardPowerPCBBrownArray = [];
 
- //      <div id="magnetronDiv" style="display:none;" >
- //        <center><h3>MAGNETRON</h3></center>
- //        <a href="images/magnetron.png" target="_blank" width="100%"><img src="images/magnetron.png" width="100%"/></a>
- //        <ul>
- //          <li>Used as a safety to disable entire unit if magnetron overheats.</li>
- //          <li>Not Resettable</li>
- //          <li>Opens: 320 degrees</li>
- //          <li>Operating Votage: 120 VAC</li>
- //        </ul> 
- //      </div>
+ var boardSBC4BlackArray = [];
+var boardSBC4DarkGrayArray = [];
+var boardSBC4LightGrayArray = [];
+var boardSBC4AquamarineArray = [];
+var boardSBC4BlueArray = [];
+var boardSBC4PurpleArray = [];
+var boardSBC4VioletArray = [];
+var boardSBC4PinkArray = [];
+var boardSBC4YellowGreenArray = [];
+var boardSBC4YellowArray = [];
+var boardSBC4OrangeArray = [path11040];
+var boardSBC4RedArray = [];
+var boardSBC4BrownArray = [];
 
- //      <div id="magnetronRelayDiv" style="display:none;" >
- //        <center><h3>RELAY BOARD BK (Black) CONNECTOR</h3></center>
- //        <a href="images/relayBoard.png" target="_blank" width="100%"><img src="images/relayBoard.png" width="100%"/></a>
- //        <br><br><br><br>
- //        <a href="images/magnetronRelay.png" target="_blank" width="100%"><img src="images/magnetronRelay.png" width="100%"/></a>
- //      </div>
+ var boardRelayDCPowerBlackArray = [path4394,pathmagnetronTCO,ovenTCOD,path6738,path8152,heaterTCOD,path10442,path10444,path10730,path10740,path10744,fuse,path14232,path14236,path9444,path5615];
+var boardRelayDCPowerDarkGrayArray = [];
+var boardRelayDCPowerLightGrayArray = [];
+var boardRelayDCPowerAquamarineArray = [];
+var boardRelayDCPowerBlueArray = [];
+var boardRelayDCPowerPurpleArray = [];
+var boardRelayDCPowerVioletArray = [];
+var boardRelayDCPowerPinkArray = [];
+var boardRelayDCPowerYellowGreenArray = [];
+var boardRelayDCPowerYellowArray = [];
+var boardRelayDCPowerOrangeArray = [path3872,path10008,path10734,path10736,path10742];
+var boardRelayDCPowerRedArray = [path8204,path9446,path5613];
+var boardRelayDCPowerBrownArray = [];
 
- //  <div id="COMP" style="display:none;">
- //    <center><h3>COMPRESSOR</h3></center>
- //    <img src="compressor.png" width="90%" style="margin:10px">
- //    <center><a href="compressor.pdf">CLICK TO ENLARGE IMAGE</a></center>
- //    <hr>
- //    Component Data
- //    <ul style="margin:0px">
- //      <li>Operating Voltage: 208/230</li>
- //      <li>Resistance: 10 ohms</li>
- //    </ul>
- //    <hr>
- //    <ul>
- //      <li>Conpressor is energized when contactor 11-21 closes.</li>
- //      <li>Contactor is energized when 24VAC is applied to Contactor C1&C2.</li>
- //      <li>HPS, LPS Defrost Board control the Contactor.</li>
- //    </ul>
- //  </div> -->
+var boardPowerPCBACSupplyBlackArray = [path4394,pathmagnetronTCO,ovenTCOD,path6738,heaterTCOD,path10442,path10444,path10730,path10740,path10744,fuse,path14232,path14236];
+var boardPowerPCBACSupplyDarkGrayArray = [];
+var boardPowerPCBACSupplyLightGrayArray = [];
+var boardPowerPCBACSupplyAquamarineArray = [];
+var boardPowerPCBACSupplyBlueArray = [];
+var boardPowerPCBACSupplyPurpleArray = [];
+var boardPowerPCBACSupplyVioletArray = [];
+var boardPowerPCBACSupplyPinkArray = [];
+var boardPowerPCBACSupplyYellowGreenArray = [];
+var boardPowerPCBACSupplyYellowArray = [];
+var boardPowerPCBACSupplyOrangeArray = [path3872,path10008,path10734,path10736,path10742];
+var boardPowerPCBACSupplyRedArray = [];
+var boardPowerPCBACSupplyBrownArray = []; 
 
+ var boardSmartDCPowerBlackArray = [path4394,pathmagnetronTCO,ovenTCOD,path6738,heaterTCOD,path10442,path10444,path10730,path10740,path10744,fuse,path14232,path14236,path9444];
+var boardSmartDCPowerDarkGrayArray = [];
+var boardSmartDCPowerLightGrayArray = [];
+var boardSmartDCPowerAquamarineArray = [];
+var boardSmartDCPowerBlueArray = [];
+var boardSmartDCPowerPurpleArray = [];
+var boardSmartDCPowerVioletArray = [];
+var boardSmartDCPowerPinkArray = [];
+var boardSmartDCPowerYellowGreenArray = [];
+var boardSmartDCPowerYellowArray = [];
+var boardSmartDCPowerOrangeArray = [path3872,path10008,path10734,path10736,path10742];
+var boardSmartDCPowerRedArray = [path9446];
+var boardSmartDCPowerBrownArray = [];
 
-    
-    
-    
-      
-      
-      
-      
-      
-     
-  
+var boardSBCDCSupplyBlackArray = [path4394,pathmagnetronTCO,ovenTCOD,path6738,heaterTCOD,path10442,path10444,path10730,path10740,path10744,path10882,fuse,path14232,path14236,path9498,path5617];
+var boardSBCDCSupplyDarkGrayArray = [];
+var boardSBCDCSupplyLightGrayArray = [];
+var boardSBCDCSupplyAquamarineArray = [];
+var boardSBCDCSupplyBlueArray = [];
+var boardSBCDCSupplyPurpleArray = [];
+var boardSBCDCSupplyVioletArray = [];
+var boardSBCDCSupplyPinkArray = [];
+var boardSBCDCSupplyYellowGreenArray = [];
+var boardSBCDCSupplyYellowArray = [];
+var boardSBCDCSupplyOrangeArray = [path3872,path10008,path10734,path10736,path10742];
+var boardSBCDCSupplyRedArray = [path10854,path9444,path5619];
+var boardSBCDCSupplyBrownArray = [];

@@ -131,6 +131,10 @@ function changeDropDown(e){
 function componentChange(){
   //Edit Here/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   TweenMax.to([path10626,path10626copy], .5, {rotation:40, transformOrigin: "0% 100%", ease: Power0.easeNone});
+  TweenMax.to([path8166,path8166copy], .5, {rotation:-15, transformOrigin: "100% 0%", ease: Power0.easeNone});
+  TweenMax.to([path10622,path10622copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+  TweenMax.to([path11098,path11098copy], .5, {rotation:20, transformOrigin: "0% 100%", ease: Power0.easeNone});
+  TweenMax.to([path67358,path67358copy], .5, {rotation:-45, transformOrigin: "100% 0%", ease: Power0.easeNone});
   
   highlightedWidth = 1.5;
   clearHighlights();
@@ -155,6 +159,7 @@ function componentChange(){
     TweenMax.to(eval("obj =" + lightGrayArray), .1, {stroke:"rgb(211, 211, 211)", strokeWidth:highlightedWidth});
     TweenMax.to(eval("obj =" + aquamarineArray), .1, {stroke:"rgb(127, 255, 212)", strokeWidth:highlightedWidth});
     TweenMax.to(eval("obj =" + blueArray), .1, {stroke:"rgb(0, 0, 255)", strokeWidth:highlightedWidth});
+    TweenMax.to(eval("obj =" + purpleArray), .1, {stroke:"rgb(128, 0, 128)", strokeWidth:highlightedWidth});
     TweenMax.to(eval("obj =" + violetArray), .1, {stroke:"rgb(238, 130, 238)", strokeWidth:highlightedWidth});
     TweenMax.to(eval("obj =" + pinkArray), .1, {stroke:"rgb(255, 192, 203)", strokeWidth:highlightedWidth});
     TweenMax.to(eval("obj =" + yellowGreenArray), .1, {stroke:"rgb(154, 205, 50)", strokeWidth:highlightedWidth});
@@ -166,9 +171,47 @@ function componentChange(){
   }catch(e){};
   switch(componentSelect.value) {
     //Edit Here/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    case "fzDoorSwitchClosed":
+    case "doorSwitchFZClosed":
     TweenMax.to([path10626,path10626copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
     break;
+
+    case "doorSwitchFZOpen":
+    TweenMax.to([path10626,path10626copy], .5, {rotation:40, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
+    case "doorSwitchLeftClosed":
+    TweenMax.to([path8166,path8166copy], .5, {rotation:15, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    break;
+
+    case "doorSwitchRightClosed":
+    TweenMax.to([path10622,path10622copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
+    case "doorSwitchRightOpen":
+    TweenMax.to([path10622,path10622copy], .5, {rotation:20, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
+    case "switchIceAndWaterCupOpen":
+    TweenMax.to([path11098,path11098copy], .5, {rotation:20, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
+    case "switchIceAndWaterCupClose":
+    TweenMax.to([path11098,path11098copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
+    case "waterValveIceAndWater":
+    TweenMax.to([path11098,path11098copy], .5, {rotation:0, transformOrigin: "0% 100%", ease: Power0.easeNone});
+    break;
+
+    case "switchPaddleNotPressed":
+    TweenMax.to([path67358,path67358copy], .5, {rotation:-45, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    break;
+
+    case "switchPaddlePressed":
+    TweenMax.to([path67358,path67358copy], .5, {rotation:40, transformOrigin: "100% 0%", ease: Power0.easeNone});
+    break;
+
+    
   }
 }
 
