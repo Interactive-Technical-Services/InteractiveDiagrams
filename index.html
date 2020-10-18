@@ -6,7 +6,6 @@
     body{
         background-color: white;
         font-family: "Arial", Times, serif;
-        color: black;
         overflow: hidden;
     }
 ul {
@@ -62,7 +61,7 @@ li.dropdown {
 .businessName{
     font-size: x-large;
     color: black;
-    top: 50%;
+    top: 0%;
 }
 
 .pic{
@@ -72,12 +71,27 @@ li.dropdown {
 iframe{
   /*z-index: -1;*/
 }
+.topBanner{
+  margin: auto;
+  padding: 10px 0;
+  background-color: #333;
+  color: #F4DEC9;
+  font-size: x-large;
+  height: 35px;
+}
 </style>
 </head>
 <body>
-   
+<div class="dropdown">
+  <button class="dropbtn">Dropdown</button>
+  <div class="dropdown-content">
+    <a href="#">Link 1</a>
+    <a href="#">Link 2</a>
+    <a href="#">Link 3</a>
+  </div>
+</div>   
 
-<span class="businessName">King James Bible Study Group</span>
+<div class="topBanner">King James Bible Study Group</div>
 <br><br>
 <ul>
   <li><a href="bible/chatForum.html">Bible</a></li>
