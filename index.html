@@ -2,11 +2,15 @@
 <html>
 <head>
 
+<meta charset="UTF-8">
+
 <style>
     body{
         background-color: white;
         font-family: "Arial", Times, serif;
         overflow: hidden;
+        margin: 0;
+        padding: 0
     }
 ul {
   list-style-type: none;
@@ -70,11 +74,13 @@ li.dropdown {
 }
 iframe{
   /*z-index: -1;*/
+  border: 0;
+  margin: 0;
+  padding: 0;
 }
 .topBanner{
-  margin: auto;
+  margin: 0;
   padding: 10px 0;
-  padding-left: -10px;
   background-color: #333;
   color: #F4DEC9;
   font-size: x-large;
@@ -111,7 +117,9 @@ option{
 </select>  
 </div>
 <br><br>
-<iframe src="bible/genesis.html" width=100% height="1000" style="position:relative; top: -20px; left: 0px;"></iframe> 
+<!-- <div id="dynamicText">Robert</div> -->
+<iframe src="bible/genesis.html" width="1280" height="1024"></iframe> 
+<!-- <iframe src="https://robertmayeight.wixsite.com/website" width="1280" height="1024" style="position:relative; top: -55px; left: 0px;"></iframe>  -->   
 <!-- <ul>
   <li><a href="bible/chatForum.html">Bible</a></li>
   <li><a href="https://robertmayeight.wixsite.com/website">Forum</a></li>
@@ -120,6 +128,6 @@ option{
   <li><a href="customProducts.html">Custom Products</a></li>
   <li><a href="mailto:feedback@interactivetechnicalsolutions.com;">Feedback</a></li>
 </ul> -->
-
+<!-- <script src="scripts/main.js"></script> -->
 </body>
 </html>
