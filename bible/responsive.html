@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+
 <style>
   body{
     overflow: hidden;
@@ -50,7 +53,7 @@
 }
 .responsive-iframe {
   position: absolute;
-  top: 0;
+  top: 100;
   left: 0;
   bottom: 0;
   right: 0;
@@ -102,6 +105,12 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #45a049;
 }
+
+#viewerDiv{
+  height: 100vh;
+  overflow: scroll;
+  padding-bottom: 20px;
+}
 </style>
 </head>
 <body style="font-family:Verdana;">
@@ -129,8 +138,12 @@ input[type=submit]:hover {
   <option value="saab" a href="bible/genesis.html">Genesis</option>
 </select> 
 </div>
-<div class="container"> 
-  <iframe class="responsive-iframe" src="Genesis1.html"></iframe>
-</div>
+
+ <!--  <iframe class="responsive-iframe" src="Genesis1.html"></iframe> -->
+ <div id = "viewerDiv">
+  viewer
+ </viewerDiv>
+
 </body>
+<script src="bibleScript.js"></script>
 </html>
