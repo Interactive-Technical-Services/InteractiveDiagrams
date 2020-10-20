@@ -5,7 +5,7 @@ xhttp.onreadystatechange = function() {
        document.getElementById("dataDiv").innerHTML = xhttp.responseText;
     }
 };
-xhttp.open("GET", "bibleExperiment.html", true);
+xhttp.open("GET", "bibleDataSet.html", true);
 xhttp.send();
 
 xhttp.onload = function () {
