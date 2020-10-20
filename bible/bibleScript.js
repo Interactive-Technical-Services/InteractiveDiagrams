@@ -9,8 +9,9 @@ xhttp.open("GET", "bibleDataSet.html", true);
 xhttp.send();
 
 xhttp.onload = function () {
-  var viewerDiv = document.getElementById('viewerDiv')
-  var dataDiv = document.getElementById('dataDiv')
+	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
+	chapVerse=document.getElementById(chapVerse);
+	viewerDiv.innerHTML = chapVerse.innerHTML;
 };
 
 
@@ -55,8 +56,7 @@ xhttp.onload = function () {
 
 
 chapterDD.onchange = function(){
-	var chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
-	chapVerse=document.getElementById(chapVerse)
-	console.log(chapVerse)
+	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
+	chapVerse=document.getElementById(chapVerse);
 	viewerDiv.innerHTML = chapVerse.innerHTML;
 };
