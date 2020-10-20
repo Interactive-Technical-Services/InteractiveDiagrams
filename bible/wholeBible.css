@@ -58,7 +58,7 @@ body article section.chapter h2 {
 
 /* Chapter Paragraph */
 body article section.chapter p.paragraph {
-  line-height: 180%;
+  line-height: 150%;
 }
 
 /* Chapter Verse Link */
@@ -82,4 +82,12 @@ body article section.chapter p.paragraph span.illuminated {
   text-decoration:none;
   text-transform:uppercase;
   vertical-align:top;
+}
+
+sup {
+    vertical-align: super;
+    font-size: smaller;
+    text-decoration: none;
+    cursor:select;
+    color: black;
 }
