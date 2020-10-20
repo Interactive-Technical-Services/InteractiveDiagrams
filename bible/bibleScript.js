@@ -48,4 +48,3 @@ chapterDD.onchange = function(){
 	changePage(bookDD.options[bookDD.selectedIndex].text + chapterDD.options[chapterDD.selectedIndex].text + ".html")
 };
 
-// 
