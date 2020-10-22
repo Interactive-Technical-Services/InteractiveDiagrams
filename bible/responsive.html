@@ -9,75 +9,14 @@
   body{
     overflow: hidden;
   }
-* {
-  box-sizing: border-box;
-}
-.menu {
-  float: left;
-  width: 20%;
-}
-.menuitem {
-  padding: 8px;
-  margin-top: 7px;
-  border-bottom: 1px solid #f1f1f1;
-}
+
 .main {
   float: left;
   width: 60%;
   padding: 0 20px;
   overflow: hidden;
 }
-.right {
-  background-color: lightblue;
-  float: left;
-  width: 20%;
-  padding: 10px 15px;
-  margin-top: 7px;
-}
 
-@media only screen and (max-width:800px) {
-  /* For tablets: */
-  .main {
-    width: 80%;
-    padding: 0;
-  }
-  .right {
-    width: 100%;
-  }
-}
-@media only screen and (max-width:500px) {
-  /* For mobile phones: */
-  .menu, .main, .right {
-    width: 100%;
-  }
-}
-.responsive-iframe {
-  position: absolute;
-  top: 100;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-}
-.container {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-}
-.container2{
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
-}
-
-/*Forms Styling*/
-
-* {
-  box-sizing: border-box;
-}
 
 input[type=text], select, textarea {
   width: 30%;
@@ -87,31 +26,10 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-label {
-  padding: 12px 12px 12px 0;
-  display: inline-block;
-}
-
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  float: right;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-
 #viewerDiv{
   height: 85vh;
   overflow: scroll;
   padding-top: 20px;
-  padding-bottom: 200px;
-  margin-bottom: 100px;
 }
 
 #charse{
@@ -135,16 +53,23 @@ input[type=submit]:hover {
 <select id="bookDD">
   <option value=50>Genesis</option>
   <option value="40">Exodus</option>
-  <option value="mercedes">Leviticus</option>
-  <option value="audi">Numbers</option>
-  <option value="audi">Deuteronomy</option>
+  <option value="27">Leviticus</option>
+  <option value="36">Numbers</option>
+  <option value="34">Deuteronomy</option>
+  <option value="24">Joshua</option>
+  <option value="21">Judges</option>
+  <option value="4">Ruth</option>
+  <option value="31">1 Samuel</option>
+  <option value="24">2 Samuel</option>
+  <option value="22">1 Kings</option>
+  <option value="25">2 Kings</option>
 </select>
 
-<select id="chapterDD" style="width: 5em">
-  <option value="volvo">1</option>
-  <option value="saab">2</option>
-  <option value="mercedes">3</option>
-  <option value="audi">4</option>
+<select id="chapterDD" style="width: 7em">
+  <option>1</option>
+  <option>2</option>
+  <option>3</option>
+  <option>4</option>
 </select>
 
 <button onclick="goBack()">Back</button>
