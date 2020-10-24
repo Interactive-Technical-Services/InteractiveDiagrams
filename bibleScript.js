@@ -7,13 +7,14 @@ xhttp.onreadystatechange = function() {
 xhttp.open("GET", "bibleDataSet.html", true);
 xhttp.send();
 
+var verses = [];
 xhttp.onload = function () {
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
 	chapVerse=document.getElementById(chapVerse);
 	bibleDiv.innerHTML = chapVerse.innerHTML;
 	populateChapterDD();
-	document.getElementById("searchButton").onclick = myFunction;
-	document.getElementById("robert").onclick = mySearch;
+	document.getElementById("searchButton").onclick = showSearchPage;
+	// document.getElementById("robert").onclick = mySearch();
 	chapters = dataDiv.getElementsByTagName("div");
 	for(i=0; i<chapters.length; i++){
 		paragraphs = chapters[i].getElementsByTagName("p");
@@ -22,6 +23,8 @@ xhttp.onload = function () {
 			paragraphs[p].id = spans[p].innerHTML;
 		}
 	}
+	verses = dataDiv.getElementsByTagName("p")
+	console.log(verses.length)
 };
 
 bookDD.onchange = function(){
@@ -33,7 +36,6 @@ bookDD.onchange = function(){
 
 chapterDD.onchange = function(){
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
-	console.log(chapVerse)
 	chapVerse=document.getElementById(chapVerse);
 	bibleDiv.innerHTML = chapVerse.innerHTML;
 };
@@ -48,12 +50,21 @@ function populateChapterDD(){
     }          
 }
 
- function myFunction(){
+ function showSearchPage(){
+ 	console.log("fired")
 	if(searchDiv.style.display == "block"){
 		searchDiv.style.display = "none"
+		homePage.style.display = "block";
+
 	}else{
 		searchDiv.style.display = "block"
+		homePage.style.display = "none"
 	}
+}
+
+function backToHome(){
+	searchDiv.style.display="none";
+	homePage.style.display="block";
 }
 
 // var str = "Visit W3Schools!"; 
@@ -73,22 +84,59 @@ function populateChapterDD(){
 
 
 function mySearch(){
-	occurences = 0;
+	var myStack = ""
+	
 	results.innerHTML = "";
 	var searchValue = document.getElementById("mySearch").value;
-	paragraphs = document.getElementsByTagName('p');
-	console.log(paragraphs)
-	for(i=0; i<paragraphs.length; i++){
+	var searchRegex = new RegExp(searchValue, "gi");
+	occurences = 0;
+	searchValueLength = searchValue.split('');
+	for(i=0; i<verses.length; i++){
+		var verseHTML = verses[i].innerHTML;
+		if(verseHTML.match(searchRegex) != null){
+			var str = document.getElementById(verses[i].id).outerHTML
+  			var res = str.replace(searchRegex, "<strong>" + searchValue + "</strong>");
+  			myStack += res;
+  			occurences+= str.match(searchRegex).length;
+  		}
+	}
+	results.innerHTML = occurences + "<br><br>" + myStack;
+	if(results.innerHTML === ""){
+  		results.innerHTML += searchValue + " not found."
+  	}
+  	
+}
 
+function ddSearch(searchValue){
+	console.log(searchValue)
+	occurences = 0;
+	results.innerHTML = "";
+	// var searchValue = document.getElementById("mySearch").value;
+	searchValueLength = searchValue.split('');
+	paragraphs = document.getElementsByTagName('p');
+	for(i=0; i<paragraphs.length; i++){
 		var els = paragraphs[i].innerHTML;
+		console.log(els.indexOf(searchValue))
 		if(els.indexOf(searchValue) > -1){
 			occurences++;
-			
-			try{
-  			results.innerHTML += document.getElementById(paragraphs[i].id).innerHTML + "<br><br>";
-  		}catch(e){console.log("Error number: " + i)}
-		}
+			var str = document.getElementById(paragraphs[i].id).innerHTML
+  			var res = str.replace(searchValue, "<strong>" + searchValue + "</strong>");
+
+  			results.innerHTML += res + "<br><br>";
+
+  			// paragraphs[i].innerHTML = res;
+  		}
 	}	
 }
 
-41
+function setUpLinks(){
+
+}
+
+// var charse = document.getElementsByClassName("charse")
+// console.log(charse)
+// for(i=0; i<charse.length; i++){
+// 	charse[i].innerHTML = "<a target = '_blank' href='../Books/Robert.html'>"  + charse[i].innerHTML + "</a>"
+// }
+
+
