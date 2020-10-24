@@ -10,16 +10,24 @@ xhttp.send();
 xhttp.onload = function () {
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
 	chapVerse=document.getElementById(chapVerse);
-	viewerDiv.innerHTML = chapVerse.innerHTML;
+	bibleDiv.innerHTML = chapVerse.innerHTML;
 	populateChapterDD();
 	document.getElementById("searchButton").onclick = myFunction;
 	document.getElementById("robert").onclick = mySearch;
+	chapters = dataDiv.getElementsByTagName("div");
+	for(i=0; i<chapters.length; i++){
+		paragraphs = chapters[i].getElementsByTagName("p");
+		spans = chapters[i].getElementsByTagName("span");
+		for(p=0; p<paragraphs.length; p++){
+			paragraphs[p].id = spans[p].innerHTML;
+		}
+	}
 };
 
 bookDD.onchange = function(){
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
 	chapVerse=document.getElementById(chapVerse);
-	viewerDiv.innerHTML = chapVerse.innerHTML;
+	bibleDiv.innerHTML = chapVerse.innerHTML;
 	populateChapterDD();
 };
 
@@ -27,7 +35,7 @@ chapterDD.onchange = function(){
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
 	console.log(chapVerse)
 	chapVerse=document.getElementById(chapVerse);
-	viewerDiv.innerHTML = chapVerse.innerHTML;
+	bibleDiv.innerHTML = chapVerse.innerHTML;
 };
 
 function populateChapterDD(){
@@ -54,16 +62,33 @@ function populateChapterDD(){
 
 
 
+// function mySearch(){
+// 	var searchValue = document.getElementById("mySearch").value
+// 	var els = document.getElementById("searchDiv").innerHTML;
+// 	console.log(els.indexOf(searchValue))
+// 	if(els.indexOf(searchValue) > -1){
+//   		console.log("I'm tired of this.")
+// 	}
+// }
+
+
 function mySearch(){
-	var searchValue = document.getElementById("mySearch").value
-	var els = document.getElementById("searchDiv").innerHTML;
-	console.log(els.indexOf(searchValue))
-	if(els.indexOf(searchValue) > -1){
-  		console.log("I'm tired of this.")
-	}
+	occurences = 0;
+	results.innerHTML = "";
+	var searchValue = document.getElementById("mySearch").value;
+	paragraphs = document.getElementsByTagName('p');
+	console.log(paragraphs)
+	for(i=0; i<paragraphs.length; i++){
+
+		var els = paragraphs[i].innerHTML;
+		if(els.indexOf(searchValue) > -1){
+			occurences++;
+			
+			try{
+  			results.innerHTML += document.getElementById(paragraphs[i].id).innerHTML + "<br><br>";
+  		}catch(e){console.log("Error number: " + i)}
+		}
+	}	
 }
 
-
-
-
-
+41
