@@ -13,6 +13,7 @@ xhttp.onload = function () {
 	viewerDiv.innerHTML = chapVerse.innerHTML;
 	populateChapterDD();
 	document.getElementById("searchButton").onclick = myFunction;
+	document.getElementById("robert").onclick = mySearch;
 };
 
 bookDD.onchange = function(){
@@ -45,9 +46,23 @@ function populateChapterDD(){
 	}else{
 		searchDiv.style.display = "block"
 	}
-	
-	console.log(document.getElementById("searchDiv").style.display)
 }
+
+// var str = "Visit W3Schools!"; 
+// var n = str.search("W3Schools");
+
+
+
+
+function mySearch(){
+	var searchValue = document.getElementById("mySearch").value
+	var els = document.getElementById("searchDiv").innerHTML;
+	console.log(els.indexOf(searchValue))
+	if(els.indexOf(searchValue) > -1){
+  		console.log("I'm tired of this.")
+	}
+}
+
 
 
 
