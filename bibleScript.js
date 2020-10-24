@@ -40,14 +40,13 @@ function populateChapterDD(){
 }
 
  function myFunction(){
-	console.log('hello')
-	if(viewerDiv.style.display == "inline"){
-		viewerDiv.style.display = "none"
+	if(searchDiv.style.display == "block"){
+		searchDiv.style.display = "none"
 	}else{
-		viewerDiv.style.display = "inline"
+		searchDiv.style.display = "block"
 	}
 	
-	console.log(document.getElementById("viewerDiv").style.display)
+	console.log(document.getElementById("searchDiv").style.display)
 }
 
 

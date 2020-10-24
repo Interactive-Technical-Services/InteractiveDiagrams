@@ -37,6 +37,7 @@ input[type=text], select, textarea {
   height: 85vh;
   overflow: scroll;
   padding-top: 20px;
+  z-index: -1
 }
 
 #dataDiv{
@@ -48,7 +49,18 @@ input[type=text], select, textarea {
   overflow: scroll;
   padding-top: 20px;
   z-index: 2;
+  display: none;
 }
+
+#searchViewArea{
+  height: 85vh;
+  padding-top: 20px;
+  border: solid;
+  border-width: thin;
+}
+
+
+
 </style>
 
 </head>
@@ -137,11 +149,23 @@ input[type=text], select, textarea {
   <button id="searchButton" type="button">SEARCH</button>  
 <a href="https://robertmayeight.wixsite.com/website" target="blank">FORUM</a> 
 </div>
+<div id="searchDiv">
+  <div id="searchHeader">
+    <form>
+      <div>
+        <input type="search" id="mySearch" name="q">
+        <button>Search</button>
+      </div>
+    </form>
+  </div>
+   <br>
+
+    Search returns here.
+
+</div>
  <div id = "viewerDiv"></div>
  <div id="dataDiv"></div>
-  <div id="searchDiv">
-    some search text
-  </div>
+  
 
 </body>
 <script src="bibleScript.js"></script>
