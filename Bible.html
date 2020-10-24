@@ -26,21 +26,29 @@ input[type=text], select, textarea {
   resize: vertical;
 }
 
-#viewerDiv{
-  height: 85vh;
-  overflow: scroll;
-  padding-top: 20px;
-}
-
 #charse{
   font-size: normal;
   color:  #943126;
   font-weight: bold;
 }
+
+#viewerDiv{
+  /*display: none;*/
+  height: 85vh;
+  overflow: scroll;
+  padding-top: 20px;
+}
+
 #dataDiv{
   display: none;
   }
 
+#searchDiv{
+  height: 85vh;
+  overflow: scroll;
+  padding-top: 20px;
+  z-index: 2;
+  }
 </style>
 
 </head>
@@ -126,10 +134,14 @@ input[type=text], select, textarea {
 
 <button onclick="goBack()">Next</button>
  &nbsp&nbsp&nbsp 
+  <button type="button">Click Me!</button> 
 <a href="https://robertmayeight.wixsite.com/website" target="blank">FORUM</a> 
 </div>
  <div id = "viewerDiv"></div>
  <div id="dataDiv"></div>
+  <div id="searchDiv">
+    some search text
+  </div>
 
 </body>
 <script src="bibleScript.js"></script>

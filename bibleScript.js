@@ -12,6 +12,7 @@ xhttp.onload = function () {
 	chapVerse=document.getElementById(chapVerse);
 	viewerDiv.innerHTML = chapVerse.innerHTML;
 	populateChapterDD();
+	document.getElementById("searchButton").onclick = myFunction;
 };
 
 bookDD.onchange = function(){
@@ -37,3 +38,18 @@ function populateChapterDD(){
         chapterDD.options.add(option)
     }          
 }
+
+ function myFunction(){
+	console.log('hello')
+	if(viewerDiv.style.display == "inline"){
+		viewerDiv.style.display = "none"
+	}else{
+		viewerDiv.style.display = "inline"
+	}
+	
+	console.log(document.getElementById("viewerDiv").style.display)
+}
+
+
+
+
