@@ -24,7 +24,7 @@ xhttp.onload = function () {
 		}
 	}
 	verses = dataDiv.getElementsByTagName("p")
-	console.log(verses.length)
+	setUpLinks();
 };
 
 bookDD.onchange = function(){
@@ -52,19 +52,19 @@ function populateChapterDD(){
 
  function showSearchPage(){
  	console.log("fired")
-	if(searchDiv.style.display == "block"){
+	if(searchDiv.style.display == "flex"){
 		searchDiv.style.display = "none"
-		homePage.style.display = "block";
+		homePage.style.display = "flex";
 
 	}else{
-		searchDiv.style.display = "block"
+		searchDiv.style.display = "flex"
 		homePage.style.display = "none"
 	}
 }
 
 function backToHome(){
 	searchDiv.style.display="none";
-	homePage.style.display="block";
+	homePage.style.display="flex";
 }
 
 // var str = "Visit W3Schools!"; 
@@ -84,59 +84,64 @@ function backToHome(){
 
 
 function mySearch(){
-	var myStack = ""
-	
+	var myStack = "";
 	results.innerHTML = "";
 	var searchValue = document.getElementById("mySearch").value;
-	var searchRegex = new RegExp(searchValue, "gi");
+	var searchRegex = new RegExp(searchValue, "g");
 	occurences = 0;
 	searchValueLength = searchValue.split('');
 	for(i=0; i<verses.length; i++){
 		var verseHTML = verses[i].innerHTML;
 		if(verseHTML.match(searchRegex) != null){
 			var str = document.getElementById(verses[i].id).outerHTML
-  			var res = str.replace(searchRegex, "<strong>" + searchValue + "</strong>");
+  			var stringMatch = str.match(searchRegex);
+  			var res = str.replace(searchRegex, "<strong>" + str.match(searchRegex)[0] + "</strong>");
   			myStack += res;
   			occurences+= str.match(searchRegex).length;
   		}
 	}
-	results.innerHTML = occurences + "<br><br>" + myStack;
+	results.innerHTML = '"' + searchValue + '"' + " found " + occurences + " times." + "<br><br>" + myStack;
 	if(results.innerHTML === ""){
   		results.innerHTML += searchValue + " not found."
   	}
-  	
 }
 
-function ddSearch(searchValue){
-	console.log(searchValue)
-	occurences = 0;
-	results.innerHTML = "";
-	// var searchValue = document.getElementById("mySearch").value;
-	searchValueLength = searchValue.split('');
-	paragraphs = document.getElementsByTagName('p');
-	for(i=0; i<paragraphs.length; i++){
-		var els = paragraphs[i].innerHTML;
-		console.log(els.indexOf(searchValue))
-		if(els.indexOf(searchValue) > -1){
-			occurences++;
-			var str = document.getElementById(paragraphs[i].id).innerHTML
-  			var res = str.replace(searchValue, "<strong>" + searchValue + "</strong>");
+// function ddSearch(searchValue){
+// 	console.log(searchValue)
+// 	occurences = 0;
+// 	results.innerHTML = "";
+// 	// var searchValue = document.getElementById("mySearch").value;
+// 	searchValueLength = searchValue.split('');
+// 	paragraphs = document.getElementsByTagName('p');
+// 	for(i=0; i<paragraphs.length; i++){
+// 		var els = paragraphs[i].innerHTML;
+// 		console.log(els.indexOf(searchValue))
+// 		if(els.indexOf(searchValue) > -1){
+// 			occurences++;
+// 			var str = document.getElementById(paragraphs[i].id).innerHTML
+//   			var res = str.replace(searchValue, "<strong>" + searchValue + "</strong>");
 
-  			results.innerHTML += res + "<br><br>";
+//   			results.innerHTML += res + "<br><br>";
 
-  			// paragraphs[i].innerHTML = res;
-  		}
-	}	
-}
+//   			// paragraphs[i].innerHTML = res;
+//   		}
+// 	}	
+// }
 
 function setUpLinks(){
-
+	results.innerHTML = "";
+	var searchValue = document.getElementById("mySearch").value;
+	var searchRegex = new RegExp(searchValue, "g");
+	searchValueLength = searchValue.split('');
+	for(i=0; i<verses.length; i++){
+		var verseHTML = verses[i].innerHTML;
+		if(verseHTML.match(searchRegex) != null){
+			var str = document.getElementById(verses[i].id).outerHTML
+  			// var res = str.replace(searchRegex, "<a target="_blank" href="Phrases/thirdDay.html">" + searchValue + "</a>");
+  		}
+	}
 }
 
-// var charse = document.getElementsByClassName("charse")
-// console.log(charse)
-// for(i=0; i<charse.length; i++){
-// 	charse[i].innerHTML = "<a target = '_blank' href='../Books/Robert.html'>"  + charse[i].innerHTML + "</a>"
-// }
+
 
 

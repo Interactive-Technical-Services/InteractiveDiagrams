@@ -59,13 +59,14 @@ input[type=text], select, textarea {
 
 .content {
   padding: 1rem;
-  overflow: scroll;
-  height: 100%;
+  overflow: auto;
 }
 
 .container {
   max-height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 </style>
@@ -171,8 +172,8 @@ input[type=text], select, textarea {
       &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
       Popular Searches&nbsp&nbsp
       <select id="searchIdeasDD" style="width: 7em" onchange="ddSearch(this.value)">
-        <option>Jesus Christ</option>
-        <option>third day</option>
+        <option>Third Day</option>
+        <option>Day of the Lord</option>
       </select>
       <br><br>
   </div>
