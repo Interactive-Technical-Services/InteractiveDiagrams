@@ -71,9 +71,11 @@ function resolutionChanged(){
 	var w = window.outerWidth;
  	var h = window.outerHeight;
  	if(w < 800){
-
+ 		searchPageH3.classList.add("centered");
+ 	}else{
+ 		searchPageH3.classList.remove("centered");
  	}
-	console.log()
+	console.log(w)
 }
 
 document.getElementById("mySearch").addEventListener("keydown", function(e) {

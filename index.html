@@ -15,13 +15,6 @@
     margin: 0;
   }
 
-/*input[type=text], select, textarea {
-  width: 30%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  resize: vertical;
-}*/
 select{
   margin: .5em;
 }
@@ -30,9 +23,9 @@ button{
   margin: .5em;
 }
 
-.popularSearches{
+#popularSearches{
   display: block;
-margin: 0 auto;
+  margin: 0 auto;
 }
 
 #charse{
@@ -48,15 +41,13 @@ margin: 0 auto;
 
 #dataDiv{
   display: none;
-  }
+}
 
 #searchDiv{
-  /* z-index: 2; */
   display: none;
 }
 
 #searchViewArea{
-  /* margin-top: 15vh; */
   overflow: scroll;
   padding-top: 20px;
   border: solid;
@@ -80,12 +71,11 @@ margin: 0 auto;
   display: flex;
   flex-direction: column;
 }
-h3{
+
+.centered{
   padding-left: .5em;
-  /*text-align:center;*/
+  text-align:center;
 }
-
-
 
 </style>
 
@@ -94,7 +84,7 @@ h3{
 
 <div id="homePage" class="container">
   <div id="mainMenu" class="menu" >
-    <h3>King James Bible Study Group</h3>
+    <h3 id="homePageH3" class="centered">King James Bible Study Group</h3>
     <select id="bookDD">
       <option value=50>Genesis</option>
       <option value="40">Exodus</option>
@@ -177,20 +167,21 @@ h3{
 
 <div id="searchDiv" class="container">
   <div id="searchHeader" class="menu">
-    <h3>&nbspKing James Bible Study Group</h3>
-      <span>
+    <h3 id="searchPageH3" class="centered">King James Bible Study Group</h3>
+      
+
+      <span class="popularSearches">
+        <select id="searchIdeasDD" style="width: 7em" onchange="ddSearch(this.value)" placeholder="Enter Search">
+          <option>Third Day</option>
+          <option>Day of the Lord</option>
+        </select>
+        &nbsp&nbsp OR &nbsp&nbsp
         <input type="search" id="mySearch" name="q" placeholder="Enter Search">
-        <button id="robert" onclick="mySearch()">SEARCH</button>
+      </span>
+
+      <span>
         <button id="backToHome" onclick="backToHome()"> &lt; Bible</button>
       </span>
-      <div class="popularSearches">
-      Popular Searches&nbsp&nbsp
-      <select id="searchIdeasDD" style="width: 7em" onchange="ddSearch(this.value)">
-        <option>Third Day</option>
-        <option>Day of the Lord</option>
-      </select>
-    </div>
-      <br><br>
   </div>
   <div id="results" class="content">
       Search returns here.
