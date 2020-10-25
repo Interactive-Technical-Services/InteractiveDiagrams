@@ -67,16 +67,19 @@ function backToHome(){
 	homePage.style.display="flex";
 }
 
-function resolutionChanged(){
-	var w = window.outerWidth;
- 	var h = window.outerHeight;
- 	if(w < 800){
- 		searchPageH3.classList.add("centered");
- 	}else{
- 		searchPageH3.classList.remove("centered");
- 	}
-	console.log(w)
-}
+// function resolutionChanged(){
+// 	var w = window.outerWidth;
+//  	var h = window.outerHeight;
+//  	if(w < 600){
+//  		searchPageH3.classList.add("centered");
+//  		homePageH3.classList.add("centered");
+//  		console.log('less than')
+//  	}else{
+//  		searchPageH3.classList.remove("centered");
+//  		homePageH3.classList.remove("centered");
+//  	}
+// 	console.log(w)
+// }
 
 document.getElementById("mySearch").addEventListener("keydown", function(e) {
     if (!e) { var e = window.event; }

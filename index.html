@@ -80,120 +80,108 @@ button{
 </style>
 
 </head>
-<body style="font-family:Verdana;" onresize="resolutionChanged()">
-
-<div id="homePage" class="container">
-  <div id="mainMenu" class="menu" >
-    <h3 id="homePageH3" class="centered">King James Bible Study Group</h3>
-    <select id="bookDD">
-      <option value=50>Genesis</option>
-      <option value="40">Exodus</option>
-      <option value="27">Leviticus</option>
-      <option value="36">Numbers</option>
-      <option value="34">Deuteronomy</option>
-      <option value="24">Joshua</option>
-      <option value="21">Judges</option>
-      <option value="4">Ruth</option>
-      <option value="31">1 Samuel</option>
-      <option value="24">2 Samuel</option>
-      <option value="22">1 Kings</option>
-      <option value="25">2 Kings</option>
-      <option value="29">1 Chronicles</option>
-      <option value="36">2 Chronicles</option>
-      <option value="10">Ezra</option>
-      <option value="13">Nehemiah</option>
-      <option value="10">Esther</option>
-      <option value="42">Job</option>
-      <option value="150">Psalms</option>
-      <option value="31">Proverbs</option>
-      <option value="12">Ecclesiastes</option>
-      <option value="8">Song of Solomon</option>
-      <option value="66">Isaiah</option>
-      <option value="52">Jeremiah</option>
-      <option value="5">Lamentations</option>
-      <option value="48">Ezekiel</option>
-      <option value="12">Daniel</option>
-      <option value="14">Hosea</option>
-      <option value="3">Joel</option>
-      <option value="9">Amos</option>
-      <option value="1">Obadiah</option>
-      <option value="4">Jonah</option>
-      <option value="7">Micah</option>
-      <option value="3">Nahum</option>
-      <option value="3">Habakkuk</option>
-      <option value="3">Zephaniah</option>
-      <option value="2">Haggai</option>
-      <option value="14">Zechariah</option>
-      <option value="4">Malachi</option>
-      <option value="28">Matthew</option>
-      <option value="16">Mark</option>
-      <option value="24">Luke</option>
-      <option value="21">John</option>
-      <option value="28">Acts</option>
-      <option value="16">Romans</option>
-      <option value="16">1 Corinthians</option>
-      <option value="13">2 Corinthians</option>
-      <option value="6">Galatians</option>
-      <option value="6">Ephesians</option>
-      <option value="4">Philippians</option>
-      <option value="4">Colossians</option>
-      <option value="5">1 Thessalonians</option>
-      <option value="3">2 Thessalonians</option>
-      <option value="6">1 Timothy</option>
-      <option value="4">2 Timothy</option>
-      <option value="3">Titus</option>
-      <option value="1">Philemon</option>
-      <option value="13">Hebrews</option>
-      <option value="5">James</option>
-      <option value="5">1 Peter</option>
-      <option value="3">2 Peter</option>
-      <option value="5">1 John</option>
-      <option value="1">2 John</option>
-      <option value="1">3 John</option>
-      <option value="1">Jude</option>
-      <option value="22">Revelation</option>
-    </select>
-
-    <select id="chapterDD" style="width: 7em">
-      <option>1</option>
-    </select>
-
-    <button id="searchButton" type="button">SEARCH</button>  
-    <a href="https://robertmayeight.wixsite.com/website" target="blank">FORUM</a>
+<body style="font-family:Verdana;">
+  <div id="homePage" class="container">
+    <div id="mainMenu" class="menu" >
+      <h3 id="homePageH3" class="centered">&nbsp&nbspKing James Bible Study Group</h3>
+      <div id="nav" class="centered">
+        <select id="bookDD">
+          <option value=50>Genesis</option>
+          <option value="40">Exodus</option>
+          <option value="27">Leviticus</option>
+          <option value="36">Numbers</option>
+          <option value="34">Deuteronomy</option>
+          <option value="24">Joshua</option>
+          <option value="21">Judges</option>
+          <option value="4">Ruth</option>
+          <option value="31">1 Samuel</option>
+          <option value="24">2 Samuel</option>
+          <option value="22">1 Kings</option>
+          <option value="25">2 Kings</option>
+          <option value="29">1 Chronicles</option>
+          <option value="36">2 Chronicles</option>
+          <option value="10">Ezra</option>
+          <option value="13">Nehemiah</option>
+          <option value="10">Esther</option>
+          <option value="42">Job</option>
+          <option value="150">Psalms</option>
+          <option value="31">Proverbs</option>
+          <option value="12">Ecclesiastes</option>
+          <option value="8">Song of Solomon</option>
+          <option value="66">Isaiah</option>
+          <option value="52">Jeremiah</option>
+          <option value="5">Lamentations</option>
+          <option value="48">Ezekiel</option>
+          <option value="12">Daniel</option>
+          <option value="14">Hosea</option>
+          <option value="3">Joel</option>
+          <option value="9">Amos</option>
+          <option value="1">Obadiah</option>
+          <option value="4">Jonah</option>
+          <option value="7">Micah</option>
+          <option value="3">Nahum</option>
+          <option value="3">Habakkuk</option>
+          <option value="3">Zephaniah</option>
+          <option value="2">Haggai</option>
+          <option value="14">Zechariah</option>
+          <option value="4">Malachi</option>
+          <option value="28">Matthew</option>
+          <option value="16">Mark</option>
+          <option value="24">Luke</option>
+          <option value="21">John</option>
+          <option value="28">Acts</option>
+          <option value="16">Romans</option>
+          <option value="16">1 Corinthians</option>
+          <option value="13">2 Corinthians</option>
+          <option value="6">Galatians</option>
+          <option value="6">Ephesians</option>
+          <option value="4">Philippians</option>
+          <option value="4">Colossians</option>
+          <option value="5">1 Thessalonians</option>
+          <option value="3">2 Thessalonians</option>
+          <option value="6">1 Timothy</option>
+          <option value="4">2 Timothy</option>
+          <option value="3">Titus</option>
+          <option value="1">Philemon</option>
+          <option value="13">Hebrews</option>
+          <option value="5">James</option>
+          <option value="5">1 Peter</option>
+          <option value="3">2 Peter</option>
+          <option value="5">1 John</option>
+          <option value="1">2 John</option>
+          <option value="1">3 John</option>
+          <option value="1">Jude</option>
+          <option value="22">Revelation</option>
+        </select>
+        <select id="chapterDD">
+          <option>1</option>
+        </select>
+        <button id="forumButton" type="button" onclick='a href="https://robertmayeight.wixsite.com/website" target="blank"'>FORUM</button>
+        <button id="searchButton" type="button">Go To Search</button>
+      </div>
+    </div>
+    <div id = "bibleDiv" class="content"></div>
   </div>
-  <div id = "bibleDiv" class="content"></div>
-</div>
-
-
-<div id="searchDiv" class="container">
-  <div id="searchHeader" class="menu">
-    <h3 id="searchPageH3" class="centered">King James Bible Study Group</h3>
-      
-
-      <span class="popularSearches">
-        <select id="searchIdeasDD" style="width: 7em" onchange="ddSearch(this.value)" placeholder="Enter Search">
+  
+  <div id="searchDiv" class="container">
+    <div id="searchHeader" class="menu">
+      <h3 id="searchPageH3" class="centered">&nbsp&nbspKing James Bible Study Group</h3>
+      <div class="centered">
+        <select id="searchIdeasDD" style="width: 10em" onchange="ddSearch(this.value)" placeholder="Enter Search">
           <option>Third Day</option>
           <option>Day of the Lord</option>
         </select>
         &nbsp&nbsp OR &nbsp&nbsp
-        <input type="search" id="mySearch" name="q" placeholder="Enter Search">
-      </span>
-
-      <span>
-        <button id="backToHome" onclick="backToHome()"> &lt; Bible</button>
-      </span>
-  </div>
+        <input type="search" id="mySearch" name="q" style="width: 10em" placeholder="Enter Search">
+      </div>
+      <div class="centered">
+        <button id="backToHome" onclick="backToHome()"> Back To Bible</button>
+      </div>
+    </div>
   <div id="results" class="content">
-      Search returns here.
+    Search returns here.
   </div> 
-</div>
-
-</div>
-
- 
- <div id="dataDiv"></div>
-  
-
+  <div id="dataDiv"></div>
 </body>
 <script src="bibleScript.js"></script>
 </html>
