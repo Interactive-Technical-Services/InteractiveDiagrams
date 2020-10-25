@@ -71,10 +71,18 @@ function resolutionChanged(){
 	var w = window.outerWidth;
  	var h = window.outerHeight;
  	if(w < 800){
- 		
+
  	}
 	console.log()
 }
+
+document.getElementById("mySearch").addEventListener("keydown", function(e) {
+    if (!e) { var e = window.event; }
+    // e.preventDefault(); // sometimes useful
+
+    // Enter is pressed
+    if (e.keyCode == 13) { mySearch(); }
+}, false);
 
 
 
