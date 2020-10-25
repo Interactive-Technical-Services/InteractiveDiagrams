@@ -15,12 +15,24 @@
     margin: 0;
   }
 
-input[type=text], select, textarea {
+/*input[type=text], select, textarea {
   width: 30%;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
   resize: vertical;
+}*/
+select{
+  margin: .5em;
+}
+
+button{
+  margin: .5em;
+}
+
+#popularSearches{
+  display: block;
+margin: 0 auto;
 }
 
 #charse{
@@ -68,15 +80,21 @@ input[type=text], select, textarea {
   display: flex;
   flex-direction: column;
 }
+h3{
+  padding-left: .5em;
+  /*text-align:center;*/
+}
+
+
 
 </style>
 
 </head>
-<body style="font-family:Verdana;">
+<body style="font-family:Verdana;" onresize="resolutionChanged()">
 
 <div id="homePage" class="container">
   <div id="mainMenu" class="menu" >
-    <h3>&nbspKing James Bible Study Group test</h3>
+    <h3>King James Bible Study Group</h3>
     <select id="bookDD">
       <option value=50>Genesis</option>
       <option value="40">Exodus</option>
@@ -150,10 +168,6 @@ input[type=text], select, textarea {
       <option>1</option>
     </select>
 
-    <button onclick="goBack()">Back</button>
-    <button onclick="goBack()">Next</button>
-
-    &nbsp;&nbsp;&nbsp;
     <button id="searchButton" type="button">SEARCH</button>  
     <a href="https://robertmayeight.wixsite.com/website" target="blank">FORUM</a>
   </div>
@@ -169,12 +183,13 @@ input[type=text], select, textarea {
         <button id="robert" onclick="mySearch()">SEARCH</button>
         <button id="backToHome" onclick="backToHome()"> &lt; Bible</button>
       </span>
-      &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+      <div id="popularSearches">
       Popular Searches&nbsp&nbsp
       <select id="searchIdeasDD" style="width: 7em" onchange="ddSearch(this.value)">
         <option>Third Day</option>
         <option>Day of the Lord</option>
       </select>
+    </div>
       <br><br>
   </div>
   <div id="results" class="content">

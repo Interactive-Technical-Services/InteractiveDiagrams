@@ -67,8 +67,14 @@ function backToHome(){
 	homePage.style.display="flex";
 }
 
-// var str = "Visit W3Schools!"; 
-// var n = str.search("W3Schools");
+function resolutionChanged(){
+	var w = window.outerWidth;
+ 	var h = window.outerHeight;
+ 	if(w < 800){
+ 		
+ 	}
+	console.log()
+}
 
 
 
