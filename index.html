@@ -30,7 +30,7 @@ button{
   margin: .5em;
 }
 
-#popularSearches{
+.popularSearches{
   display: block;
 margin: 0 auto;
 }
@@ -179,11 +179,11 @@ h3{
   <div id="searchHeader" class="menu">
     <h3>&nbspKing James Bible Study Group</h3>
       <span>
-        <input type="search" id="mySearch" name="q">
+        <input type="search" id="mySearch" name="q" value="Enter Search">
         <button id="robert" onclick="mySearch()">SEARCH</button>
         <button id="backToHome" onclick="backToHome()"> &lt; Bible</button>
       </span>
-      <div id="popularSearches">
+      <div class="popularSearches">
       Popular Searches&nbsp&nbsp
       <select id="searchIdeasDD" style="width: 7em" onchange="ddSearch(this.value)">
         <option>Third Day</option>
