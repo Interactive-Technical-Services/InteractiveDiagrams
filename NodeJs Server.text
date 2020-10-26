@@ -1,0 +1,4 @@
+Open node.js command
+Navigate to folder to install server..
+http-server -g
+http-server "path"

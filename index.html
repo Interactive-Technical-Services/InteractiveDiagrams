@@ -157,7 +157,7 @@ button{
           <option>1</option>
         </select>
         <button id="forumButton" type="button" onclick='a href="https://robertmayeight.wixsite.com/website" target="blank"'>FORUM</button>
-        <button id="searchButton" type="button">Go To Search</button>
+        <button id="searchButton" type="button" onclick="showSearchPage()">Go To Search</button>
       </div>
     </div>
     <div id = "bibleDiv" class="content"></div>
@@ -167,13 +167,19 @@ button{
     <div id="searchHeader" class="menu">
       <h3 id="searchPageH3" class="centered">&nbsp&nbspKing James Bible Study Group</h3>
       <div class="centered">
-        <select id="searchIdeasDD" style="width: 10em" onchange="ddSearch(this.value)" placeholder="Enter Search">
+        <select id="prePopDD" style="width: 10em" onchange="prePop(this)" placeholder="Enter Search">
           <option>Third Day</option>
           <option>Day of the Lord</option>
         </select>
         &nbsp&nbsp OR &nbsp&nbsp
-        <input type="search" id="mySearch" name="q" style="width: 10em" placeholder="Enter Search">
+        <input type="search" id="myInput" name="q" style="width: 10em" placeholder="Enter Search">
+        <button id="backToHome" onclick="setUpSearch()">Search</button>
       </div>
+      <form class="centered">
+        <input type="checkbox" id="caseSensitive" name="caseSensitive" value="yes" onclick="setUpSearch()"><label style="font-size: 11px;">Case Sensitive</label>
+        <input type="radio" id="exactMatch" name="match" value="no" checked="true"><label style="font-size: 11px;">Exact Match</label>
+        <input type="radio" id="partialMatch" name="match" value="no"onclick="setUpSearch()"><label style="font-size: 11px;">Partial Match</label>
+      </form>
       <div class="centered">
         <button id="backToHome" onclick="backToHome()"> Back To Bible</button>
       </div>
@@ -182,6 +188,7 @@ button{
     Search returns here.
   </div> 
   <div id="dataDiv"></div>
+  <div id="dataDiv2" class="hidden"></div>
 </body>
 <script src="bibleScript.js"></script>
 </html>

@@ -13,8 +13,6 @@ xhttp.onload = function () {
 	chapVerse=document.getElementById(chapVerse);
 	bibleDiv.innerHTML = chapVerse.innerHTML;
 	populateChapterDD();
-	document.getElementById("searchButton").onclick = showSearchPage;
-	// document.getElementById("robert").onclick = mySearch();
 	chapters = dataDiv.getElementsByTagName("div");
 	for(i=0; i<chapters.length; i++){
 		paragraphs = chapters[i].getElementsByTagName("p");
@@ -28,10 +26,11 @@ xhttp.onload = function () {
 };
 
 bookDD.onchange = function(){
+	populateChapterDD();
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
 	chapVerse=document.getElementById(chapVerse);
 	bibleDiv.innerHTML = chapVerse.innerHTML;
-	populateChapterDD();
+	
 };
 
 chapterDD.onchange = function(){
@@ -51,7 +50,6 @@ function populateChapterDD(){
 }
 
  function showSearchPage(){
- 	console.log("fired")
 	if(searchDiv.style.display == "flex"){
 		searchDiv.style.display = "none"
 		homePage.style.display = "flex";
@@ -67,56 +65,77 @@ function backToHome(){
 	homePage.style.display="flex";
 }
 
-// function resolutionChanged(){
-// 	var w = window.outerWidth;
-//  	var h = window.outerHeight;
-//  	if(w < 600){
-//  		searchPageH3.classList.add("centered");
-//  		homePageH3.classList.add("centered");
-//  		console.log('less than')
-//  	}else{
-//  		searchPageH3.classList.remove("centered");
-//  		homePageH3.classList.remove("centered");
-//  	}
-// 	console.log(w)
-// }
-
-document.getElementById("mySearch").addEventListener("keydown", function(e) {
-    if (!e) { var e = window.event; }
-    // e.preventDefault(); // sometimes useful
-
-    // Enter is pressed
-    if (e.keyCode == 13) { mySearch(); }
+document.getElementById("myInput").addEventListener("keydown", function(e) {
+    if (e.keyCode == 13) {
+    	setUpSearch();
+    }
 }, false);
 
+var hyperLinks = ["third day", "Holy Ghost", "summer fruit", "ten thousand"];
+
+function setUpLinks(){
+	for(a=0; a<hyperLinks.length; a++){
+		var searchValue = hyperLinks[a];
+		var searchRegex = new RegExp(searchValue, "gi");
+		for(i=0; i<verses.length; i++){
+			var verseHTML = verses[i].innerHTML;
+			if(verseHTML.match(searchRegex) != null){
+				var str = document.getElementById(verses[i].id).outerHTML
+  				var stringMatch = str.match(searchRegex);
+  				var res = str.replace(searchRegex, "<a href='Phrases/" + searchValue + ".html' target='_blank'>" + str.match(searchRegex)[0] + "</a>");
+  			}
+  		}
+	}
+}
+
+var start = "";
+var end = "";
+var flag = "g";
+
+var searchValue = document.getElementById("myInput").value;
+var searchOptions = "";
+function setUpSearch(){
+	console.log("fired")
+	if(document.getElementById('caseSensitive').checked){
+		flag = "g";
+	}else{
+		flag = "gi";
+	}
+	if(document.getElementById('exactMatch').checked){
+		start = "\\b"
+		end = "\\b"
+	}else{
+		start = ""
+		end = ""
+	}
+	mySearchInputFunction()
+	
+}
 
 
 
-// function mySearch(){
-// 	var searchValue = document.getElementById("mySearch").value
-// 	var els = document.getElementById("searchDiv").innerHTML;
-// 	console.log(els.indexOf(searchValue))
-// 	if(els.indexOf(searchValue) > -1){
-//   		console.log("I'm tired of this.")
-// 	}
-// }
+// var searchRegex = new RegExp(searchOptions, "gi");
+// var searchRegex = new RegExp("\\b"+searchValue+"\\b","g");
 
 
-function mySearch(){
+
+function mySearchInputFunction(){
+	searchValue = document.getElementById("myInput").value;
 	var myStack = "";
 	results.innerHTML = "";
-	var searchValue = document.getElementById("mySearch").value;
-	var searchRegex = new RegExp(searchValue, "g");
 	occurences = 0;
-	searchValueLength = searchValue.split('');
 	for(i=0; i<verses.length; i++){
 		var verseHTML = verses[i].innerHTML;
+		// var searchRegex = new RegExp(\bthird day\b, "g");
+		var searchRegex = new RegExp(start+searchValue+end,flag);
 		if(verseHTML.match(searchRegex) != null){
-			var str = document.getElementById(verses[i].id).outerHTML
-  			var stringMatch = str.match(searchRegex);
-  			var res = str.replace(searchRegex, "<strong>" + str.match(searchRegex)[0] + "</strong>");
+			var str = document.getElementById(verses[i].id).outerHTML;
+			var newString = str.replace(str.match(/<a(.*?)<\/a>/g), verseHTML.match(searchRegex)[0]);
+  			var stringMatch = newString.match(searchRegex);
+			  var res = newString.replace(searchRegex, "<strong>" + newString.match(searchRegex)[0] + "</strong>");
+			  
   			myStack += res;
-  			occurences+= str.match(searchRegex).length;
+  			occurences+= newString.match(searchRegex).length;
   		}
 	}
 	results.innerHTML = '"' + searchValue + '"' + " found " + occurences + " times." + "<br><br>" + myStack;
@@ -125,42 +144,16 @@ function mySearch(){
   	}
 }
 
-// function ddSearch(searchValue){
-// 	console.log(searchValue)
-// 	occurences = 0;
-// 	results.innerHTML = "";
-// 	// var searchValue = document.getElementById("mySearch").value;
-// 	searchValueLength = searchValue.split('');
-// 	paragraphs = document.getElementsByTagName('p');
-// 	for(i=0; i<paragraphs.length; i++){
-// 		var els = paragraphs[i].innerHTML;
-// 		console.log(els.indexOf(searchValue))
-// 		if(els.indexOf(searchValue) > -1){
-// 			occurences++;
-// 			var str = document.getElementById(paragraphs[i].id).innerHTML
-//   			var res = str.replace(searchValue, "<strong>" + searchValue + "</strong>");
-
-//   			results.innerHTML += res + "<br><br>";
-
-//   			// paragraphs[i].innerHTML = res;
-//   		}
-// 	}	
-// }
-
-function setUpLinks(){
-	results.innerHTML = "";
-	var searchValue = document.getElementById("mySearch").value;
-	var searchRegex = new RegExp(searchValue, "g");
-	searchValueLength = searchValue.split('');
-	for(i=0; i<verses.length; i++){
-		var verseHTML = verses[i].innerHTML;
-		if(verseHTML.match(searchRegex) != null){
-			var str = document.getElementById(verses[i].id).outerHTML
-  			// var res = str.replace(searchRegex, "<a target="_blank" href="Phrases/thirdDay.html">" + searchValue + "</a>");
-  		}
-	}
+function prePop(e){
+	myInput.value = e.value;
+	console.log(e.value)
 }
 
+myInput.value = prePopDD.value;
 
 
 
+
+
+// var str = "This is some HTML text <a href='Phrases/Jesus Christ.html' target='_blank'>programming</a>";
+// console.log(str.replace(str.match(/<a(.*?)<\/a>/g), "written by Robert May."))
