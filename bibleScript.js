@@ -111,9 +111,6 @@ function mySearchInputFunction(){
 		if(verseHTML.match(searchRegex) != null){
 			var str = document.getElementById(verses[i].id).textContent;
 
-			console.log(verseHTML.match(searchRegex))
-			console.log(str.match(searchRegex))
-
 			var res = str.replace(searchRegex, "<strong>" + str.match(searchRegex)[0] + "</strong>").replace(verses[i].id, "<a href='javascript:showAnchor(" + '"' + verses[i].id + '"' + ");'>" + verses[i].id + "</a>");
 
 			myStack += res + "<br><br>";
@@ -127,7 +124,6 @@ function mySearchInputFunction(){
 }
 
 function showAnchor(id){
-	console.log(id)
 	idSplit = id.split(":")
 	book = idSplit[0].split(" ")
 	switch(book[0]) {
@@ -388,21 +384,36 @@ function setUpLinks(){
 		}
 	}
 	bibleDiv.innerHTML = chapVerse.innerHTML;
-	console.log(document.getElementById("Exo 19:11").outerHTML)
 }
 
 
 var lookUpWord = "";
-window.addEventListener('mouseup', function(e) {
+window.addEventListener("touchend", function(e) {
     var selection;
     if (window.getSelection) {
       selection = window.getSelection();
-      lookUpWord = selection
-      console.log(selection.toString());
+      lookUpWord = selection;
     } else if (document.selection) {
       selection.toString() !== '' && alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
     }
     searchPhrase.textContent = selection;
+    if(searchPhrase.textContent === ""){
+    	searchPhrase.textContent = "Nothing Selected"
+    }
+}
+);
+window.addEventListener('mouseup', function(e) {
+    var selection;
+    if (window.getSelection) {
+      selection = window.getSelection();
+      lookUpWord = selection;
+    } else if (document.selection) {
+      selection.toString() !== '' && alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
+    }
+    searchPhrase.textContent = selection;
+    if(searchPhrase.textContent === ""){
+    	searchPhrase.textContent = "Nothing Selected"
+    }
 }
 )
 
