@@ -181,8 +181,8 @@ button{
       </div>
       <form class="centered">
         <input type="checkbox" id="caseSensitive" name="caseSensitive" value="yes" onclick="setUpSearch()"><label style="font-size: 11px;">Case Sensitive</label>
-        <input type="radio" id="exactMatch" name="match" value="no" checked="true"><label style="font-size: 11px;">Exact Match</label>
-        <input type="radio" id="partialMatch" name="match" value="no"onclick="setUpSearch()"><label style="font-size: 11px;">Partial Match</label>
+        <input type="radio" id="exactMatch" name="match" value="no" checked="true" onclick="setUpSearch()"><label style="font-size: 11px;">Exact Match</label>
+        <input type="radio" id="partialMatch" name="match" value="no" onclick="setUpSearch()"><label style="font-size: 11px;">Partial Match</label>
       </form>
       <div class="centered">
         <button id="backToHome" onclick="backToHome()"> Back To Bible</button>
@@ -192,7 +192,6 @@ button{
     Search returns here.
   </div> 
   <div id="dataDiv"></div>
-  <div id="dataDiv2" class="hidden"></div>
 
 </body>
 <script src="bibleScript.js"></script>
