@@ -402,6 +402,7 @@ window.addEventListener('mouseup', function(e) {
     } else if (document.selection) {
       selection.toString() !== '' && alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
     }
+    searchPhrase.textContent = selection;
 }
 )
 
