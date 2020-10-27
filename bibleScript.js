@@ -436,3 +436,13 @@ function wordDefinition(source){
 		mySearchInputFunction();
 	}
 }
+
+////Next Navigation
+function goBack(){
+	console.log("go back")
+}
+
+function goForward(){
+	console.log("go forward")
+}
+
