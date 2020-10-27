@@ -4,8 +4,62 @@
 <meta charset="UTF-8">
 </head>
 <body>
-The Holy Ghost WebPage.
-<p><span class="charse">Gen_22:4</span> Then on the <span class="chapte">third day</span> Abraham lifted up his eyes, and saw the place afar off.</p>
+	The third day.
+<p a href='#' contextmenu="supermenu"><span class="charse">Gen_1:13</span> And the evening and the morning were the third day.</p>
+<p>custom contentmenu as modal </p>
+
+<!-- The Modal -->
+<menu type="context" id="supermenu">
+ <menuitem label="Webster's 1828" onclick="wordDefinition('websters')"></menuitem>
+  <menuitem label="Eymology" onclick="wordDefinition('etymology')"></menuitem>
+  <menuitem label="resize" onclick="wordDefinition('search')"></menuitem>
+  <menu label="share">
+    <menuitem label="twitter" onclick="alert('foo')"></menuitem>
+    <menuitem label="facebook" onclick="alert('bar')"></menuitem>
+  </menu>
+</menu>
+
+<a href='#' contextmenu="supermenu">Right click me</a>
+
 </body>
-<script src="Phrases.js"></script>
+<script type="text/javascript">
+// $(function() {
+//   $(document.body).bind('mouseup', function(e) {
+//     var selection;
+
+//     if (window.getSelection) {
+//       selection = window.getSelection();
+//     } else if (document.selection) {
+//       selection = document.selection.createRange();
+//     }
+
+//     selection.toString() !== '' && alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
+//   });
+// });
+
+var lookUpWord = "";
+window.addEventListener('mouseup', function(e) {
+    var selection;
+    if (window.getSelection) {
+      selection = window.getSelection();
+      lookUpWord = selection
+      console.log(selection.toString());
+    } else if (document.selection) {
+      selection.toString() !== '' && alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
+    }
+}
+)
+
+function wordDefinition(source){
+	if(source === "websters"){
+		window.open("http://webstersdictionary1828.com/Dictionary/" + lookUpWord + "", "_blank");
+	}
+	if(source === "etymology"){
+		window.open("https://www.etymonline.com/search?q=" + lookUpWord + "", "_blank");
+	}
+	if(source === "search"){
+		window.open("https://www.etymonline.com/search?q=" + lookUpWord + "", "_blank");
+	}
+}
+</script>
 </html>

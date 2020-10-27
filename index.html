@@ -80,7 +80,16 @@ button{
 </style>
 
 </head>
-<body style="font-family:Verdana;">
+<menu type="context" id="supermenu">
+ <menuitem label="Webster's 1828" onclick="wordDefinition('websters')"></menuitem>
+  <menuitem label="Eymology" onclick="wordDefinition('etymology')"></menuitem>
+  <menuitem label="Search" onclick="wordDefinition('search')"></menuitem>
+  <!-- <menu label="share">
+    <menuitem label="twitter" onclick="alert('foo')"></menuitem>
+    <menuitem label="facebook" onclick="alert('bar')"></menuitem>
+  </menu> -->
+</menu>
+<body a href='#' contextmenu="supermenu" style="font-family:Verdana;">
   <div id="homePage" class="container">
     <div id="mainMenu" class="menu" >
       <h3 id="homePageH3" class="centered">&nbsp&nbspKing James Bible Study Group</h3>

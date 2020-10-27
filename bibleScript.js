@@ -99,16 +99,6 @@ function setUpSearch(){
 
 
 
-// var searchRegex = new RegExp(searchOptions, "gi");
-// var searchRegex = new RegExp("\\b"+searchValue+"\\b","g");
-
-
-rob = "Exo 1:2 Thus sayeth the Lord."
-robSplit = rob.split(" ")
-newLink = robSplit[0] + " " + robSplit[1];
-console.log(newLink)
-
-
 function mySearchInputFunction(){
 	searchValue = document.getElementById("myInput").value;
 	var myStack = "";
@@ -395,4 +385,38 @@ function setUpLinks(){
 	}
 	bibleDiv.innerHTML = chapVerse.innerHTML;
 	console.log(document.getElementById("Exo 19:11").outerHTML)
+}
+
+
+var lookUpWord = "";
+window.addEventListener('mouseup', function(e) {
+    var selection;
+    if (window.getSelection) {
+      selection = window.getSelection();
+      lookUpWord = selection
+      console.log(selection.toString());
+    } else if (document.selection) {
+      selection.toString() !== '' && alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
+    }
+}
+)
+
+function wordDefinition(source){
+	if(source === "websters"){
+		window.open("http://webstersdictionary1828.com/Dictionary/" + lookUpWord + "", "_blank");
+	}
+	if(source === "etymology"){
+		window.open("https://www.etymonline.com/search?q=" + lookUpWord + "", "_blank");
+	}
+	if(source === "search"){
+		lookUpWord = lookUpWord.toString()
+		searchDiv.style.display="flex";
+		homePage.style.display="none";
+		prePopDD.value = source;
+		exactMatch.checked = true;
+		start = "\\b"
+		end = "\\b"
+		document.getElementById("myInput").value = lookUpWord;
+		mySearchInputFunction();
+	}
 }
