@@ -394,7 +394,6 @@ function setUpLinks(){
 
 var lookUpWord = "";
 window.addEventListener('mouseup', function(e) {
-	e.preventDefault();
     var selection;
     if (window.getSelection) {
       selection = window.getSelection();
@@ -425,14 +424,3 @@ function wordDefinition(source){
 		mySearchInputFunction();
 	}
 }
-
-window.addEventListener('contextmenu', function(ev) {
-    ev.preventDefault();
-    if(searchTools.style.display === "none"){
-    	searchTools.style.display = "flex";
-    }else{
-    	searchTools.style.display = "none";
-    }
-    
-    return false;
-}, false);
