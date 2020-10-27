@@ -110,6 +110,10 @@ function mySearchInputFunction(){
 		var searchRegex = new RegExp(start+searchValue+end,flag);
 		if(verseHTML.match(searchRegex) != null){
 			var str = document.getElementById(verses[i].id).textContent;
+
+			console.log(verseHTML.match(searchRegex))
+			console.log(str.match(searchRegex))
+
 			var res = str.replace(searchRegex, "<strong>" + str.match(searchRegex)[0] + "</strong>").replace(verses[i].id, "<a href='javascript:showAnchor(" + '"' + verses[i].id + '"' + ");'>" + verses[i].id + "</a>");
 
 			myStack += res + "<br><br>";
@@ -390,6 +394,7 @@ function setUpLinks(){
 
 var lookUpWord = "";
 window.addEventListener('mouseup', function(e) {
+	e.preventDefault();
     var selection;
     if (window.getSelection) {
       selection = window.getSelection();
@@ -420,3 +425,14 @@ function wordDefinition(source){
 		mySearchInputFunction();
 	}
 }
+
+window.addEventListener('contextmenu', function(ev) {
+    ev.preventDefault();
+    if(searchTools.style.display === "none"){
+    	searchTools.style.display = "flex";
+    }else{
+    	searchTools.style.display = "none";
+    }
+    
+    return false;
+}, false);

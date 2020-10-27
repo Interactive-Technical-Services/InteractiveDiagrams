@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta charset="UTF-8">
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body{
+    padding: 0;
+    margin: 0;
+  }
+
+select{
+  margin: .5em;
+}
+
+button{
+  margin: .5em;
+}
+
+#popularSearches{
+  display: block;
+  margin: 0 auto;
+}
+
+#charse{
+  font-size: normal;
+  color:  #943126;
+  font-weight: bold;
+}
+
+#bibleDiv{
+  /* padding-top: 15vh; */
+  /* z-index: -1 */
+}
+
+#dataDiv{
+  display: none;
+}
+
+#searchDiv{
+  display: none;
+}
+
+#searchViewArea{
+  overflow: scroll;
+  padding-top: 20px;
+  border: solid;
+  border-width: thin;
+}
+
+.menu {
+  background-color:#f1f1f1;
+  padding:2px;
+  width: 100vw;
+}
+
+.content {
+  padding: 1rem;
+  overflow: auto;
+}
+
+.container {
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.centered{
+  padding-left: .5em;
+  text-align:center;
+}
+
+</style>
+
+</head>
+<menu type="context" id="supermenu">
+ <menuitem label="Webster's 1828" onclick="wordDefinition('websters')"></menuitem>
+  <menuitem label="Eymology" onclick="wordDefinition('etymology')"></menuitem>
+  <menuitem label="Search" onclick="wordDefinition('search')"></menuitem>
+  <!-- <menu label="share">
+    <menuitem label="twitter" onclick="alert('foo')"></menuitem>
+    <menuitem label="facebook" onclick="alert('bar')"></menuitem>
+  </menu> -->
+</menu>
+<body a href='#' contextmenu="supermenu" style="font-family:Verdana;">
+  <div id="homePage" class="container">
+    <div id="mainMenu" class="menu" >
+      <h3 id="homePageH3" class="centered">&nbsp&nbspKing James Bible Study Tool</h3>
+      <div id="nav" class="centered">
+        <select id="bookDD">
+          <option value=50>Genesis</option>
+          <option value="40">Exodus</option>
+          <option value="27">Leviticus</option>
+          <option value="36">Numbers</option>
+          <option value="34">Deuteronomy</option>
+          <option value="24">Joshua</option>
+          <option value="21">Judges</option>
+          <option value="4">Ruth</option>
+          <option value="31">1 Samuel</option>
+          <option value="24">2 Samuel</option>
+          <option value="22">1 Kings</option>
+          <option value="25">2 Kings</option>
+          <option value="29">1 Chronicles</option>
+          <option value="36">2 Chronicles</option>
+          <option value="10">Ezra</option>
+          <option value="13">Nehemiah</option>
+          <option value="10">Esther</option>
+          <option value="42">Job</option>
+          <option value="150">Psalms</option>
+          <option value="31">Proverbs</option>
+          <option value="12">Ecclesiastes</option>
+          <option value="8">Song of Solomon</option>
+          <option value="66">Isaiah</option>
+          <option value="52">Jeremiah</option>
+          <option value="5">Lamentations</option>
+          <option value="48">Ezekiel</option>
+          <option value="12">Daniel</option>
+          <option value="14">Hosea</option>
+          <option value="3">Joel</option>
+          <option value="9">Amos</option>
+          <option value="1">Obadiah</option>
+          <option value="4">Jonah</option>
+          <option value="7">Micah</option>
+          <option value="3">Nahum</option>
+          <option value="3">Habakkuk</option>
+          <option value="3">Zephaniah</option>
+          <option value="2">Haggai</option>
+          <option value="14">Zechariah</option>
+          <option value="4">Malachi</option>
+          <option value="28">Matthew</option>
+          <option value="16">Mark</option>
+          <option value="24">Luke</option>
+          <option value="21">John</option>
+          <option value="28">Acts</option>
+          <option value="16">Romans</option>
+          <option value="16">1 Corinthians</option>
+          <option value="13">2 Corinthians</option>
+          <option value="6">Galatians</option>
+          <option value="6">Ephesians</option>
+          <option value="4">Philippians</option>
+          <option value="4">Colossians</option>
+          <option value="5">1 Thessalonians</option>
+          <option value="3">2 Thessalonians</option>
+          <option value="6">1 Timothy</option>
+          <option value="4">2 Timothy</option>
+          <option value="3">Titus</option>
+          <option value="1">Philemon</option>
+          <option value="13">Hebrews</option>
+          <option value="5">James</option>
+          <option value="5">1 Peter</option>
+          <option value="3">2 Peter</option>
+          <option value="5">1 John</option>
+          <option value="1">2 John</option>
+          <option value="1">3 John</option>
+          <option value="1">Jude</option>
+          <option value="22">Revelation</option>
+        </select>
+        <select id="chapterDD">
+          <option>1</option>
+        </select>
+        <button id="forumButton" type="button" onclick='a href="https://robertmayeight.wixsite.com/website" target="blank"'>FORUM</button>
+       <div>
+        <button class="centered">BACK</button>
+          <button id="searchButton" type="button" onclick="showSearchPage()">Go To Search</button>
+          <button>NEXT</button>
+        </div>
+      </div>
+    </div>
+    <div id = "bibleDiv" class="content"></div>
+  </div>
+  
+  <div id="searchDiv" class="container">
+    <div id="searchHeader" class="menu">
+      <h3 id="searchPageH3" class="centered">&nbsp&nbspKing James Bible Study Tool - Search Page</h3>
+      <div class="centered">
+        <select id="prePopDD" style="width: 10em" onchange="prePop(this)" placeholder="Enter Search">
+          <option>Third Day</option>
+          <option>Day of the Lord</option>
+        </select>
+        &nbsp&nbsp OR &nbsp&nbsp
+        <input type="search" id="myInput" name="q" style="width: 10em" placeholder="Enter Search">
+        <button id="backToHome" onclick="setUpSearch()">Search</button>
+      </div>
+      <form class="centered">
+        <input type="checkbox" id="caseSensitive" name="caseSensitive" value="yes" onclick="setUpSearch()"><label style="font-size: 11px;">Case Sensitive</label>
+        <input type="radio" id="exactMatch" name="match" value="no" checked="true" onclick="setUpSearch()"><label style="font-size: 11px;">Exact Match</label>
+        <input type="radio" id="partialMatch" name="match" value="no" onclick="setUpSearch()"><label style="font-size: 11px;">Partial Match</label>
+      </form>
+      <div class="centered">
+        <button id="backToHome" onclick="backToHome()"> Back To Bible</button>
+      </div>
+    </div>
+  <div id="results" class="content">
+    Search returns here.
+  </div> 
+  <div id="dataDiv"></div>
+
+</body>
+<script src="bibleScript.js"></script>
+</html>
