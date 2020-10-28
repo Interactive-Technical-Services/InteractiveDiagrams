@@ -92,9 +92,8 @@ h3{
 }
 
 #rightDiv{
-  position: absolute;
-  /*top: 100vh;*/
-  right: 0px;
+ position: absolute;
+  right:0px;
   /*max-width: 20vh;*/
  /* max-height: 100vh;*/
   background-color: white;
@@ -195,16 +194,23 @@ h3{
           <button id="searchButton" type="button" onclick="showSearchPage()">Go To Search</button>
           <button>NEXT</button>
        <div>
-        <textarea id="searchPhrase" style="width: 20em; height: 2em">Nothing Selected</textarea> - <a href="#" onclick="wordDefinition('websters')">Definition</a> <a href="#" onclick="wordDefinition('etymology')">Etymology</a>  <a href="#" onclick="wordDefinition('search')">Search</a>
+        <textarea id="searchPhrase" style="width: 20em; height: 1.5em">Select Search Text</textarea>
+        <br>
+        <span style="font-size: small">
+        <a href="#" onclick="wordDefinition('websters')">Definition</a> <a href="#" onclick="wordDefinition('etymology')">Etymology</a>  <a href="#" onclick="wordDefinition('search')">Search</a>
+        </span>
         <br><br>
         </div>
       </div>
-      <span id="leftDiv">
-        <span style="cursor: pointer" href="#" onclick="goForward()"> << </span>
-      </span>
-      <span id="rightDiv">
-        <span style="cursor: pointer" href="#" onclick="goForward()"> >> </span>
-      </span>
+      
+    </div>
+    <div>
+    <span id="leftDiv">
+      <span style="cursor: pointer" href="#" onclick="goBack()"> << </span>
+    </span>
+    <span id="rightDiv">
+      <span style="cursor: pointer" href="#" onclick="goForward()"> >> </span>
+    </span>
     </div>
     <div id = "bibleDiv" class="content"></div>
   </div>
