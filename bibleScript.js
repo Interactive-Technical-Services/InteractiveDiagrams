@@ -455,6 +455,7 @@ window.addEventListener('mouseup', function(e) {
 )
 
 function wordDefinition(source){
+	lookUpWord = lookUpWord.toString()
 	TweenMax.to(hiddenMenu,.5, {x:-250})
 	if(source === "websters"){
 		window.open("http://webstersdictionary1828.com/Dictionary/" + lookUpWord + "", "_blank");
@@ -462,19 +463,35 @@ function wordDefinition(source){
 	if(source === "etymology"){
 		window.open("https://www.etymonline.com/search?q=" + lookUpWord + "", "_blank");
 	}
-	if(source === "etymology"){
-		window.open("https://www.etymonline.com/search?q=" + lookUpWord + "", "_blank");
+	if(source === "google"){
+		window.open("https://www.google.com/search?sxsrf=ALeKk03jVPw_AZYKhqAK-w7Uv2mg97IOeQ%3A1604239940473&source=hp&ei=RMKeX9a7Gpm7tQbzzJCYBA&q=" + lookUpWord + "", "_blank");
+		// https://www.google.com/search?sxsrf=ALeKk03jVPw_AZYKhqAK-w7Uv2mg97IOeQ%3A1604239940473&source=hp&ei=RMKeX9a7Gpm7tQbzzJCYBA&q=Jesus
 	}
 	if(source === "forum"){
 		window.open("https://robertmayeight.wixsite.com/website", "_blank");
 	}
+	if(source === "blueletterbible"){
+		window.open("https://www.blueletterbible.org/search/search.cfm?Criteria=" + lookUpWord + "&t=KJV&ss=1#s=s_primary_0_1", "_blank");
+	}
+	if(source === "biblegateway"){
+		window.open("https://www.biblegateway.com/quicksearch/?quicksearch=" + lookUpWord + "&version=KJV", "_blank");
+	}
+	if(source === "gnv"){
+		lookUpWordSplit = lookUpWord.split(" ");
+		bookSearch = lookUpWordSplit[0];
+		chapVerseSplit = lookUpWordSplit[1].split(":")
+		chapterSearch = chapVerseSplit[0];
+		verseSearch = chapVerseSplit[1];
 
-
-
-	 // https://www.biblegateway.com/passage/?search=Jas+4%3A2&version=KJV
-	console.log(lookUpWord)
+		console.log(chapterSearch)
+		window.open("https://www.biblegateway.com/passage/?search" + bookSearch + "%3A" + verseSearch +   "&version=KJV;GNV", "_blank");
+			// https://www.biblegateway.com/quicksearch/?quicksearch=Jesus&version=GNV
+	// https://www.biblegateway.com/passage/?search=Genesis%201%3A1-3&version=KJV;NIV
+	// https://www.biblegateway.com/passage/?search=Genesis+1%3A12&version=KJV;GNV
+	// https://www.biblegateway.com/passage/?searchGen%201:12&version=KJV;GNV
+	}
 	if(source === "search" && lookUpWord != ""){
-		lookUpWord = lookUpWord.toString()
+		
 		searchDiv.style.display="flex";
 		homePage.style.display="none";
 		prePopDD.value = source;
@@ -484,8 +501,11 @@ function wordDefinition(source){
 		document.getElementById("myInput").value = lookUpWord;
 		mySearchInputFunction();
 	}else{
-		searchDiv.style.display="flex";
-		homePage.style.display="none";
+		if(source === "search" && lookUpWord === ""){
+			searchDiv.style.display="flex";
+			homePage.style.display="none";
+		}
+		
 	}
 }
 
