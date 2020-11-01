@@ -144,23 +144,23 @@ h3{
 </head>
 <body style="font-family:Verdana;">
  <div id="rob"> 
-<div id="hiddenMenu" class="vertical-menu">
-  <a href="#" onclick="wordDefinition('search')">Search</a>
-  <a href="#" onclick="wordDefinition('websters')">Lookup Websters 1898</a>
-  <a href="#" onclick="wordDefinition('etymology')">Etymology Online</a>
-  <a href="#">Strongs</a>
-  <a href="#">Bible Gateway</a>
-</div>
+  <div id="hiddenMenu" class="vertical-menu">
+    <a href="#" onclick="wordDefinition('search')">Search</a>
+    <a href="#" onclick="wordDefinition('websters')">Lookup Websters 1898</a>
+    <a href="#" onclick="wordDefinition('etymology')">Etymology Online</a>
+    <a href="#">Strongs</a>
+    <a href="#">Bible Gateway</a>
+    <a href="#" onclick="wordDefinition('forum')">FORUM</a>
+  </div>
 </div>
 
 
   <div id="homePage" class="container">
     <div id="mainMenu" class="menu" >
       <img src="menuIcon.png" class="upperLeft" onclick="showMenu()">
-      
       <div id="nav" class="centered">
-        <!-- <span id="homePageH3" class="centered">&nbsp&nbspKing James Bible Study Tool</span> -->
-        <span style="cursor: pointer" href="#" onclick="goBack()" class="noselect"> << </span>
+      <!-- <span id="homePageH3" class="centered">&nbsp&nbspKing James Bible Study Tool</span> -->
+      <span style="cursor: pointer" href="#" onclick="goBack()" class="noselect"> << </span>
       <span style="cursor: pointer" href="#" onclick="goForward()" class="noselect"> >> </span>
         <select id="bookDD">
           <option value=50>Genesis</option>
@@ -232,10 +232,7 @@ h3{
         </select>
         <select id="chapterDD">
           <option>1</option>
-        </select>
-        <button id="searchButton" type="button" onclick="showSearchPage()">Go To Search</button>
-        <button id="forumButton" type="button" onclick='a href="https://robertmayeight.wixsite.com/website" target="blank"'>FORUM</button>
-          
+        </select> 
        <div>
         </div>
       </div>
@@ -247,10 +244,7 @@ h3{
 
 
 
-    <span id="wordLinks">
-   <center><a href="#" onclick="wordDefinition('websters')">Definition</a> <a href="#" onclick="wordDefinition('etymology')">Etymology</a>  <a href="#" onclick="wordDefinition('search')">Search</a></center>
-      
-    </span>
+
     </div>
     <div id = "bibleDiv" class="content"></div>
   </div>

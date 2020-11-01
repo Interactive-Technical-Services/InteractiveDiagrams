@@ -433,31 +433,25 @@ function textLinkClicked(){
 
 var lookUpWord = "";
 window.addEventListener("touchend", function(e) {
-    var selection;
-    if (window.getSelection) {
-      selection = window.getSelection();
-      lookUpWord = selection;
-    } else if (document.selection) {
-      selection.toString() !== '' && alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
-    }
-    searchPhrase.textContent = selection;
-    if(searchPhrase.textContent === ""){
-    	searchPhrase.textContent = "Nothing Selected"
-    }
-}
-);
+   	selection = window.getSelection().toString();
+    lookUpWord = selection; 
+    if(selection === ""){
+    	TweenMax.to(hiddenMenu,.5, {x:-250})
+    }else{
+    	TweenMax.to(hiddenMenu,.5, {x:250})
+   		 }
+	}
+)
 var selection;
 window.addEventListener('mouseup', function(e) {
 	selection = window.getSelection().toString();
     lookUpWord = selection; 
     if(selection === ""){
-    	wordLinks.style.display = "none"
     	TweenMax.to(hiddenMenu,.5, {x:-250})
     }else{
-    	wordLinks.style.display = "inline"
     	TweenMax.to(hiddenMenu,.5, {x:250})
-    }
-}
+   		 }
+	}
 )
 
 function wordDefinition(source){
@@ -470,6 +464,9 @@ function wordDefinition(source){
 	}
 	if(source === "etymology"){
 		window.open("https://www.etymonline.com/search?q=" + lookUpWord + "", "_blank");
+	}
+	if(source === "forum"){
+		window.open("https://robertmayeight.wixsite.com/website", "_blank");
 	}
 
 
@@ -486,6 +483,9 @@ function wordDefinition(source){
 		end = "\\b"
 		document.getElementById("myInput").value = lookUpWord;
 		mySearchInputFunction();
+	}else{
+		searchDiv.style.display="flex";
+		homePage.style.display="none";
 	}
 }
 
@@ -549,5 +549,3 @@ function showMenu(){
 	
 }
 
-console.log(mainMenu.style.top)
-console.log(mainMenu.clientHeight)
