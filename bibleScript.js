@@ -481,9 +481,9 @@ function wordDefinition(source){
 		bookSearch = lookUpWordSplit[0];
 		chapVerseSplit = lookUpWordSplit[1].split(":")
 		chapterSearch = chapVerseSplit[0];
-		verseSearch = chapVerseSplit[1];
+		verseSearch = chapVerse[1];
 
-		console.log(chapterSearch)
+		console.log(verseSearch)
 		window.open("https://www.biblegateway.com/passage/?search" + bookSearch + "%3A" + verseSearch +   "&version=KJV;GNV", "_blank");
 			// https://www.biblegateway.com/quicksearch/?quicksearch=Jesus&version=GNV
 	// https://www.biblegateway.com/passage/?search=Genesis%201%3A1-3&version=KJV;NIV
