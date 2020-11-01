@@ -116,9 +116,8 @@ h3{
 
 .upperRight{
   position: absolute;
-  padding-top: 4px;
   top: 0px;
-  right: 5px;
+  right: 0px;
 }
 
 #hiddenMenu{
@@ -164,7 +163,7 @@ h3{
   </div>
   <div id="homePage" class="container">
     <div id="mainMenu" class="menu" >
-      <img src="menuIcon.png" class="upperRight" onclick="showMenu()">
+      <img src="menuIcon.png" class="upperLeft" onclick="showMenu()">
       <div id="nav" class="centered">
       <span id="homePageH3"><h3>King James Bible Study Tool</h3></span>
         <select id="bookDD">
@@ -268,7 +267,7 @@ h3{
         <input type="search" id="myInput" name="q" style="width: 10em" placeholder="Enter Search">
         <button id="backToHome" onclick="setUpSearch()">Search</button>
         <!-- <button id="backToHome" style="position: absolute; left: 0%" onclick="backToHome()"> Back To Bible</button> -->
-        <img src="closeIcon.png" class="upperRight" onclick="backToHome()">
+        <img src="closeIcon.png" class="upperLeft" onclick="backToHome()">
       </div>
       <form class="centered">
         <input type="checkbox" id="caseSensitive" name="caseSensitive" value="yes" onclick="setUpSearch()"><label style="font-size: 11px;">Case Sensitive</label>
