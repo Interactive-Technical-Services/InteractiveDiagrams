@@ -108,9 +108,10 @@ h3{
 }
 .upperLeft{
   position: absolute;
-  padding-top: 5px;
+  padding-top: 1px;
+  padding-left: 5px;
   top: 0px;
-  left: 0px;
+  right: 0px;
 }
 
 #hiddenMenu{
@@ -144,7 +145,6 @@ h3{
 <script src="TweenMax.min.js"></script>
 </head>
 <body style="font-family:Verdana;">
- <div id="rob"> 
   <div id="hiddenMenu" class="vertical-menu">
     <a href="#" onclick="wordDefinition('search')">Search</a>
     <a href="#" onclick="wordDefinition('websters')">Lookup Websters 1898</a>
@@ -155,14 +155,11 @@ h3{
     <a href="#" onclick="wordDefinition('gnv')">Geneva Bible</a>
     <a href="#" onclick="wordDefinition('forum')">FORUM</a>
   </div>
-</div>
   <div id="homePage" class="container">
     <div id="mainMenu" class="menu" >
       <img src="menuIcon.png" class="upperLeft" onclick="showMenu()">
       <div id="nav" class="centered">
       <!-- <span id="homePageH3" class="centered">&nbsp&nbspKing James Bible Study Tool</span> -->
-      <span style="cursor: pointer" href="#" onclick="goBack()" class="noselect"> << </span>
-      <span style="cursor: pointer" href="#" onclick="goForward()" class="noselect"> >> </span>
         <select id="bookDD">
           <option value=50>Genesis</option>
           <option value="40">Exodus</option>
@@ -233,7 +230,9 @@ h3{
         </select>
         <select id="chapterDD">
           <option>1</option>
-        </select> 
+        </select>
+        <span style="cursor: pointer" href="#" onclick="goBack()" class="noselect"> << </span>
+      <span style="cursor: pointer" href="#" onclick="goForward()" class="noselect"> >> </span>
        <div>
         </div>
       </div>
@@ -261,7 +260,8 @@ h3{
         &nbsp&nbsp OR &nbsp&nbsp
         <input type="search" id="myInput" name="q" style="width: 10em" placeholder="Enter Search">
         <button id="backToHome" onclick="setUpSearch()">Search</button>
-        <button id="backToHome" onclick="backToHome()"> Back To Bible</button>
+        <!-- <button id="backToHome" style="position: absolute; left: 0%" onclick="backToHome()"> Back To Bible</button> -->
+        <img src="closeIcon.png" class="upperLeft" onclick="backToHome()">
       </div>
       <form class="centered">
         <input type="checkbox" id="caseSensitive" name="caseSensitive" value="yes" onclick="setUpSearch()"><label style="font-size: 11px;">Case Sensitive</label>
