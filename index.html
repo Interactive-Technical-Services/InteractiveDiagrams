@@ -6,6 +6,15 @@
 <meta charset="UTF-8">
 
 <style>
+  .noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
   * {
     box-sizing: border-box;
   }
@@ -91,33 +100,68 @@ h3{
   opacity: .5;
 }
 
-#rightDiv{
+#wordLinks{
  position: absolute;
-  right:0px;
-  /*max-width: 20vh;*/
- /* max-height: 100vh;*/
-  background-color: white;
-  opacity: .5
+ margin: auto;
+ width: 100%;
+ background-color: #f1f1f1
+}
+.upperLeft{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#hiddenMenu{
+  position: absolute;
+  left: -250px;
+}
+
+.vertical-menu {
+  position: absolute;
+  width: 200px;
+}
+
+.vertical-menu a {
+  background-color: #eee;
+  color: black;
+  display: block;
+  padding: 12px;
+  text-decoration: none;
+}
+
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+
+.vertical-menu a.active {
+  background-color: #4CAF50;
+  color: white;
 }
 
 </style>
-
+<script src="TweenMax.min.js"></script>
 </head>
-<menu type="context" id="supermenu">
- <menuitem label="Webster's 1828" onclick="wordDefinition('websters')"></menuitem>
-  <menuitem label="Eymology" onclick="wordDefinition('etymology')"></menuitem>
-  <menuitem label="Search" onclick="wordDefinition('search')"></menuitem>
-  <!-- <menu label="share">
-    <menuitem label="twitter" onclick="alert('foo')"></menuitem>
-    <menuitem label="facebook" onclick="alert('bar')"></menuitem>
-  </menu> -->
-</menu>
-<body a href='#' contextmenu="supermenu" style="font-family:Verdana;">
+<body style="font-family:Verdana;">
+ <div id="rob"> 
+<div id="hiddenMenu" class="vertical-menu">
+  <a href="#" onclick="wordDefinition('search')">Search</a>
+  <a href="#" onclick="wordDefinition('websters')">Lookup Websters 1898</a>
+  <a href="#" onclick="wordDefinition('etymology')">Etymology Online</a>
+  <a href="#">Strongs</a>
+  <a href="#">Bible Gateway</a>
+</div>
+</div>
+
+
   <div id="homePage" class="container">
     <div id="mainMenu" class="menu" >
-      <h3 id="homePageH3" class="centered">&nbsp&nbspKing James Bible Study Tool</h3>
+      <img src="menuIcon.png" class="upperLeft" onclick="showMenu()">
       
       <div id="nav" class="centered">
+        <!-- <span id="homePageH3" class="centered">&nbsp&nbspKing James Bible Study Tool</span> -->
+        <span style="cursor: pointer" href="#" onclick="goBack()" class="noselect"> << </span>
+      <span style="cursor: pointer" href="#" onclick="goForward()" class="noselect"> >> </span>
         <select id="bookDD">
           <option value=50>Genesis</option>
           <option value="40">Exodus</option>
@@ -189,27 +233,23 @@ h3{
         <select id="chapterDD">
           <option>1</option>
         </select>
+        <button id="searchButton" type="button" onclick="showSearchPage()">Go To Search</button>
         <button id="forumButton" type="button" onclick='a href="https://robertmayeight.wixsite.com/website" target="blank"'>FORUM</button>
-        <button class="centered">BACK</button>
-          <button id="searchButton" type="button" onclick="showSearchPage()">Go To Search</button>
-          <button>NEXT</button>
+          
        <div>
-        <textarea id="searchPhrase" style="width: 20em; height: 1.5em">Select Search Text</textarea>
-        <br>
-        <span style="font-size: small">
-        <a href="#" onclick="wordDefinition('websters')">Definition</a> <a href="#" onclick="wordDefinition('etymology')">Etymology</a>  <a href="#" onclick="wordDefinition('search')">Search</a>
-        </span>
-        <br><br>
         </div>
       </div>
       
     </div>
     <div>
-    <span id="leftDiv">
-      <span style="cursor: pointer" href="#" onclick="goBack()"> << </span>
-    </span>
-    <span id="rightDiv">
-      <span style="cursor: pointer" href="#" onclick="goForward()"> >> </span>
+
+
+
+
+
+    <span id="wordLinks">
+   <center><a href="#" onclick="wordDefinition('websters')">Definition</a> <a href="#" onclick="wordDefinition('etymology')">Etymology</a>  <a href="#" onclick="wordDefinition('search')">Search</a></center>
+      
     </span>
     </div>
     <div id = "bibleDiv" class="content"></div>
@@ -217,7 +257,7 @@ h3{
   
   <div id="searchDiv" class="container">
     <div id="searchHeader" class="menu">
-      <h3 id="searchPageH3" class="centered">&nbsp&nbspKing James Bible Study Tool - Search Page</h3>
+      <!-- <h3 id="searchPageH3" class="centered">&nbsp&nbspKing James Bible Study Tool - Search Page</h3> -->
       <div class="centered">
         <select id="prePopDD" style="width: 10em" onchange="prePop(this)" placeholder="Enter Search">
           <option>Third Day</option>
@@ -226,15 +266,13 @@ h3{
         &nbsp&nbsp OR &nbsp&nbsp
         <input type="search" id="myInput" name="q" style="width: 10em" placeholder="Enter Search">
         <button id="backToHome" onclick="setUpSearch()">Search</button>
+        <button id="backToHome" onclick="backToHome()"> Back To Bible</button>
       </div>
       <form class="centered">
         <input type="checkbox" id="caseSensitive" name="caseSensitive" value="yes" onclick="setUpSearch()"><label style="font-size: 11px;">Case Sensitive</label>
         <input type="radio" id="exactMatch" name="match" value="no" checked="true" onclick="setUpSearch()"><label style="font-size: 11px;">Exact Match</label>
         <input type="radio" id="partialMatch" name="match" value="no" onclick="setUpSearch()"><label style="font-size: 11px;">Partial Match</label>
       </form>
-      <div class="centered">
-        <button id="backToHome" onclick="backToHome()"> Back To Bible</button>
-      </div>
     </div>
   <div id="results" class="content">
     Search returns here.
@@ -242,5 +280,7 @@ h3{
   <div id="dataDiv"></div>
 
 </body>
+
 <script src="bibleScript.js"></script>
+
 </html>

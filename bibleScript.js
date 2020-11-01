@@ -446,29 +446,37 @@ window.addEventListener("touchend", function(e) {
     }
 }
 );
+var selection;
 window.addEventListener('mouseup', function(e) {
-    var selection;
-    if (window.getSelection) {
-      selection = window.getSelection();
-      lookUpWord = selection;
-    } else if (document.selection) {
-      selection.toString() !== '' && alert('"' + selection.toString() + '" was selected at ' + e.pageX + '/' + e.pageY);
-    }
-    searchPhrase.textContent = selection;
-    if(searchPhrase.textContent === ""){
-    	searchPhrase.textContent = "Nothing Selected"
+	selection = window.getSelection().toString();
+    lookUpWord = selection; 
+    if(selection === ""){
+    	wordLinks.style.display = "none"
+    	TweenMax.to(hiddenMenu,.5, {x:-250})
+    }else{
+    	wordLinks.style.display = "inline"
+    	TweenMax.to(hiddenMenu,.5, {x:250})
     }
 }
 )
 
 function wordDefinition(source){
+	TweenMax.to(hiddenMenu,.5, {x:-250})
 	if(source === "websters"){
 		window.open("http://webstersdictionary1828.com/Dictionary/" + lookUpWord + "", "_blank");
 	}
 	if(source === "etymology"){
 		window.open("https://www.etymonline.com/search?q=" + lookUpWord + "", "_blank");
 	}
-	if(source === "search"){
+	if(source === "etymology"){
+		window.open("https://www.etymonline.com/search?q=" + lookUpWord + "", "_blank");
+	}
+
+
+
+	 // https://www.biblegateway.com/passage/?search=Jas+4%3A2&version=KJV
+	console.log(lookUpWord)
+	if(source === "search" && lookUpWord != ""){
 		lookUpWord = lookUpWord.toString()
 		searchDiv.style.display="flex";
 		homePage.style.display="none";
@@ -501,13 +509,13 @@ function goBack(){
 	}
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
 	chapVerse=document.getElementById(chapVerse);
+	bibleDiv.getElementsByTagName('p')[0].scrollIntoView();
 	bibleDiv.innerHTML = chapVerse.innerHTML;
 }
 
 function goForward(){
 	if(chapterDD.selectedIndex < chapterDD.length-1){
 		chapterDD.selectedIndex++
-		console.log(chapterDD.selectedIndex)
 	}else{
 		if(chapterDD.selectedIndex === chapterDD.length-1 && bookDD.selectedIndex < bookDD.length){
 		bookDD.selectedIndex++
@@ -520,14 +528,26 @@ function goForward(){
     	    option.innerHTML = i+1;
     	    chapterDD.options.add(option)
     	} 
-		console.log(bookDD.value)
 	}
-	}
+}
 	
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
 	chapVerse=document.getElementById(chapVerse);
+	bibleDiv.getElementsByTagName('p')[0].scrollIntoView();
 	bibleDiv.innerHTML = chapVerse.innerHTML;
 }
 
 
+TweenMax.set(hiddenMenu, {x:-250})
+function showMenu(){
+	hiddenMenu.style.top = mainMenu.clientHeight + "px"
+	if(hiddenMenu._gsTransform.x <= 0){
+		TweenMax.to(hiddenMenu,.5, {x:250})
+	}else{
+		TweenMax.to(hiddenMenu, 1, {x:0})
+	}
+	
+}
 
+console.log(mainMenu.style.top)
+console.log(mainMenu.clientHeight)
