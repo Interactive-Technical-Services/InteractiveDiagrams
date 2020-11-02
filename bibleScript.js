@@ -443,16 +443,18 @@ window.addEventListener("touchend", function(e) {
 	}
 )
 var selection;
-window.addEventListener('mouseup', function(e) {
-	selection = window.getSelection().toString();
-    lookUpWord = selection; 
-    if(selection === ""){
-    	TweenMax.to(hiddenMenu,.5, {x:-250})
-    }else{
-    	TweenMax.to(hiddenMenu,.5, {x:250})
-   		 }
-	}
-)
+// window.addEventListener('mouseup', function(e) {
+	
+     
+//     if(selection === ""){
+//     	TweenMax.to(hiddenMenu,.5, {x:-250})
+//     	selection = window.getSelection().toString();
+//     	lookUpWord = selection;
+//     }else{
+//     	TweenMax.to(hiddenMenu,.5, {x:250})
+//    		 }
+// 	}
+// )
 
 function wordDefinition(source){
 	lookUpWord = lookUpWord.toString()
@@ -560,6 +562,8 @@ function goForward(){
 
 TweenMax.set(hiddenMenu, {x:-250})
 function showMenu(){
+	selection = window.getSelection().toString();
+    	lookUpWord = selection;
 	hiddenMenu.style.top = mainMenu.clientHeight + "px"
 	if(hiddenMenu._gsTransform.x <= 0){
 		TweenMax.to(hiddenMenu,.5, {x:250})
