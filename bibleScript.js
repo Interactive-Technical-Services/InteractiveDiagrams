@@ -432,16 +432,16 @@ function textLinkClicked(){
 
 
 var lookUpWord = "";
-window.addEventListener("touchend", function(e) {
-   	selection = window.getSelection().toString();
-    lookUpWord = selection; 
-    if(selection === ""){
-    	TweenMax.to(hiddenMenu,.5, {x:-250})
-    }else{
-    	TweenMax.to(hiddenMenu,.5, {x:250})
-   		 }
-	}
-)
+// window.addEventListener("touchend", function(e) {
+//    	selection = window.getSelection().toString();
+//     lookUpWord = selection; 
+//     if(selection === ""){
+//     	TweenMax.to(hiddenMenu,.5, {x:-250})
+//     }else{
+//     	TweenMax.to(hiddenMenu,.5, {x:250})
+//    		 }
+// 	}
+// )
 var selection;
 // window.addEventListener('mouseup', function(e) {
 	
