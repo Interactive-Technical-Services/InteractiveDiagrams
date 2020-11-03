@@ -531,7 +531,8 @@ function goBack(){
 	}
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
 	chapVerse=document.getElementById(chapVerse);
-	bibleDiv.getElementsByTagName('p')[0].scrollIntoView();
+	
+	// bibleDiv.getElementsByTagName('p')[0].scrollIntoView();
 	bibleDiv.innerHTML = chapVerse.innerHTML;
 }
 
