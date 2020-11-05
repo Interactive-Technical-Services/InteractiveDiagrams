@@ -465,12 +465,17 @@ function wordDefinition(source){
 	if(source === "etymology"){
 		window.open("https://www.etymonline.com/search?q=" + lookUpWord + "", "_blank");
 	}
+	if(source === "searchForum"){
+		window.open("/Phrases/" + lookUpWord + "", "_blank");
+	}
+
+	
 	if(source === "google"){
 		window.open("https://www.google.com/search?sxsrf=ALeKk03jVPw_AZYKhqAK-w7Uv2mg97IOeQ%3A1604239940473&source=hp&ei=RMKeX9a7Gpm7tQbzzJCYBA&q=" + lookUpWord + "", "_blank");
 		// https://www.google.com/search?sxsrf=ALeKk03jVPw_AZYKhqAK-w7Uv2mg97IOeQ%3A1604239940473&source=hp&ei=RMKeX9a7Gpm7tQbzzJCYBA&q=Jesus
 	}
 	if(source === "forum"){
-		window.open("https://robertmayeight.wixsite.com/website", "_blank");
+		window.open("https://discussionplace.createaforum.com/", "_blank");
 	}
 	if(source === "blueletterbible"){
 		window.open("https://www.blueletterbible.org/search/search.cfm?Criteria=" + lookUpWord + "&t=KJV&ss=1#s=s_primary_0_1", "_blank");
@@ -531,7 +536,7 @@ function goBack(){
 	}
 	chapVerse = (bookDD.options[bookDD.selectedIndex].text + [chapterDD.selectedIndex + 1]);
 	chapVerse=document.getElementById(chapVerse);
-	
+
 	// bibleDiv.getElementsByTagName('p')[0].scrollIntoView();
 	bibleDiv.innerHTML = chapVerse.innerHTML;
 }

@@ -146,7 +146,8 @@ h3{
 </head>
 <body style="font-family:Verdana;">
   <div id="hiddenMenu" class="vertical-menu">
-    <a href="#" onclick="wordDefinition('search')">Search</a>
+    <a href="#" onclick="wordDefinition('search')">Search Bible</a>
+    <a href="#" onclick="wordDefinition('searchForum')">Search This Site</a>
     <a href="#" onclick="wordDefinition('websters')">Lookup Websters 1898</a>
     <a href="#" onclick="wordDefinition('etymology')">Etymology Online</a>
     <a href="#" onclick="wordDefinition('google')">Google</a>
@@ -234,6 +235,14 @@ h3{
         <select id="chapterDD">
           <option>1</option>
         </select> 
+        <div>Search: 
+          <input type="search" id="myInput" name="q" style="width: 10em" placeholder="Enter Search"></div>
+        <form class="centered">
+        <input type="checkbox" id="caseSensitive" name="caseSensitive" value="yes" onclick="setUpSearch()"><label style="font-size: 11px;">Case Sensitive</label>
+        <input type="radio" id="exactMatch" name="match" value="no" checked="true" onclick="setUpSearch()"><label style="font-size: 11px;">Exact Match</label>
+        <input type="radio" id="partialMatch" name="match" value="no" onclick="setUpSearch()"><label style="font-size: 11px;">Partial Match</label>
+
+      </form>
        <div>
         </div>
       </div>
@@ -259,15 +268,11 @@ h3{
           <option>Day of the Lord</option>
         </select>
         &nbsp&nbsp OR &nbsp&nbsp
-        <input type="search" id="myInput" name="q" style="width: 10em" placeholder="Enter Search">
+        
         <button id="backToHome" onclick="setUpSearch()">Search</button>
         <button id="backToHome" onclick="backToHome()"> Back To Bible</button>
       </div>
-      <form class="centered">
-        <input type="checkbox" id="caseSensitive" name="caseSensitive" value="yes" onclick="setUpSearch()"><label style="font-size: 11px;">Case Sensitive</label>
-        <input type="radio" id="exactMatch" name="match" value="no" checked="true" onclick="setUpSearch()"><label style="font-size: 11px;">Exact Match</label>
-        <input type="radio" id="partialMatch" name="match" value="no" onclick="setUpSearch()"><label style="font-size: 11px;">Partial Match</label>
-      </form>
+      
     </div>
   <div id="results" class="content">
     Search returns here.
