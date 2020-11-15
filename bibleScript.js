@@ -404,7 +404,7 @@ function prePop(e){
 	myInput.value = e.value;
 }
 
-myInput.value = prePopDD.value;
+myInput.value = "";
 
 var hyperLinks = ["third day", "summer fruit", "ten thousand"];
 
@@ -470,8 +470,8 @@ function wordDefinition(source){
 	}
 
 	
-	if(source === "google"){
-		window.open("https://www.google.com/search?sxsrf=ALeKk03jVPw_AZYKhqAK-w7Uv2mg97IOeQ%3A1604239940473&source=hp&ei=RMKeX9a7Gpm7tQbzzJCYBA&q=" + lookUpWord + "", "_blank");
+	if(source === "duckduckgo"){
+		window.open("https://duckduckgo.com/?q=" + lookUpWord + "&t=h_&ia=web", "_blank");
 		// https://www.google.com/search?sxsrf=ALeKk03jVPw_AZYKhqAK-w7Uv2mg97IOeQ%3A1604239940473&source=hp&ei=RMKeX9a7Gpm7tQbzzJCYBA&q=Jesus
 	}
 	if(source === "forum"){
@@ -501,7 +501,6 @@ function wordDefinition(source){
 		
 		searchDiv.style.display="flex";
 		homePage.style.display="none";
-		prePopDD.value = source;
 		exactMatch.checked = true;
 		start = "\\b"
 		end = "\\b"
